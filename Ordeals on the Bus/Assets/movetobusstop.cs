@@ -7,7 +7,7 @@ public class movetobusstop : MonoBehaviour
     public GameObject bus;
     public GameObject busstop;
     public float speed = 5;
-    private bool isMoving = false;
+    //private bool isMoving = false;
 
     void Update()
     {
@@ -23,7 +23,7 @@ public class movetobusstop : MonoBehaviour
 
     IEnumerator MoveBus(Vector3 direction)
     {
-        isMoving = true;
+        //isMoving = true;
 
         // Calculate the distance between the bus and the bus stop.
         float distance = Vector3.Distance(bus.transform.position, busstop.transform.position);
@@ -37,8 +37,8 @@ public class movetobusstop : MonoBehaviour
             distance = Vector3.Distance(bus.transform.position, busstop.transform.position);
 
             yield return null;
-        }
+        }   
 
-        isMoving = false;
+        //isMoving = false;
     }
 }
