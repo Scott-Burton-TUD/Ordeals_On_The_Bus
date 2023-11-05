@@ -28,7 +28,7 @@ public class movetobusstop : MonoBehaviour
         // Calculate the distance between the bus and the bus stop.
         float distance = Vector3.Distance(bus.transform.position, busstop.transform.position);
 
-        while (distance > 0.1f)
+        while (distance > 5f)
         {
             // Move the bus towards the bus stop.
             bus.transform.position = Vector3.MoveTowards(bus.transform.position, busstop.transform.position, speed * Time.deltaTime);
