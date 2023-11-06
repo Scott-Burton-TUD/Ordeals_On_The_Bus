@@ -79,7 +79,7 @@ Material:
     - _BillboardKwToggle: 0
     - _BillboardShadowFade: 0.5
     - _BumpScale: 1
-    - _Curvature: 0.000001
+    - _Curvature: 0.00019
     - _Cutoff: 0.5
     - _DetailNormalMapScale: 1
     - _DstBlend: 0
