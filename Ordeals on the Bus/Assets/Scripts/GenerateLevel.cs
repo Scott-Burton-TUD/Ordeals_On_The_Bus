@@ -8,6 +8,7 @@ public class GenerateLevel : MonoBehaviour
     public float zPos = 26.2f;
     public bool CreatingSection = false;
     public int secNum;
+    public GameObject[] x;
 
     void Update()
     {
@@ -26,9 +27,9 @@ public class GenerateLevel : MonoBehaviour
         {
             secNum = 2;
         }
-            Instantiate(section[secNum], new Vector3(0, 0, zPos), Quaternion.identity);
+        Instantiate(section[secNum], new Vector3(0, 0, zPos), Quaternion.identity);
         zPos += 26;
         yield return new WaitForSeconds(2);
         CreatingSection = false;
-    }
+    } 
 }
