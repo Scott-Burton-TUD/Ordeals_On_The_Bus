@@ -55,6 +55,7 @@ public class switchlanes : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.P))
         {
             canDrive = true;
+            lanemove.enabled = false;
             stopMove.enabled = true;
             currentLane = 0;
             isChangingLane = true;
