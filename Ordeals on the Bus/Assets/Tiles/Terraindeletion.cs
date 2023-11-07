@@ -6,7 +6,7 @@ public class Terraindeletion : MonoBehaviour
 {
     void Update()
     {
-        Invoke("destroyer", 20f);
+        Invoke("destroyer", 40f);
     }
     void destroyer()
     {
