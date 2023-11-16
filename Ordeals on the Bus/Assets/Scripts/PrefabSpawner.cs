@@ -31,7 +31,7 @@ public class PrefabSpawner : MonoBehaviour
             Instantiate(objectToSpawn, spawnPoint.position, Quaternion.identity);
 
             // Wait for some time before spawning the next object.
-            yield return new WaitForSeconds(5.0f);
+            yield return new WaitForSeconds(20.0f);
         }
     }
 }
