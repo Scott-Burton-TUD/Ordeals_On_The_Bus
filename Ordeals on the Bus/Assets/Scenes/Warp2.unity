@@ -357,7 +357,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 306841770}
   m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
-  m_LocalPosition: {x: 0.9039998, y: 2.974, z: 44.93}
+  m_LocalPosition: {x: 1.79, y: 2.974, z: 44.93}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -476,6 +476,11 @@ PrefabInstance:
     serializedVersion: 2
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 3870297915726044624, guid: 0eecc9eb27919b94f9eee0979bedeecb,
+        type: 3}
+      propertyPath: busStopName
+      value: Bus Stop
+      objectReference: {fileID: 0}
     - target: {fileID: 4422462469561872576, guid: 0eecc9eb27919b94f9eee0979bedeecb,
         type: 3}
       propertyPath: m_IsActive
@@ -484,7 +489,7 @@ PrefabInstance:
     - target: {fileID: 4422462469812170976, guid: 0eecc9eb27919b94f9eee0979bedeecb,
         type: 3}
       propertyPath: speed
-      value: 5
+      value: 16
       objectReference: {fileID: 0}
     - target: {fileID: 4422462469812170990, guid: 0eecc9eb27919b94f9eee0979bedeecb,
         type: 3}

@@ -10,7 +10,7 @@ public class switchlanes : MonoBehaviour
     public float speed = 5.0f;
     public int currentLane = 1; // Initialize to the middle lane
     public GameObject parkZone;
-    public GameObject busStop;
+    public string busStopName; // Name of the bus stop GameObject
 
     public bool isEnteringBusStop = false;
     private bool isChangingLane = false;
@@ -21,6 +21,19 @@ public class switchlanes : MonoBehaviour
 
     public Busmovement stopMove;
     public laneMovetobusStop lanemove;
+
+    private GameObject busStop; // Reference to the bus stop GameObject
+
+    void Start()
+    {
+        // Find the bus stop GameObject using its name
+        busStop = GameObject.Find(busStopName);
+
+        if (busStop == null)
+        {
+            Debug.LogError("Bus stop GameObject not found with the name: " + busStopName);
+        }
+    }
 
     void Update()
     {
@@ -74,7 +87,6 @@ public class switchlanes : MonoBehaviour
         }
     }
 
-
     IEnumerator MoveBus(Transform targetLane)
     {
         Vector3 targetPosition = targetLane.position;
@@ -97,11 +109,14 @@ public class switchlanes : MonoBehaviour
         }
     }
 
- 
-
     void MoveBusToBusStop()
     {
-        
+        if (busStop == null)
+        {
+            Debug.LogError("Bus stop GameObject not found.");
+            return;
+        }
+
         // Calculate the direction to the bus stop
         Vector3 directionToBusStop = busStop.transform.position - bus.transform.position;
         directionToBusStop.y = 0; // Make sure it's in the horizontal plane
@@ -113,16 +128,17 @@ public class switchlanes : MonoBehaviour
             canDrive = false;
             // Normalize the direction vector and move the bus towards the bus stop
             directionToBusStop.Normalize();
-            bus.transform.position += directionToBusStop * speed/ (currentLane + 0.1f) * Time.deltaTime;
+            bus.transform.position += directionToBusStop * speed / (currentLane + 0.1f) * Time.deltaTime;
         }
         else
         {
             // The bus has reached the bus stop
             isEnteringBusStop = false;
             stopMove.enabled = false;
-            
+
             // You can add additional logic here, such as stopping the bus, opening doors, etc.
         }
     }
 }
+
    
