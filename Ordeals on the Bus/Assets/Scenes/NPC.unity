@@ -1180,7 +1180,7 @@ MonoBehaviour:
   - {fileID: 98177004}
   - {fileID: 702480956}
   - {fileID: 1754472002}
-  - {fileID: 1820638115}
+  - {fileID: 0}
   speed: 4
   currentLane: 1
   parkZone: {fileID: 1764831874}
