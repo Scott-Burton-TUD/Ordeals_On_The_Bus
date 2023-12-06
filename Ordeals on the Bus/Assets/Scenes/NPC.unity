@@ -1184,7 +1184,7 @@ MonoBehaviour:
   speed: 4
   currentLane: 1
   parkZone: {fileID: 1764831874}
-  busStop: {fileID: 1820638115}
+  busStopName: Bus Stop
   isEnteringBusStop: 0
   canDrive: 1
   objectToClick: {fileID: 315037740}
