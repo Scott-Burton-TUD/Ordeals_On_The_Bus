@@ -99,10 +99,10 @@ public class npcmovement : MonoBehaviour
                 transform.eulerAngles = new Vector3(0, 0, 0);
 
                 // Optional: You can disable the NavMeshAgent once the NPC reaches the seat
-                navMeshAgent.isStopped = true;
+                //navMeshAgent.isStopped = true;
 
                 // Optional: Set gotoseat to false or perform other actions as needed
-                gotoseat = false;
+                //gotoseat = false;
             }
         }
         else
