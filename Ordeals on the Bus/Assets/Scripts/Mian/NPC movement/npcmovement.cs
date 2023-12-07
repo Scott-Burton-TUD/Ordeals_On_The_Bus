@@ -20,16 +20,46 @@ public class npcmovement : MonoBehaviour
 
     [Header("Mayham")]
     public bool mayham;
+    public string randomMovementAreaName;
 
     void Start()
     {
         navMeshAgent = GetComponent<NavMeshAgent>();
         navMeshAgent.speed = movementSpeed; // Set the initial speed
+
     }
 
     void Update()
     {
-        MoveTowardsTarget(targetObjectName); // Pass the string as the target
+        if (Input.GetKey(KeyCode.B))
+        {
+            mayham = true;
+            gotoseat = false;
+            navMeshAgent.isStopped = false;
+        }
+        if (mayham == true && !string.IsNullOrEmpty(randomMovementAreaName))
+        {
+            GameObject randomMovementArea = GameObject.Find(randomMovementAreaName);
+
+            if (randomMovementArea != null)
+            {
+                // Get the bounds of the BoxCollider
+                Vector3 minBounds = randomMovementArea.GetComponent<Collider>().bounds.min;
+                Vector3 maxBounds = randomMovementArea.GetComponent<Collider>().bounds.max;
+
+                PerformRandomMovementInArea(minBounds, maxBounds);
+            }
+            else
+            {
+                Debug.LogWarning("Random movement area not found.");
+            }
+        }
+
+        if(mayham == false && gotoseat == false)
+        {
+            MoveTowardsTarget(targetObjectName); // Pass the string as the target
+        }
+        
 
         if (Input.GetKey(KeyCode.K))
         {
@@ -37,7 +67,7 @@ public class npcmovement : MonoBehaviour
             mayham = false;
         }
 
-        if (gotoseat == true)
+        if (gotoseat == true && mayham == false)
         {
             GoToRandomSeat();
         }
@@ -106,4 +136,31 @@ public class npcmovement : MonoBehaviour
     /// <summary>
     /// Random movements of the NPC
     /// </summary>
+    void PerformRandomMovementInArea(Vector3 minBounds, Vector3 maxBounds)
+    {
+        // Check if the NavMeshAgent has reached the current destination
+        if (!navMeshAgent.pathPending && navMeshAgent.remainingDistance < 0.5f)
+        {
+            // Generate a random point within the specified rectangular area
+            Vector3 randomDestination = RandomNavInBounds(minBounds, maxBounds);
+
+            // Set the destination for the NavMeshAgent
+            navMeshAgent.SetDestination(randomDestination);
+        }
+    }
+
+    Vector3 RandomNavInBounds(Vector3 minBounds, Vector3 maxBounds)
+    {
+        Vector3 randomDirection = new Vector3(
+            Random.Range(minBounds.x, maxBounds.x),
+            Random.Range(minBounds.y, maxBounds.y),
+            Random.Range(minBounds.z, maxBounds.z)
+        );
+
+        NavMeshHit navHit;
+
+        NavMesh.SamplePosition(randomDirection, out navHit, 5f, -1);
+
+        return navHit.position;
+    }
 }
