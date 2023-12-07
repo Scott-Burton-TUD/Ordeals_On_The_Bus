@@ -4152,7 +4152,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   npcPrefabs:
   - {fileID: 6578364347002115895, guid: 81989e8b909efaf4184463efdecb65ba, type: 3}
-  numberOfNPCs: 2
+  numberOfNPCs: 3
   spaceBetweenNPCs: 1
 --- !u!65 &1807822697
 BoxCollider:

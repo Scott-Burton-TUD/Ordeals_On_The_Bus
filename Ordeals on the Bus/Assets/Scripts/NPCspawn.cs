@@ -42,11 +42,9 @@ public class NPCspawn : MonoBehaviour
             // Add the spawned NPC to the list
             spawnedNPCs.Add(npc);
 
-            // Enable the BoardingBus script only for the first NPC, disable for others
-            if (i != 0)
-            {
-                npc.GetComponent<BoardingBus>().enabled = false;
-            }
+            // Enable the npcmovement and NavMeshAgent components for all NPCs
+            npc.GetComponent<npcmovement>().enabled = true;
+            npc.GetComponent<NavMeshAgent>().enabled = true;
         }
     }
 
@@ -56,9 +54,7 @@ public class NPCspawn : MonoBehaviour
         if (currentNPCIndex < spawnedNPCs.Count)
         {
             // Enable the BoardingBus script for the current NPC
-            spawnedNPCs[currentNPCIndex].GetComponent<npcmovement>().enabled = true;
-            spawnedNPCs[currentNPCIndex].GetComponent<NavMeshAgent>().enabled = true;
-
+            spawnedNPCs[currentNPCIndex].GetComponent<BoardingBus>().enabled = true;
 
             // Increment the index for the next NPC
             currentNPCIndex++;
