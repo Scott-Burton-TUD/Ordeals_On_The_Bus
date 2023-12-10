@@ -21,6 +21,7 @@ public class npcmovement : MonoBehaviour
     [Header("Mayham")]
     public bool mayham;
     public string randomMovementAreaName;
+    public vipmovement vip;
 
     void Start()
     {
@@ -32,13 +33,13 @@ public class npcmovement : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetKey(KeyCode.B))
+        if (vip.isonFire == true)
         {
-            mayham = true;
-            gotoseat = false;
+            
+    
             navMeshAgent.isStopped = false;
         }
-        if (mayham == true && !string.IsNullOrEmpty(randomMovementAreaName))
+        if (vip.isonFire == true && !string.IsNullOrEmpty(randomMovementAreaName))
         {
             GameObject randomMovementArea = GameObject.Find(randomMovementAreaName);
 
@@ -56,7 +57,7 @@ public class npcmovement : MonoBehaviour
             }
         }
 
-        if(mayham == false && gotoseat == false)
+        if(vip.isonFire == false && gotoseat == false)
         {
             MoveTowardsTarget(targetObjectName); // Pass the string as the target
         }
@@ -68,7 +69,7 @@ public class npcmovement : MonoBehaviour
             mayham = false;
         }
 
-        if (gotoseat == true && mayham == false)
+        if (gotoseat == true && vip.isonFire == false)
         {
             GoToRandomSeat();
         }
