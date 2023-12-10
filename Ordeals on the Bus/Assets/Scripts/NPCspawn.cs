@@ -15,9 +15,9 @@ public class NPCspawn : MonoBehaviour
 
     void Start()
     {
-        InstantiateNPCs();
+        //InstantiateNPCs();
     }
-
+        
     void Update()
     {
         // Check for the 'L' key press
