@@ -21,7 +21,6 @@ public class npcmovement : MonoBehaviour
     [Header("Mayham")]
     public bool mayham;
     public string randomMovementAreaName;
-    public vipmovement vip;
 
     void Start()
     {
@@ -33,7 +32,7 @@ public class npcmovement : MonoBehaviour
 
     void Update()
     {
-        if (vip.isonFire == true)
+        if (Input.GetKey(KeyCode.B))
         {
             mayham = true;
             gotoseat = false;
@@ -69,7 +68,7 @@ public class npcmovement : MonoBehaviour
             mayham = false;
         }
 
-        if (gotoseat == true && mayham == false && vip.isonFire == falsez)
+        if (gotoseat == true && mayham == false)
         {
             GoToRandomSeat();
         }

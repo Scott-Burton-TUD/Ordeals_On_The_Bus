@@ -68,7 +68,7 @@ public class vipmovement : MonoBehaviour
         }
 
 
-        if (Input.GetKey(KeyCode.J))
+        if (Input.GetKey(KeyCode.K))
         {
             gotoseat = true;
             mayham = false;
