@@ -1,9 +1,9 @@
-    using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 
-public class npcmovement : MonoBehaviour
+public class vipmovement : MonoBehaviour
 {
     [Header("NPC movement speed")]
     public float movementSpeed = 3.0f; // Public variable for controlling the speed
@@ -21,22 +21,28 @@ public class npcmovement : MonoBehaviour
     [Header("Mayham")]
     public bool mayham;
     public string randomMovementAreaName;
+    public GameObject icecube;
+    public GameObject fire;
+    public bool isonFire;
 
     void Start()
     {
         navMeshAgent = GetComponent<NavMeshAgent>();
-        navMeshAgent.speed = movementSpeed; // Set the initial speed 
+        navMeshAgent.speed = movementSpeed; // Set the initial speed
 
-     
     }
 
     void Update()
     {
-        if (Input.GetKey(KeyCode.B))
+        if (Input.GetKey(KeyCode.N))
         {
-            mayham = true;
-            gotoseat = false;
-            navMeshAgent.isStopped = false;
+            //mayham = true;
+            //gotoseat = false;
+            //navMeshAgent.isStopped = false;
+            icecube.SetActive(true);
+            fire.SetActive(false);
+            isonFire = false;
+
         }
         if (mayham == true && !string.IsNullOrEmpty(randomMovementAreaName))
         {
@@ -56,16 +62,18 @@ public class npcmovement : MonoBehaviour
             }
         }
 
-        if(mayham == false && gotoseat == false)
+        if (mayham == false && gotoseat == false)
         {
             MoveTowardsTarget(targetObjectName); // Pass the string as the target
         }
-        
+
 
         if (Input.GetKey(KeyCode.K))
         {
             gotoseat = true;
             mayham = false;
+            fire.SetActive(true);
+            isonFire = true;
         }
 
         if (gotoseat == true && mayham == false)
