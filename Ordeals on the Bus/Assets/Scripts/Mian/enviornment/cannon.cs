@@ -1,20 +1,20 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using FMODUnity;
 
 public class cannon : MonoBehaviour
 {
-    public Transform firePoint; // The point where the cannonball will be instantiated
-    public GameObject cannonballPrefab; // Prefab of the cannonball
-    public float launchForce = 10f; // Force applied to the cannonball
-
+    public Transform firePoint;
+    public GameObject cannonballPrefab;
+    public float launchForce = 10f;
+    public EventReference cannonSound;
     void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Player"))
         {
             FireCannon();
         }
-
     }
 
     void FireCannon()
@@ -30,6 +30,9 @@ public class cannon : MonoBehaviour
         {
             // Apply force to the cannonball in the forward direction
             rb.AddForce(firePoint.forward * launchForce, ForceMode.Impulse);
+
+            // Play the FMOD sound event
+            FMODUnity.RuntimeManager.PlayOneShot(cannonSound, firePoint.position);
         }
         else
         {

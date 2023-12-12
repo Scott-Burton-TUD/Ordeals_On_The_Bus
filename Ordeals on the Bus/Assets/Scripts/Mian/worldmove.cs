@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using FMODUnity;
 
 public class worldmove : MonoBehaviour
 {
@@ -27,6 +28,8 @@ public class worldmove : MonoBehaviour
     private int currentLaneIndex = 1;
     private bool isSwitchingLane = false;
 
+    //Fmod
+
 
 
 
@@ -34,6 +37,9 @@ public class worldmove : MonoBehaviour
     void Start()
     {
         UpdateBusPosition();
+
+        //Fmod
+
     }
 
     // Update is called once per frame

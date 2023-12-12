@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="ParameterPreset" id="{afc87fc0-9cb3-4507-bdfd-e8eb1344e98f}">
+		<property name="name">
+			<value>Transition to Stop</value>
+		</property>
+		<relationship name="folder">
+			<destination>{e0555101-ae54-43d3-8426-282ff13d5ca1}</destination>
+		</relationship>
+		<relationship name="parameter">
+			<destination>{519d4e1c-4f0f-4cd5-be44-889ca3bde1e2}</destination>
+		</relationship>
+	</object>
+	<object class="GameParameter" id="{519d4e1c-4f0f-4cd5-be44-889ca3bde1e2}">
+		<property name="initialValue">
+			<value>0</value>
+		</property>
+	</object>
+</objects>

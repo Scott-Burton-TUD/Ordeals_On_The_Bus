@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="AudioFile" id="{7c33acb9-f7af-45b3-83b6-5391a3596b63}">
+		<property name="assetPath">
+			<value>Cannon Fire Sound Effects (HD)  Free Sound Pack_01.mp3</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>44.0999985</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>5.6424489795918369</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{393e53a7-5643-44fc-8f84-3ad26457eb28}</destination>
+		</relationship>
+	</object>
+</objects>

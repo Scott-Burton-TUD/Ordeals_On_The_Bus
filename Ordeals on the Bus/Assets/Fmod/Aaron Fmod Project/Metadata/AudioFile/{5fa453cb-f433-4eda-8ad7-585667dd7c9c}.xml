@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="AudioFile" id="{5fa453cb-f433-4eda-8ad7-585667dd7c9c}">
+		<property name="assetPath">
+			<value>busstop.mp3</value>
+		</property>
+		<property name="isStreaming">
+			<value>true</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>48</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>32.015999999999998</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{393e53a7-5643-44fc-8f84-3ad26457eb28}</destination>
+		</relationship>
+	</object>
+</objects>
