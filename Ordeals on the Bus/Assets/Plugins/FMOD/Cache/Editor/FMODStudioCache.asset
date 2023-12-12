@@ -130,10 +130,10 @@ MonoBehaviour:
   Path: Assets/Fmod/Aaron Fmod Project/Build/Desktop/SFX.bank
   Name: SFX
   StudioPath: bank:/SFX
-  lastModified: 638380214553854542
+  lastModified: 638380218143448766
   FileSizes:
   - Name: Desktop
-    Value: 2799072
+    Value: 2799264
   Exists: 1
 --- !u!114 &-1881757306124773324
 MonoBehaviour:
@@ -185,7 +185,7 @@ MonoBehaviour:
   - {fileID: -8648431496427239209}
   StringsBanks:
   - {fileID: -9176944544538367247}
-  cacheTime: 638380214553854542
+  cacheTime: 638380218143448766
   cacheVersion: 131609
 --- !u!114 &418781063225351340
 MonoBehaviour:
