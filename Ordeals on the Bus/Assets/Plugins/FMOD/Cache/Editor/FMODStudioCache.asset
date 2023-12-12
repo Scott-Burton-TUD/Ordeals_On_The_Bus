@@ -15,10 +15,10 @@ MonoBehaviour:
   Path: Assets/Fmod/Aaron Fmod Project/Build/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 638380102579816710
+  lastModified: 638380194779625332
   FileSizes:
   - Name: Desktop
-    Value: 952
+    Value: 1058
   Exists: 1
 --- !u!114 &-8648431496427239209
 MonoBehaviour:
@@ -35,7 +35,7 @@ MonoBehaviour:
   Path: Assets/Fmod/Aaron Fmod Project/Build/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 638380102579816710
+  lastModified: 638380194779608713
   FileSizes:
   - Name: Desktop
     Value: 1036
@@ -67,6 +67,54 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 0
+--- !u!114 &-5736839781125924725
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Background SFX/Volume
+  m_EditorClassIdentifier: 
+  Name: Volume
+  StudioPath: 
+  Min: 0
+  Max: 1
+  Default: 0
+  ID:
+    data1: 627262696
+    data2: 2953360453
+  Type: 0
+  IsGlobal: 0
+  Labels: []
+  Exists: 1
+--- !u!114 &-3907240310691206728
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Background SFX/state
+  m_EditorClassIdentifier: 
+  Name: state
+  StudioPath: 
+  Min: 0
+  Max: 1
+  Default: 0
+  ID:
+    data1: 1631815191
+    data2: 2252492172
+  Type: 0
+  IsGlobal: 0
+  Labels: []
+  Exists: 1
 --- !u!114 &-1892422384583958065
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -82,10 +130,10 @@ MonoBehaviour:
   Path: Assets/Fmod/Aaron Fmod Project/Build/Desktop/SFX.bank
   Name: SFX
   StudioPath: bank:/SFX
-  lastModified: 638380136034094233
+  lastModified: 638380214553854542
   FileSizes:
   - Name: Desktop
-    Value: 750976
+    Value: 2799072
   Exists: 1
 --- !u!114 &-1881757306124773324
 MonoBehaviour:
@@ -131,12 +179,13 @@ MonoBehaviour:
   - {fileID: -7482944308898503521}
   - {fileID: 2666531306957423383}
   - {fileID: 418781063225351340}
+  - {fileID: 6504564005769191243}
   EditorParameters: []
   MasterBanks:
   - {fileID: -8648431496427239209}
   StringsBanks:
   - {fileID: -9176944544538367247}
-  cacheTime: 638380136034094233
+  cacheTime: 638380214553854542
   cacheVersion: 131609
 --- !u!114 &418781063225351340
 MonoBehaviour:
@@ -193,3 +242,32 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 0
+--- !u!114 &6504564005769191243
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Background SFX
+  m_EditorClassIdentifier: 
+  Path: event:/Background SFX
+  Guid:
+    Data1: -1725334419
+    Data2: 1326939081
+    Data3: 2064448422
+    Data4: 983061706
+  Banks:
+  - {fileID: -1892422384583958065}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 0
+  Parameters:
+  - {fileID: -3907240310691206728}
+  - {fileID: -5736839781125924725}
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 136120
