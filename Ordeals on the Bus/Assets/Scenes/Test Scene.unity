@@ -5482,7 +5482,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   parameterName: state
-  parameterValue: 1
+  parameterValue: 0.08
   busSfxScript: {fileID: 217401056}
 --- !u!54 &1972579191
 Rigidbody:
@@ -5709,7 +5709,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   parameterName: state
-  parameterValue: 1
+  parameterValue: 0.33
   busSfxScript: {fileID: 217401056}
 --- !u!54 &2033336527
 Rigidbody:

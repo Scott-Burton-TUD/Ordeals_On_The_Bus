@@ -82,10 +82,10 @@ MonoBehaviour:
   Path: Assets/Fmod/Aaron Fmod Project/Build/Desktop/SFX.bank
   Name: SFX
   StudioPath: bank:/SFX
-  lastModified: 638380125766874666
+  lastModified: 638380136034094233
   FileSizes:
   - Name: Desktop
-    Value: 750848
+    Value: 750976
   Exists: 1
 --- !u!114 &-1881757306124773324
 MonoBehaviour:
@@ -136,7 +136,7 @@ MonoBehaviour:
   - {fileID: -8648431496427239209}
   StringsBanks:
   - {fileID: -9176944544538367247}
-  cacheTime: 638380125766874666
+  cacheTime: 638380136034094233
   cacheVersion: 131609
 --- !u!114 &418781063225351340
 MonoBehaviour:
@@ -165,7 +165,7 @@ MonoBehaviour:
   - {fileID: -1881757306124773324}
   MinDistance: 1
   MaxDistance: 20
-  Length: 48600
+  Length: 65600
 --- !u!114 &2666531306957423383
 MonoBehaviour:
   m_ObjectHideFlags: 0
