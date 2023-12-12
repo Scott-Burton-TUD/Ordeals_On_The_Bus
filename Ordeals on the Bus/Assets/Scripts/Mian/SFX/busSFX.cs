@@ -2,42 +2,36 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using FMODUnity;
+using FMOD.Studio;
 
 public class busSFX : MonoBehaviour
 {
-    public Transform engine;
-    public GameObject busstop;
-    public GameObject busstart;
+    public EventReference bussounds;
 
-    public soundTrigger dockk;
+    private EventInstance bussoundsfx;
 
-    //stopping bus
-    public stopbus stoppingbus;
+    // Awake is called before Start
+    void Awake()
+    {
+        // Create the EventInstance for bussounds
+        
+    }
 
-    //Fmod
-
-    public EventReference busIdle;
     // Start is called before the first frame update
     void Start()
     {
-        FMODUnity.RuntimeManager.PlayOneShot(busIdle, engine.position);
+        bussoundsfx = RuntimeManager.CreateInstance(bussounds);
+        bussoundsfx.start();
     }
 
     // Update is called once per frame
     void Update()
     {
-        if(dockk.sfxTrigger == true)
-        {
-            busstop.SetActive(true);
-        }
-        else
-        {
-            busstop.SetActive(false);
-        }
+        // You can add any update logic here if needed
+    }
 
-        if (Input.GetKey(KeyCode.P))
-        {
-            busstart.SetActive(true);
-        }
+    public void SetBusParameter(string parameterName, float parameterValue)
+    {
+        bussoundsfx.setParameterByName(parameterName, parameterValue);
     }
 }
