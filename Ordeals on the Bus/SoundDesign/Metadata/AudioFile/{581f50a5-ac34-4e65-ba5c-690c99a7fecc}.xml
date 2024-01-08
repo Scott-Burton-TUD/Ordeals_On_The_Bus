@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="AudioFile" id="{581f50a5-ac34-4e65-ba5c-690c99a7fecc}">
+		<property name="assetPath">
+			<value>Max Brhon - Cyberpunk  NCS - Copyright Free Music.mp3</value>
+		</property>
+		<property name="isStreaming">
+			<value>true</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>48</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>215.08799999999999</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{c1676496-bd89-44d9-8af3-12d20685bd12}</destination>
+		</relationship>
+	</object>
+</objects>

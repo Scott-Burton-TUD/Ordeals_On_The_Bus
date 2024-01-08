@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="AudioFile" id="{b77de4ba-6a17-40aa-b104-8b36ee8e77ed}">
+		<property name="assetPath">
+			<value>Metal Jungle (Cyberpunk Trance Music).mp3</value>
+		</property>
+		<property name="isStreaming">
+			<value>true</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>44.0999985</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>149.99510204081633</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{c1676496-bd89-44d9-8af3-12d20685bd12}</destination>
+		</relationship>
+	</object>
+</objects>

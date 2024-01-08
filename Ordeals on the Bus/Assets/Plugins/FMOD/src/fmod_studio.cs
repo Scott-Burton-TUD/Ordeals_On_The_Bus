@@ -10,6 +10,7 @@ using System;
 using System.Text;
 using System.Runtime.InteropServices;
 using System.Collections;
+using UnityEngine;
 
 namespace FMOD.Studio
 {
@@ -1573,6 +1574,11 @@ namespace FMOD.Studio
         public bool isValid()
         {
             return hasHandle() && FMOD_Studio_EventInstance_IsValid(this.handle);
+        }
+
+        public static void set3DAttributes(GameObject gameObject)
+        {
+            throw new NotImplementedException();
         }
 
         #endregion
