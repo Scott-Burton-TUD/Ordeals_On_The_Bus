@@ -2,7 +2,7 @@
 <objects serializationModel="Studio.02.02.00">
 	<object class="AudioFile" id="{581f50a5-ac34-4e65-ba5c-690c99a7fecc}">
 		<property name="assetPath">
-			<value>Max Brhon - Cyberpunk  NCS - Copyright Free Music.mp3</value>
+			<value>Max Brhon - Cyberpunk.mp3</value>
 		</property>
 		<property name="isStreaming">
 			<value>true</value>

@@ -121,7 +121,6 @@
 		<property name="length">
 			<value>13.5</value>
 		</property>
-		<property name="name" />
 		<relationship name="fadeInCurve">
 			<destination>{d9857ccf-32d8-420f-85eb-366b3c8e253a}</destination>
 		</relationship>
@@ -158,6 +157,9 @@
 		</relationship>
 	</object>
 	<object class="EventMixerGroup" id="{8bad49c7-c46d-4856-bfa2-5db81fdfe337}">
+		<property name="volume">
+			<value>-8</value>
+		</property>
 		<property name="name">
 			<value>Audio 1</value>
 		</property>
@@ -732,7 +734,7 @@
 			<value>0</value>
 		</property>
 		<property name="curveShape">
-			<value>-0.2547189</value>
+			<value>-0.209752709</value>
 		</property>
 	</object>
 	<object class="AutomationPoint" id="{7402346a-23a1-425d-89b3-2da5fc98a579}">

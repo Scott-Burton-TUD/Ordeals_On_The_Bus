@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="AudioFile" id="{f8729b02-e717-4d46-9834-4a670b52009d}">
+		<property name="assetPath">
+			<value>Honk1.mp3</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>48</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>1.032</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{c1676496-bd89-44d9-8af3-12d20685bd12}</destination>
+		</relationship>
+	</object>
+</objects>

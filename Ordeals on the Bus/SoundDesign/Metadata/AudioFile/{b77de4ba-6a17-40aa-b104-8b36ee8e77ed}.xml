@@ -2,7 +2,7 @@
 <objects serializationModel="Studio.02.02.00">
 	<object class="AudioFile" id="{b77de4ba-6a17-40aa-b104-8b36ee8e77ed}">
 		<property name="assetPath">
-			<value>Metal Jungle (Cyberpunk Trance Music).mp3</value>
+			<value>Jasper George - Metal Jungle.mp3</value>
 		</property>
 		<property name="isStreaming">
 			<value>true</value>
