@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="AudioFile" id="{40bb5656-c0f3-4223-b349-c732b8974336}">
+		<property name="assetPath">
+			<value>Music/Down With The Sickness.mp3</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>44.0999985</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>1.0971428571428572</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{78282307-3a2b-4c63-9f1b-149622ac0a47}</destination>
+		</relationship>
+	</object>
+</objects>

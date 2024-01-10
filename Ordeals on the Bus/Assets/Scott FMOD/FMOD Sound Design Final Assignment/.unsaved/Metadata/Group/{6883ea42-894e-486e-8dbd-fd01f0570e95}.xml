@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="MixerGroup" id="{6883ea42-894e-486e-8dbd-fd01f0570e95}">
+		<property name="name">
+			<value>Tunnel snapshot</value>
+		</property>
+		<relationship name="effectChain">
+			<destination>{1f6df062-a160-435b-98b7-e1efbf209c71}</destination>
+		</relationship>
+		<relationship name="panner">
+			<destination>{f0530c93-aaf0-4c30-bb02-8789c346a623}</destination>
+		</relationship>
+		<relationship name="output">
+			<destination>{2969be4f-f28d-4373-ae58-8595fffeedec}</destination>
+		</relationship>
+	</object>
+	<object class="MixerBusEffectChain" id="{1f6df062-a160-435b-98b7-e1efbf209c71}">
+		<relationship name="effects">
+			<destination>{b1325856-cb3f-4e1d-9196-d41a70d9f865}</destination>
+			<destination>{e9949574-8543-4c6d-8275-a0edded6abfc}</destination>
+		</relationship>
+	</object>
+	<object class="MixerBusPanner" id="{f0530c93-aaf0-4c30-bb02-8789c346a623}" />
+	<object class="MixerBusFader" id="{b1325856-cb3f-4e1d-9196-d41a70d9f865}" />
+	<object class="MixerSend" id="{e9949574-8543-4c6d-8275-a0edded6abfc}">
+		<property name="level">
+			<value>-66</value>
+		</property>
+		<property name="inputFormat">
+			<value>1</value>
+		</property>
+		<relationship name="mixerReturn">
+			<destination>{564ceee1-0bce-4bb5-bf95-295e4c2e2bdc}</destination>
+		</relationship>
+	</object>
+</objects>
