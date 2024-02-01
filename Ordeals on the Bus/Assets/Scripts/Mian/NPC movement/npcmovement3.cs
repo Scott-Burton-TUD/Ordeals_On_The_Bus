@@ -1,9 +1,9 @@
-    using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 
-public class npcmovement : MonoBehaviour
+public class npcmovement3 : MonoBehaviour
 {
     [Header("NPC movement speed")]
     public float movementSpeed = 3.0f; // Public variable for controlling the speed
@@ -14,7 +14,7 @@ public class npcmovement : MonoBehaviour
     public string targetObjectName; // Change the target variable to string
 
     [Header("Seats")]
-    public bool ticket1;
+    public bool ticke3;
     public string[] Seats;
     public bool gotoseat;
     public string randomSeatName;
@@ -29,15 +29,15 @@ public class npcmovement : MonoBehaviour
         navMeshAgent = GetComponent<NavMeshAgent>();
         navMeshAgent.speed = movementSpeed; // Set the initial speed 
 
-     
+
     }
 
     void Update()
     {
         if (vip.isonFire == true)
         {
-            
-    
+
+
             navMeshAgent.isStopped = false;
         }
         if (vip.isonFire == true && !string.IsNullOrEmpty(randomMovementAreaName))
@@ -58,13 +58,13 @@ public class npcmovement : MonoBehaviour
             }
         }
 
-        if(vip.isonFire == false && gotoseat == false)
+        if (vip.isonFire == false && gotoseat == false)
         {
             MoveTowardsTarget(targetObjectName); // Pass the string as the target
         }
-        
 
-        if (ticket1 == true)
+
+        if (ticke3 == true)
         {
             gotoseat = true;
             mayham = false;
