@@ -8,16 +8,28 @@ public class getonbus : MonoBehaviour
     public List<GameObject> npc = new List<GameObject>(); // Keep track of spawned NPCs
     private int currentNPCIndex = 0; // Keep track of the current NPC index
 
+    public GameObject doorbutton;
+
     void Start()
     {
     }
 
     void Update()
     {
-        // Check for the 'L' key press
-        if (Input.GetKeyDown(KeyCode.L))
+
+        if (Input.GetMouseButtonDown(0)) // Left mouse button click
         {
-            ActivateNextBoardingScript();
+            Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+            RaycastHit hit;
+
+            if (Physics.Raycast(ray, out hit))
+            {
+                if (hit.collider.gameObject == doorbutton)
+                {
+                    ActivateNextBoardingScript();
+                    print("test");
+                }
+            }
         }
     }
 
