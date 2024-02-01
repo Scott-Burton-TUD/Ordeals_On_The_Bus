@@ -5,14 +5,31 @@ using UnityEngine.SceneManagement;
 
 public class SceneLoader : MonoBehaviour
 {
-    public string sceneToLoad; // The name of the scene to load.
+    // The name of the scene to load.
 
-    private void OnTriggerEnter(Collider other)
+
+    public void Start()
     {
-        if (other.CompareTag("Player"))
+        GameObject someObject = GameObject.Find("WorldMap");
+        if (someObject != null)
         {
-            // The object with the "Player" tag has entered the collider.
-            SceneManager.LoadScene(sceneToLoad); // Load the specified scene.
+            worldmove someScript = someObject.GetComponent<worldmove>();
+
+            if (someScript != null)
+            {
+                someScript.drive();
+            }
+        }
+
+        void OnTriggerEnter(Collider other)
+        {
+
+            if (other.CompareTag("Player"))
+            {
+                float worldmovespeed = other.GetComponent<worldmove>().speed;
+                // The object with the "Player" tag has entered the collider.
+
+            }
         }
     }
 }

@@ -87,7 +87,7 @@ public class worldmove : MonoBehaviour
 
 
     /// Bus Docking Code
-    void drive()
+    public void drive()
     {
         transform.Translate(Vector3.left * speed * Time.deltaTime);
     }
