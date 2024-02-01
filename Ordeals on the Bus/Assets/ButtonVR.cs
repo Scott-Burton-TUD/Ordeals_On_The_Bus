@@ -5,6 +5,7 @@ using UnityEngine.Events;
 
 public class ButtonVR : MonoBehaviour
 {
+    public ButtonCannon Bang;
     public GameObject button;
     public UnityEvent onPress;
     public UnityEvent onRelease;
@@ -41,6 +42,11 @@ public class ButtonVR : MonoBehaviour
 
     public void UseCannon()
     {
-       
+        Bang.FireCannon();
+    }
+
+    public void Spawn()
+    {
+        gameObject.SetActive(true);
     }
 }
