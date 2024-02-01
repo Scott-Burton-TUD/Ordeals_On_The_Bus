@@ -44,4 +44,9 @@ public class ButtonVR : MonoBehaviour
     {
         Bang.FireCannon();
     }
+
+    public void Spawn()
+    {
+        gameObject.SetActive(true);
+    }
 }
