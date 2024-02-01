@@ -773,22 +773,19 @@ MonoBehaviour:
   m_GameObject: {fileID: 217401053}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dacd840b50ffd144581e3bcf0e6f3df5, type: 3}
+  m_Script: {fileID: 11500000, guid: 5c02ac70af87d5f4496b47d4eec34d9c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 1
   targetXPosition: 114.32
   moveSpeed: 1
   canPark: 0
-  dockk: {fileID: 1446339929}
-  stoppingbus: {fileID: 1011724972}
+  dockk: {fileID: 0}
+  stoppingbus: {fileID: 0}
   gobackPosition: 109.42
-  leftButton: {fileID: 1033119354}
-  rightButton: {fileID: 1033119353}
-  lanes:
-  - 114.3
-  - 109.42
-  - 104.9
+  leftButton: {fileID: 0}
+  rightButton: {fileID: 0}
+  lanes: []
 --- !u!1 &236771507
 GameObject:
   m_ObjectHideFlags: 0
@@ -2036,7 +2033,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 86c45ae47ece7a242b0beade0f081179, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sceneToLoad: Win
 --- !u!65 &858788076
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -3373,18 +3369,6 @@ PrefabInstance:
       insertIndex: -1
       addedObject: {fileID: 4605332}
   m_SourcePrefab: {fileID: 100100000, guid: d2e95782b31e11e4fb9ecf5dba1a997f, type: 3}
---- !u!1 &1033119353 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 642239438290087686, guid: d2e95782b31e11e4fb9ecf5dba1a997f,
-    type: 3}
-  m_PrefabInstance: {fileID: 1033119351}
-  m_PrefabAsset: {fileID: 0}
---- !u!1 &1033119354 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 642239437678826685, guid: d2e95782b31e11e4fb9ecf5dba1a997f,
-    type: 3}
-  m_PrefabInstance: {fileID: 1033119351}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1051419646
 GameObject:
   m_ObjectHideFlags: 0
