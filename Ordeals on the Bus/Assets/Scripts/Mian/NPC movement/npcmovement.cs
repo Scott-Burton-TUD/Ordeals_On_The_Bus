@@ -17,7 +17,7 @@ public class npcmovement : MonoBehaviour
     public bool ticket1;
     public string[] Seats;
     public bool gotoseat;
-    public string randomSeatName;
+    private string randomSeatName;
 
     [Header("Mayham")]
     public bool mayham;

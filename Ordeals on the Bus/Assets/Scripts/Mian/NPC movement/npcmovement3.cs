@@ -17,7 +17,8 @@ public class npcmovement3 : MonoBehaviour
     public bool ticke3;
     public string[] Seats;
     public bool gotoseat;
-    public string randomSeatName;
+    private string randomSeatName;
+    public bool isseated;
 
     [Header("Mayham")]
     public bool mayham;
@@ -100,6 +101,7 @@ public class npcmovement3 : MonoBehaviour
             {
                 // Set the y-rotation to 0
                 transform.eulerAngles = new Vector3(0, 0, 0);
+                
 
                 // Optional: You can disable the NavMeshAgent once the NPC reaches the seat
                 //navMeshAgent.isStopped = true;
