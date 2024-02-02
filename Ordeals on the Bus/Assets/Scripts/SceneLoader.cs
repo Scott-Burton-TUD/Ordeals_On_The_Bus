@@ -84,7 +84,11 @@ public class SceneLoader : MonoBehaviour
             {
                 Debug.LogError("GameObject with the tag 'World' not found.");
             }
-            Destroy(this.gameObject);
+            Renderer renderer = GetComponent<Renderer>();
+            if (renderer != null)
+            {
+                renderer.enabled = false;
+            }
         }
        
 
@@ -94,11 +98,12 @@ public class SceneLoader : MonoBehaviour
     IEnumerator ResetSpeedAfterDelay(worldmove playerWorldMove, float initialSpeed)
     {
         isCoroutineRunning = true;
-        yield return new WaitForSeconds(2f);
+        yield return new WaitForSeconds(3f);
 
         // Reset the speed to the initial value
-        playerWorldMove.speed = initialSpeed;
+        playerWorldMove.speed = 5f;
 
         isCoroutineRunning = false;
+        Destroy(this.gameObject);
     }
 }
