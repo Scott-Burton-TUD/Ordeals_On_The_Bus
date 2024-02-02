@@ -7,6 +7,9 @@ TagManager:
   - Park
   - SpecialNPC
   - Ticket1
+  - Ticket2
+  - Ticket3
+  - Seat
   layers:
   - Default
   - TransparentFX
