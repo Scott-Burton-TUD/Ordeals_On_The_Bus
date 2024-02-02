@@ -70,7 +70,7 @@ public class SceneLoader : MonoBehaviour
                     }
 
                     // Destroy the GameObject (assuming this script is attached to a GameObject).
-                    Destroy(gameObject, 5f);
+                   
 
                     Debug.Log("GameObject destroyed");
 
@@ -84,8 +84,10 @@ public class SceneLoader : MonoBehaviour
             {
                 Debug.LogError("GameObject with the tag 'World' not found.");
             }
+            Destroy(this.gameObject);
         }
        
+
     }
 
     // Coroutine to reset speed after a delay
