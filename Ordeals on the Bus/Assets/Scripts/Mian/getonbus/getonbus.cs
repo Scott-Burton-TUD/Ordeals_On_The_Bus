@@ -13,10 +13,12 @@ public class getonbus : MonoBehaviour
 
     public npcmovement npc1;
     public npcmovement2 npc2;
+    public bool canSpawn;
 
 
     void Start()
     {
+
     }
 
     void Update()
@@ -29,9 +31,9 @@ public class getonbus : MonoBehaviour
 
             if (Physics.Raycast(ray, out hit))
             {
-                if (hit.collider.gameObject == doorbutton)
+                if (hit.collider.gameObject == doorbutton && canSpawn == true)
                 {
-                    FristNPC();
+                    StartCoroutine(DoorOpening());
                 }
             }
         }
@@ -65,6 +67,12 @@ public class getonbus : MonoBehaviour
         npc[currentNPCIndex].GetComponent<NavMeshAgent>().enabled = true;
     }    
 
+    IEnumerator DoorOpening()
+    {
+        yield return new WaitForSeconds(5f);
+        FristNPC();
+
+    }
 
 
 
