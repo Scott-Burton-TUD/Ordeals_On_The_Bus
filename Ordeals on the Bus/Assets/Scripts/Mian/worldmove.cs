@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.XR.Interaction.Toolkit;
 
 public class worldmove : MonoBehaviour
 {
@@ -104,6 +105,22 @@ public class worldmove : MonoBehaviour
 
         
 
+    }
+    public void Left()
+    {
+        SwitchLane(-1);
+    }
+    public void Right()
+    {
+        SwitchLane(1);
+    }
+
+    public void CloseDoor()
+    {
+        if (npcleave.ticke3 == true)
+        {
+            StartCoroutine(MoveOut());
+        }
     }
 
 

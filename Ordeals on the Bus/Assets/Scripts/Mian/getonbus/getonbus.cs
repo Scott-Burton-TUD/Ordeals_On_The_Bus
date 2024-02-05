@@ -43,6 +43,14 @@ public class getonbus : MonoBehaviour
 
     }
 
+    public void GetOn()
+    {
+        if (canSpawn == true)
+        {
+            StartCoroutine(DoorOpening());
+        }
+    }
+
     void ActivateNPC()
     {
         if (npc1.ticket1 == true)
@@ -62,15 +70,15 @@ public class getonbus : MonoBehaviour
 
     void FristNPC()
     {
-        currentNPCIndex = 0;
-        npc[currentNPCIndex].GetComponent<npcmovement>().enabled = true;
-        npc[currentNPCIndex].GetComponent<NavMeshAgent>().enabled = true;
+        
     }    
 
     IEnumerator DoorOpening()
     {
-        yield return new WaitForSeconds(5f);
-        FristNPC();
+        yield return new WaitForSeconds(2.5f);
+        currentNPCIndex = 0;
+        npc[currentNPCIndex].GetComponent<npcmovement>().enabled = true;
+        npc[currentNPCIndex].GetComponent<NavMeshAgent>().enabled = true;
 
     }
 
