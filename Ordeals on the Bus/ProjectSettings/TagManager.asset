@@ -3,7 +3,13 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - Park
+  - SpecialNPC
+  - Ticket1
+  - Ticket2
+  - Ticket3
+  - Seat
   layers:
   - Default
   - TransparentFX

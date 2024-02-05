@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.XR.Interaction.Toolkit;
 
 public class worldmove : MonoBehaviour
 {
@@ -15,7 +16,7 @@ public class worldmove : MonoBehaviour
     public dockcheck dockk;
 
     //stopping bus
-    public stopbus stoppingbus;
+    stopbus stoppingbus;
 
     //going forward
     public float gobackPosition = 109.42f;
@@ -27,18 +28,28 @@ public class worldmove : MonoBehaviour
     private int currentLaneIndex = 1;
     private bool isSwitchingLane = false;
 
+    //bus leaving
+    npcmovement3 npcleave;
+    public GameObject doorbutton;
 
 
 
     // Start is called before the first frame update
     void Start()
     {
+        stoppingbus = GameObject.FindGameObjectWithTag("Stop").GetComponent<stopbus>();
+        npcleave = GameObject.FindGameObjectWithTag("LastNPC").GetComponent<npcmovement3>();
         UpdateBusPosition();
+
+
     }
 
     // Update is called once per frame
     void Update()
     {
+        //bus driving
+        drive();
+
         //Switching lane
         if (!isSwitchingLane)
         {
@@ -62,27 +73,54 @@ public class worldmove : MonoBehaviour
             }
         }
 
-
-
-            //Bus docking
-            if (stoppingbus.busstoping == false)
-        {
-            drive();
-        }
-
         if (dockk.dockingmode == true && canPark == false)
         {
-            buspark();
+            //buspark();
         }
 
-        if (Input.GetKey(KeyCode.P))
+        //Bus leaving
+
+      
+
+
+        if (Input.GetMouseButtonDown(0)) // Left mouse button click
         {
-            goback();
-            canPark = true;
-            stoppingbus.busstoping = false;
+            Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+            RaycastHit hit;
+
+            if (Physics.Raycast(ray, out hit))
+            {
+                if (hit.collider.gameObject == doorbutton)
+                {
+                    
+                    if (npcleave.ticke3 == true)
+                    {
+                        StartCoroutine(MoveOut());
+                    }
+                    
+                    
+                }
+            }
         }
 
+        
 
+    }
+    public void Left()
+    {
+        SwitchLane(-1);
+    }
+    public void Right()
+    {
+        SwitchLane(1);
+    }
+
+    public void CloseDoor()
+    {
+        if (npcleave.ticke3 == true)
+        {
+            StartCoroutine(MoveOut());
+        }
     }
 
 
@@ -92,10 +130,11 @@ public class worldmove : MonoBehaviour
         transform.Translate(Vector3.left * speed * Time.deltaTime);
     }
 
-    void buspark()
+    public void buspark()
     {
         float step = moveSpeed * Time.deltaTime;
         transform.position = new Vector3(Mathf.MoveTowards(transform.position.x, targetXPosition, step), transform.position.y, transform.position.z);
+        currentLaneIndex = 0;
     }
 
     void goback()
@@ -131,4 +170,14 @@ public class worldmove : MonoBehaviour
         transform.position = new Vector3(targetX, transform.position.y, transform.position.z);
         isSwitchingLane = false;
     }
+
+    IEnumerator MoveOut()
+    {
+        yield return new WaitForSeconds(5f);
+        canPark = true;
+        speed = 1;
+        goback();
+
+    }
+
 }

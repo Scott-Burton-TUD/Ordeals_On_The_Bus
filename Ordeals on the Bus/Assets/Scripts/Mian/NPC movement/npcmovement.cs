@@ -14,9 +14,10 @@ public class npcmovement : MonoBehaviour
     public string targetObjectName; // Change the target variable to string
 
     [Header("Seats")]
+    public bool ticket1;
     public string[] Seats;
     public bool gotoseat;
-    public string randomSeatName;
+    private string randomSeatName;
 
     [Header("Mayham")]
     public bool mayham;
@@ -63,7 +64,7 @@ public class npcmovement : MonoBehaviour
         }
         
 
-        if (Input.GetKey(KeyCode.K))
+        if (ticket1 == true)
         {
             gotoseat = true;
             mayham = false;
