@@ -108,11 +108,18 @@ public class worldmove : MonoBehaviour
     }
     public void Left()
     {
-        SwitchLane(-1);
+        if (!isSwitchingLane)
+        {
+            SwitchLane(-1);
+        }          
     }
+
     public void Right()
     {
-        SwitchLane(1);
+        if (!isSwitchingLane)
+        {
+            SwitchLane(1);
+        }         
     }
 
     public void CloseDoor()
