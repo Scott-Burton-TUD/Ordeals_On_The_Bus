@@ -31,6 +31,11 @@ public class worldmove : MonoBehaviour
     //bus leaving
     npcmovement3 npcleave;
     public GameObject doorbutton;
+    public GameObject busdoor;
+    public Animator busdoorAnim;
+    public string animationName;
+
+
 
 
 
@@ -39,6 +44,7 @@ public class worldmove : MonoBehaviour
     {
         stoppingbus = GameObject.FindGameObjectWithTag("Stop").GetComponent<stopbus>();
         npcleave = GameObject.FindGameObjectWithTag("LastNPC").GetComponent<npcmovement3>();
+        busdoorAnim = busdoor.GetComponent<Animator>();
         UpdateBusPosition();
 
 
@@ -126,6 +132,7 @@ public class worldmove : MonoBehaviour
     {
         if (npcleave.ticke3 == true)
         {
+            busdoorAnim.Play(animationName);
             StartCoroutine(MoveOut());
         }
     }

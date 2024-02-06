@@ -38,9 +38,6 @@ public class buttonref : MonoBehaviour
         button2.GetOn();
     }
 
-    IEnumerator DoorOpening()
-    {
-        yield return null;
-    }
+  
 
 }

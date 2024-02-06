@@ -14,11 +14,14 @@ public class getonbus : MonoBehaviour
     public npcmovement npc1;
     public npcmovement2 npc2;
     public bool canSpawn;
+    public GameObject busdoor;
+    public Animator busdoorAnim;
+    public string animationName;
 
 
     void Start()
     {
-
+        busdoorAnim = busdoor.GetComponent<Animator>();
     }
 
     void Update()
@@ -47,6 +50,7 @@ public class getonbus : MonoBehaviour
     {
         if (canSpawn == true)
         {
+            busdoorAnim.Play(animationName);
             StartCoroutine(DoorOpening());
         }
     }
