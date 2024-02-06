@@ -14,6 +14,9 @@ TagManager:
   - BusStop
   - Stop
   - LastNPC
+  - NPC
+  - Break
+  - Monkey
   layers:
   - Default
   - TransparentFX

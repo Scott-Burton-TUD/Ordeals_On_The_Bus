@@ -8,10 +8,12 @@ public class Breakbusback : MonoBehaviour
     public GameObject Sceneloader;
     public bool MonkeyCatch = false;
     private bool Eat = false;
-    private Vector3 originalPosition = new Vector3(102.6279f, -1.623596f, -154.0749f);
+    private Vector3 originalPosition = new Vector3(-0.33f, 0f, -124.9f);
     private float moveSpeed = 1099f;
     private Rigidbody rb;
     private float resetter;
+    public GameObject NPC1;
+    public float eater = 0;
 
     void Start()
     {
@@ -24,7 +26,9 @@ public class Breakbusback : MonoBehaviour
 
     public void EnableEat()
     {
+        eater += 1;
         Eat = true;
+       
     }
 
     void OnTriggerEnter(Collider other)
@@ -88,16 +92,17 @@ public class Breakbusback : MonoBehaviour
         if (Eat == true)
         {
             
-            if (other.CompareTag("NPC"))
-            {
-                Debug.Log("hes Eaten");
-                Destroy(other.gameObject);
-
+            if (eater == 2)
+                {
+                    Debug.Log("hes Eaten 1");
+                    Destroy(NPC1);
+                }
+                
                 // Start the coroutine to continuously return to the original position
 
-                Eat = false;
                 
-            }
+            
+           
         }
     }
 

@@ -106,4 +106,5 @@ public class SceneLoader : MonoBehaviour
         isCoroutineRunning = false;
         Destroy(this.gameObject);
     }
+    
 }
