@@ -2188,7 +2188,7 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 04c71bc04dffe5240ab4af7345095092,
         type: 3}
       propertyPath: m_TagString
-      value: Monkey
+      value: Untagged
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_AddedGameObjects: []
@@ -14170,6 +14170,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: cube (8)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 04c71bc04dffe5240ab4af7345095092,
+        type: 3}
+      propertyPath: m_TagString
+      value: Monkey
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_AddedGameObjects: []
