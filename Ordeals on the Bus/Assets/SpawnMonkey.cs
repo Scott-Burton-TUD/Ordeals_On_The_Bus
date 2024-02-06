@@ -5,6 +5,7 @@ using UnityEngine;
 public class SpawnMonkey : MonoBehaviour
 {
     // Start is called before the first frame update
+    public string objectNameToEnable;
     void Start()
     {
 
@@ -19,6 +20,7 @@ public class SpawnMonkey : MonoBehaviour
     {
         if(other.CompareTag("Monkey"))
         {
+            GameObject objectToEnable = GameObject.Find(objectNameToEnable);
             transform.GetChild(0).gameObject.SetActive(true);
         }
     }
