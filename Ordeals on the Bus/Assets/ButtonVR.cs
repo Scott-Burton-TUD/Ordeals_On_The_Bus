@@ -20,8 +20,6 @@ public class ButtonVR : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (gameObject.tag == "interact")
-        {
             if (!isPressed)
             {
                 button.transform.localPosition = new Vector3(0, 0.003f, 0);
@@ -30,17 +28,16 @@ public class ButtonVR : MonoBehaviour
                 sound.Play();
                 isPressed = true;
             }
-        }
     }
 
     private void OnTriggerExit(Collider other)
     {
-        if(other.gameObject == presser)
-        {
-            button.transform.localPosition = new Vector3(0, 0.015f, 0);
-            onRelease.Invoke();
-            isPressed = false;
-        }
+            if (other.gameObject == presser)
+            {
+                button.transform.localPosition = new Vector3(0, 0.015f, 0);
+                onRelease.Invoke();
+                isPressed = false;
+            }
     }
 
     public void UseCannon()

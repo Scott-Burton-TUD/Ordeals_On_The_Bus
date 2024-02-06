@@ -3867,7 +3867,7 @@ GameObject:
   - component: {fileID: 263628457}
   - component: {fileID: 263628456}
   - component: {fileID: 263628455}
-  m_Layer: 7
+  m_Layer: 6
   m_Name: Sphere
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4866,7 +4866,7 @@ GameObject:
   - component: {fileID: 320106641}
   - component: {fileID: 320106640}
   - component: {fileID: 320106639}
-  m_Layer: 7
+  m_Layer: 6
   m_Name: Sphere (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8015,9 +8015,9 @@ GameObject:
   - component: {fileID: 550888603}
   - component: {fileID: 550888602}
   - component: {fileID: 550888601}
-  m_Layer: 7
+  m_Layer: 6
   m_Name: Right Hand
-  m_TagString: Untagged
+  m_TagString: Button
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -16107,9 +16107,9 @@ GameObject:
   m_Component:
   - component: {fileID: 1118611093}
   - component: {fileID: 1118611094}
-  m_Layer: 7
+  m_Layer: 6
   m_Name: Left Hand
-  m_TagString: Untagged
+  m_TagString: Button
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -17325,6 +17325,18 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1187637721}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1199078839 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 261439169, guid: e4775987c9f0c0f43895e96084a213d9,
+    type: 3}
+  m_PrefabInstance: {fileID: 1202287671}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 71325edef8629ca4eb1100b08c566d7f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1202287671
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -20719,17 +20731,17 @@ PrefabInstance:
     - target: {fileID: 2828966753181022489, guid: beaf8b4ca3937a34296fa6c80820a02c,
         type: 3}
       propertyPath: m_Layer
-      value: 6
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 2828966753977235346, guid: beaf8b4ca3937a34296fa6c80820a02c,
         type: 3}
       propertyPath: m_Layer
-      value: 6
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 2828966754050450393, guid: beaf8b4ca3937a34296fa6c80820a02c,
         type: 3}
       propertyPath: m_Layer
-      value: 6
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 2828966754092903418, guid: beaf8b4ca3937a34296fa6c80820a02c,
         type: 3}
@@ -20739,7 +20751,7 @@ PrefabInstance:
     - target: {fileID: 2828966754092903418, guid: beaf8b4ca3937a34296fa6c80820a02c,
         type: 3}
       propertyPath: m_Layer
-      value: 6
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 2828966754092903421, guid: beaf8b4ca3937a34296fa6c80820a02c,
         type: 3}
@@ -20799,32 +20811,32 @@ PrefabInstance:
     - target: {fileID: 3276159720163221700, guid: beaf8b4ca3937a34296fa6c80820a02c,
         type: 3}
       propertyPath: m_Layer
-      value: 0
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 4142322658079366897, guid: beaf8b4ca3937a34296fa6c80820a02c,
         type: 3}
       propertyPath: m_Layer
-      value: 0
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 4243276980676132479, guid: beaf8b4ca3937a34296fa6c80820a02c,
         type: 3}
       propertyPath: m_Layer
-      value: 0
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 5171267332536841831, guid: beaf8b4ca3937a34296fa6c80820a02c,
         type: 3}
       propertyPath: m_Layer
-      value: 0
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 6378497573250547911, guid: beaf8b4ca3937a34296fa6c80820a02c,
         type: 3}
       propertyPath: m_Layer
-      value: 0
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 7175773271331492756, guid: beaf8b4ca3937a34296fa6c80820a02c,
         type: 3}
       propertyPath: m_Layer
-      value: 0
+      value: 7
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 2828966754092903420, guid: beaf8b4ca3937a34296fa6c80820a02c, type: 3}
@@ -22620,7 +22632,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6f3d6d9e24c6d1c46a8f7f7898216ce0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Bang: {fileID: 0}
+  Bang: {fileID: 1199078839}
   button: {fileID: 1605046806}
   onPress:
     m_PersistentCalls:

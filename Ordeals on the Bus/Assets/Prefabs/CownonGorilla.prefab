@@ -26,14 +26,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 715284217}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
   m_LocalPosition: {x: -0.571, y: -1.828, z: -0.257}
   m_LocalScale: {x: 0.6488247, y: 0.6488247, z: 0.6488247}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 5527705594250400645}
   m_RootOrder: -1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
 --- !u!33 &715284221
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -109,6 +109,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalPosition.z
       value: 3.114
+      objectReference: {fileID: 0}
+    - target: {fileID: 7342838114927217987, guid: ba0ef2e460a901349a56903354ca744c,
+        type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7342838114927218012, guid: ba0ef2e460a901349a56903354ca744c,
         type: 3}
@@ -319,22 +324,6 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 2977260540064213670}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &261439169
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5527705594250400666}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 71325edef8629ca4eb1100b08c566d7f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  firePoint: {fileID: 715284218}
-  cannonballPrefab: {fileID: 2520793872552159961, guid: 53a2c027dd0bc8a4399eefd594498d93,
-    type: 3}
-  launchForce: 10
 --- !u!54 &9129885694886625148
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -351,3 +340,19 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &261439169
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5527705594250400666}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 71325edef8629ca4eb1100b08c566d7f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  firePoint: {fileID: 715284218}
+  cannonballPrefab: {fileID: 2520793872552159961, guid: 53a2c027dd0bc8a4399eefd594498d93,
+    type: 3}
+  launchForce: 10
