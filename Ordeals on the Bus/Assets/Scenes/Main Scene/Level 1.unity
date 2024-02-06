@@ -8017,7 +8017,7 @@ GameObject:
   - component: {fileID: 550888601}
   m_Layer: 6
   m_Name: Right Hand
-  m_TagString: Button
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -16109,7 +16109,7 @@ GameObject:
   - component: {fileID: 1118611094}
   m_Layer: 6
   m_Name: Left Hand
-  m_TagString: Button
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
