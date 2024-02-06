@@ -26,7 +26,7 @@ public class worldmove : MonoBehaviour
     public GameObject rightButton;
     public float[] lanes;
     private int currentLaneIndex = 1;
-    private bool isSwitchingLane = false;
+    public bool isSwitchingLane = false;
 
     //bus leaving
     npcmovement3 npcleave;

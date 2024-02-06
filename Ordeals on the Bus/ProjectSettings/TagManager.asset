@@ -10,6 +10,10 @@ TagManager:
   - Ticket2
   - Ticket3
   - Seat
+  - World
+  - BusStop
+  - Stop
+  - LastNPC
   layers:
   - Default
   - TransparentFX
