@@ -3,13 +3,15 @@ using UnityEngine.UI;
 
 public class CountdownTimer : MonoBehaviour
 {
-    public ButtonVR spawn;
     public float totalTime = 60f; // Total time for countdown in seconds
     private float timeRemaining; // Time remaining for countdown
     private bool isCountingDown = false; // Flag to check if countdown is active
 
     public Text countdownText; // Text component to display countdown
-    public AudioSource audioSource; // Reference to AudioSource component for playing sound
+    public GameObject objectToTurnOff; // GameObject to turn off when countdown finishes
+    public AudioSource audioSource; // AudioSource component for playing sound
+
+    private bool isSoundPlayed = false; // Flag to check if the sound has been played
 
     void Start()
     {
@@ -34,7 +36,14 @@ public class CountdownTimer : MonoBehaviour
                 timeRemaining = 0; // Ensure timer doesn't go negative
                 isCountingDown = false; // Stop the countdown
                 Debug.Log("Countdown Finished!"); // Output a message
-                InvokeCountdownFinished(); // Invoke the event
+                TurnGameObjectOff(); // Turn off the specified GameObject
+
+                // Play the sound if it hasn't been played yet
+                if (!isSoundPlayed && audioSource != null)
+                {
+                    audioSource.Play();
+                    isSoundPlayed = true;
+                }
             }
         }
     }
@@ -48,23 +57,35 @@ public class CountdownTimer : MonoBehaviour
     // Update the timer display
     void UpdateTimerDisplay()
     {
+        // Ensure the timer doesn't display negative values
+        if (timeRemaining < 0)
+        {
+            timeRemaining = 0;
+        }
+
         // Format the time remaining as minutes and seconds
         int minutes = Mathf.FloorToInt(timeRemaining / 60f);
         int seconds = Mathf.FloorToInt(timeRemaining % 60f);
-        string timeString = string.Format("{0:00}:{1:00}", minutes, seconds);
 
-        // Update the UI text
-        countdownText.text = timeString;
+        // Display "00:00" when countdown finishes
+        if (minutes <= 0 && seconds <= 0)
+        {
+            countdownText.text = "00:00";
+        }
+        else
+        {
+            string timeString = string.Format("{0:00}:{1:00}", minutes, seconds);
+            // Update the UI text
+            countdownText.text = timeString;
+        }
     }
 
-    // Invoke the CountdownFinished event
-    void InvokeCountdownFinished()
+    // Turn off the specified GameObject
+    void TurnGameObjectOff()
     {
-        spawn.Spawn();
-        // Play the sound
-        if (audioSource != null)
+        if (objectToTurnOff != null)
         {
-            audioSource.Play();
+            objectToTurnOff.SetActive(false);
         }
     }
 }

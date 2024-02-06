@@ -20,13 +20,16 @@ public class ButtonVR : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (!isPressed)
+        if (gameObject.tag == "interact")
         {
-            button.transform.localPosition = new Vector3(0, 0.003f, 0);
-            presser = other.gameObject;
-            onPress.Invoke();
-            sound.Play();
-            isPressed = true;
+            if (!isPressed)
+            {
+                button.transform.localPosition = new Vector3(0, 0.003f, 0);
+                presser = other.gameObject;
+                onPress.Invoke();
+                sound.Play();
+                isPressed = true;
+            }
         }
     }
 
@@ -43,10 +46,5 @@ public class ButtonVR : MonoBehaviour
     public void UseCannon()
     {
         Bang.FireCannon();
-    }
-
-    public void Spawn()
-    {
-        gameObject.SetActive(true);
     }
 }
