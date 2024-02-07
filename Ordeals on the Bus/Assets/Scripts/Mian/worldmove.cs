@@ -7,7 +7,8 @@ public class worldmove : MonoBehaviour
 {
     //world move
     public float speed = 1;
-
+    public bool candrive;
+    public bool canspeed;
 
     //parking
     public float targetXPosition = 114.32f;
@@ -45,6 +46,7 @@ public class worldmove : MonoBehaviour
         stoppingbus = GameObject.FindGameObjectWithTag("Stop").GetComponent<stopbus>();
         npcleave = GameObject.FindGameObjectWithTag("LastNPC").GetComponent<npcmovement3>();
         busdoorAnim = busdoor.GetComponent<Animator>();
+        canspeed = true;
         UpdateBusPosition();
 
 
