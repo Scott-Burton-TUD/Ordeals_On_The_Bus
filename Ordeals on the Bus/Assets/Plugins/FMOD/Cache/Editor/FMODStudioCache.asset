@@ -15,10 +15,10 @@ MonoBehaviour:
   Path: Assets/Fmod/Aaron Fmod Project/Build/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 638380194779625332
+  lastModified: 638429338031658668
   FileSizes:
   - Name: Desktop
-    Value: 1058
+    Value: 1218
   Exists: 1
 --- !u!114 &-8648431496427239209
 MonoBehaviour:
@@ -35,10 +35,10 @@ MonoBehaviour:
   Path: Assets/Fmod/Aaron Fmod Project/Build/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 638380194779608713
+  lastModified: 638429338031658668
   FileSizes:
   - Name: Desktop
-    Value: 1036
+    Value: 4170
   Exists: 1
 --- !u!114 &-7482944308898503521
 MonoBehaviour:
@@ -91,6 +91,34 @@ MonoBehaviour:
   IsGlobal: 0
   Labels: []
   Exists: 1
+--- !u!114 &-3950910851768694364
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Ambience
+  m_EditorClassIdentifier: 
+  Path: event:/Ambience
+  Guid:
+    Data1: -1509049278
+    Data2: 1123045131
+    Data3: 1046737044
+    Data4: -247098333
+  Banks:
+  - {fileID: -1892422384583958065}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 1
+  Parameters:
+  - {fileID: -1936913817610580477}
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 505000
 --- !u!114 &-3907240310691206728
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -115,6 +143,57 @@ MonoBehaviour:
   IsGlobal: 0
   Labels: []
   Exists: 1
+--- !u!114 &-3703234874674581283
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: snapshot:/Reverb Room
+  m_EditorClassIdentifier: 
+  Path: snapshot:/Reverb Room
+  Guid:
+    Data1: -1757759968
+    Data2: 1277854632
+    Data3: -1593847674
+    Data4: 934396104
+  Banks:
+  - {fileID: -8648431496427239209}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 0
+--- !u!114 &-1936913817610580477
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Ambience/area
+  m_EditorClassIdentifier: 
+  Name: area
+  StudioPath: 
+  Min: 0
+  Max: 1
+  Default: 0
+  ID:
+    data1: 828287227
+    data2: 2262874051
+  Type: 0
+  IsGlobal: 0
+  Labels: []
+  Exists: 1
 --- !u!114 &-1892422384583958065
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -130,10 +209,10 @@ MonoBehaviour:
   Path: Assets/Fmod/Aaron Fmod Project/Build/Desktop/SFX.bank
   Name: SFX
   StudioPath: bank:/SFX
-  lastModified: 638380218143448766
+  lastModified: 638429338032526771
   FileSizes:
   - Name: Desktop
-    Value: 2799264
+    Value: 15144384
   Exists: 1
 --- !u!114 &-1881757306124773324
 MonoBehaviour:
@@ -180,12 +259,14 @@ MonoBehaviour:
   - {fileID: 2666531306957423383}
   - {fileID: 418781063225351340}
   - {fileID: 6504564005769191243}
+  - {fileID: -3950910851768694364}
+  - {fileID: -3703234874674581283}
   EditorParameters: []
   MasterBanks:
   - {fileID: -8648431496427239209}
   StringsBanks:
   - {fileID: -9176944544538367247}
-  cacheTime: 638380218143448766
+  cacheTime: 638429338032526771
   cacheVersion: 131609
 --- !u!114 &418781063225351340
 MonoBehaviour:

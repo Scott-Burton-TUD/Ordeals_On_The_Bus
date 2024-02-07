@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="AudioFile" id="{540f96a3-89e1-41d2-bc16-bb846f6bc341}">
+		<property name="assetPath">
+			<value>x2mate.com - CITY TRAFFIC SOUNDS 10 MINUTES (128 kbps).mp3</value>
+		</property>
+		<property name="isStreaming">
+			<value>true</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>48</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>601.27200000000005</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{393e53a7-5643-44fc-8f84-3ad26457eb28}</destination>
+		</relationship>
+	</object>
+</objects>
