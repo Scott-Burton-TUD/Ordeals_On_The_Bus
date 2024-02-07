@@ -22,6 +22,7 @@ public class nomovement : MonoBehaviour
         if (other.gameObject.CompareTag("Player"))
         {
             busmove.isSwitchingLane = true;
+            busmove.canspeed = false;
         }
     }
 
@@ -30,6 +31,7 @@ public class nomovement : MonoBehaviour
         if (other.gameObject.CompareTag("Player"))
         {
             busmove.isSwitchingLane = false;
+            busmove.canspeed = true;
         }
     }
 
