@@ -15,9 +15,9 @@ public class CountdownTimer : MonoBehaviour
 
     void Start()
     {
+        gameObject.SetActive(false);
         timeRemaining = totalTime; // Initialize time remaining
         UpdateTimerDisplay(); // Update the timer display initially
-        StartCountdown(); // Start the countdown when the script is enabled
     }
 
     void Update()
@@ -49,8 +49,9 @@ public class CountdownTimer : MonoBehaviour
     }
 
     // Start the countdown
-    void StartCountdown()
+    public void StartCountdown()
     {
+        gameObject.SetActive(true);
         isCountingDown = true;
     }
 
