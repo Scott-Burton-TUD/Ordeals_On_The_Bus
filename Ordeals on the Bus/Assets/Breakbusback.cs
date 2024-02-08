@@ -8,7 +8,7 @@ public class Breakbusback : MonoBehaviour
     public GameObject Sceneloader;
     public bool MonkeyCatch = false;
     private bool Eat = false;
-    private Vector3 originalPosition = new Vector3(-0.33f, 0f, -124.9f);
+    private Vector3 originalPosition;
     private float moveSpeed = 1099f;
     private Rigidbody rb;
     private float resetter;
@@ -22,6 +22,7 @@ public class Breakbusback : MonoBehaviour
         {
             Debug.LogError("Rigidbody component not found. Attach a Rigidbody to the monkey GameObject.");
         }
+        originalPosition = transform.position;
     }
 
     public void EnableEat()

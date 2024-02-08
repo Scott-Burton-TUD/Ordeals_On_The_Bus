@@ -7,6 +7,9 @@ public class PrefabSpawner : MonoBehaviour
     public GameObject objectToSpawn; // The prefab you want to spawn.
     public Transform[] spawnPoints; // Array to hold the spawn points.
     public float moveSpeed = 2f; // Speed at which the spawner moves backward.
+    public int numberOfCarsToSpawn = 2; // Number of cars to spawn.
+
+    private int carsSpawned = 0; // Counter to keep track of spawned cars.
 
     private void Start()
     {
@@ -21,7 +24,7 @@ public class PrefabSpawner : MonoBehaviour
 
     IEnumerator SpawnObjects()
     {
-        while (true) // Spawning objects continuously.
+        while (carsSpawned < numberOfCarsToSpawn) // Spawn until the desired number of cars is reached.
         {
             // Randomly select a spawn point.
             int randomSpawnIndex = Random.Range(0, spawnPoints.Length);
@@ -29,6 +32,9 @@ public class PrefabSpawner : MonoBehaviour
 
             // Instantiate the object at the selected spawn point.
             Instantiate(objectToSpawn, spawnPoint.position, Quaternion.identity);
+
+            // Increment the counter.
+            carsSpawned++;
 
             // Wait for some time before spawning the next object.
             yield return new WaitForSeconds(6.0f);

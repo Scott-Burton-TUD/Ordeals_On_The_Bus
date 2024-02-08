@@ -14575,6 +14575,7 @@ MonoBehaviour:
   - {fileID: 972933542}
   - {fileID: 1384741324}
   moveSpeed: 4
+  numberOfCarsToSpawn: 2
 --- !u!4 &920250347
 Transform:
   m_ObjectHideFlags: 0
@@ -18493,6 +18494,11 @@ PrefabInstance:
     - target: {fileID: 261439169, guid: e4775987c9f0c0f43895e96084a213d9, type: 3}
       propertyPath: launchForce
       value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 5527705592527018257, guid: e4775987c9f0c0f43895e96084a213d9,
+        type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5527705594250400645, guid: e4775987c9f0c0f43895e96084a213d9,
         type: 3}
