@@ -8,6 +8,16 @@ public class ButtonCannon : MonoBehaviour
     public GameObject cannonballPrefab; // Prefab of the cannonball
     public float launchForce = 10f; // Force applied to the cannonball
 
+    private void Start()
+    {
+        gameObject.SetActive(false);
+    }
+
+     public void SpawnCannon()
+    {
+        gameObject.SetActive(true);
+    }
+
     public void FireCannon()
     {
         // Instantiate a cannonball at the firePoint position and rotation

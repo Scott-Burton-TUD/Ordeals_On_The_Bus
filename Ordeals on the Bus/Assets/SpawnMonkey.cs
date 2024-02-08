@@ -6,6 +6,8 @@ public class SpawnMonkey : MonoBehaviour
 {
     // Start is called before the first frame update
     public GameObject Traffic;
+    public ButtonCannon But;
+    public CountdownTimer HAHA;
     void Start()
     {
 
@@ -22,6 +24,8 @@ public class SpawnMonkey : MonoBehaviour
         {
             Traffic.SetActive(true);
             transform.GetChild(0).gameObject.SetActive(true);
+            HAHA.StartCountdown();
+            But.SpawnCannon();
         }
     }
 }
