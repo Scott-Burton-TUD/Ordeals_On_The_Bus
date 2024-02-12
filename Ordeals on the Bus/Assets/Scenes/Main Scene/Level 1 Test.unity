@@ -41383,6 +41383,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1777931573}
   - component: {fileID: 1777931574}
+  - component: {fileID: 1777931575}
   m_Layer: 0
   m_Name: StopSmoker
   m_TagString: Cleaner
@@ -41419,6 +41420,19 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 2.4498067, y: 1.0634842, z: 0.44565237}
   m_Center: {x: -0.40363422, y: 0.41129774, z: 0.09585004}
+--- !u!114 &1777931575
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1777931572}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b56b569e6671afe40937ab4f782ad139, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  SmokerCleaner: {fileID: 1777931572}
 --- !u!1 &1780232283
 GameObject:
   m_ObjectHideFlags: 0
@@ -47495,6 +47509,8 @@ GameObject:
   - component: {fileID: 1861881841}
   - component: {fileID: 1861881843}
   - component: {fileID: 1861881842}
+  - component: {fileID: 1861881845}
+  - component: {fileID: 1861881844}
   m_Layer: 0
   m_Name: Button4
   m_TagString: Untagged
@@ -47568,6 +47584,51 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1861881840}
   m_Mesh: {fileID: -2479927565464385962, guid: 505e87a129beecc4c80b7a6fbf3b1c89, type: 3}
+--- !u!114 &1861881844
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1861881840}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6f3d6d9e24c6d1c46a8f7f7898216ce0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Bang: {fileID: 0}
+  button: {fileID: 1861881840}
+  onPress:
+    m_PersistentCalls:
+      m_Calls: []
+  onRelease:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1777931575}
+        m_TargetAssemblyTypeName: EnableSmokeLeaver, Assembly-CSharp
+        m_MethodName: Wiper
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &1861881845
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1861881840}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b56b569e6671afe40937ab4f782ad139, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  SmokerCleaner: {fileID: 1777931572}
 --- !u!1 &1869875150
 GameObject:
   m_ObjectHideFlags: 0
