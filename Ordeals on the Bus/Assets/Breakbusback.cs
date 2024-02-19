@@ -32,7 +32,7 @@ public class Breakbusback : MonoBehaviour
        
     }
 
-    void OnTriggerEnter(Collider other)
+    void OnTriggerSta(Collider other)
     {
         if (other.CompareTag("Break"))
         {
@@ -104,6 +104,11 @@ public class Breakbusback : MonoBehaviour
                 
             
            
+        }
+        if (other.CompareTag("Break"))
+        {
+            Debug.Log("works");
+            Destroy(other.gameObject);
         }
     }
 
