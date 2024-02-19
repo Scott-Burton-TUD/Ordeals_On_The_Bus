@@ -6,12 +6,12 @@ using UnityEngine.AI;
 public class npcmovement : MonoBehaviour
 {
     [Header("NPC movement speed")]
-    public float movementSpeed = 3.0f; 
+    public float movementSpeed = 3.0f; // Public variable for controlling the speed
     private NavMeshAgent navMeshAgent;
 
     [Header("Going to the driver speed")]
     public float dockingspeed = 5f;
-    public string targetObjectName; 
+    public string targetObjectName; // Change the target variable to string
 
     [Header("Seats")]
     public bool ticket1;
@@ -27,17 +27,17 @@ public class npcmovement : MonoBehaviour
     void Start()
     {
         navMeshAgent = GetComponent<NavMeshAgent>();
-        navMeshAgent.speed = movementSpeed;
+        navMeshAgent.speed = movementSpeed; // Set the initial speed 
 
-     
+
     }
 
     void Update()
     {
         if (vip.isonFire == true)
         {
-            
-    
+
+
             navMeshAgent.isStopped = false;
         }
         if (vip.isonFire == true && !string.IsNullOrEmpty(randomMovementAreaName))
@@ -58,11 +58,11 @@ public class npcmovement : MonoBehaviour
             }
         }
 
-        if(vip.isonFire == false && gotoseat == false)
+        if (vip.isonFire == false && gotoseat == false)
         {
             MoveTowardsTarget(targetObjectName); // Pass the string as the target
         }
-        
+
 
         if (ticket1 == true)
         {
@@ -76,34 +76,47 @@ public class npcmovement : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// Picking a random seat
+    /// </summary>
     void GoToRandomSeat()
     {
         if (Seats.Length > 0)
         {
             if (string.IsNullOrEmpty(randomSeatName))
             {
-                
+                // Choose a random seat name from the array for the first time
                 randomSeatName = Seats[Random.Range(0, Seats.Length)];
             }
 
-            
+            // Find the GameObject with the chosen seat name
             GameObject randomSeat = GameObject.Find(randomSeatName);
 
-            
-            MoveTowardsTarget(randomSeatName); 
+            // Move towards the selected seat
+            MoveTowardsTarget(randomSeatName); // Pass the string as the target
 
-         
+            // Check if the NPC has reached the seat
             if (Vector3.Distance(transform.position, randomSeat.transform.position) < 0.5f)
             {
-         
+                // Set the y-rotation to 0
                 transform.eulerAngles = new Vector3(0, 0, 0);
 
-       
+                // Optional: You can disable the NavMeshAgent once the NPC reaches the seat
+                //navMeshAgent.isStopped = true;
+
+                // Optional: Set gotoseat to false or perform other actions as needed
+                //gotoseat = false;
             }
+        }
+        else
+        {
+            Debug.LogWarning("No seat names defined in the array.");
         }
     }
 
-
+    /// <summary>
+    /// Making the npc go to the driver
+    /// </summary>
     void MoveTowardsTarget(string targetName)
     {
         if (!string.IsNullOrEmpty(targetName))
@@ -116,10 +129,16 @@ public class npcmovement : MonoBehaviour
                 // Use NavMeshAgent for smooth navigation
                 navMeshAgent.SetDestination(targetObject.transform.position);
             }
+            else
+            {
+                Debug.LogWarning("Target object not found.");
+            }
         }
     }
 
-
+    /// <summary>
+    /// Random movements of the NPC
+    /// </summary>
     void PerformRandomMovementInArea(Vector3 minBounds, Vector3 maxBounds)
     {
         // Check if the NavMeshAgent has reached the current destination
