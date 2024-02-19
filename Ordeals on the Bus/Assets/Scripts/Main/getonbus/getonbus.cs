@@ -46,7 +46,7 @@ public class getonbus : MonoBehaviour
     {
         yield return new WaitForSeconds(2.5f);
         currentNPCIndex = 0;
-        npc[currentNPCIndex].GetComponent<NPC2>().enabled = true;
+        npc[currentNPCIndex].GetComponent<npcmovement>().enabled = true;
         npc[currentNPCIndex].GetComponent<NavMeshAgent>().enabled = true;
 
     }
