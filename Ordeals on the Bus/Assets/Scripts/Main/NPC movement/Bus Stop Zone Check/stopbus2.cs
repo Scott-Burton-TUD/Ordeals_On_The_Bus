@@ -7,7 +7,7 @@ public class stopbus2 : MonoBehaviour
     public bool busstoping;
     worldmove busstop;
     Collider coll;
-    public busStop2 npcbus;
+    public busStop3 npcbus;
 
     // Start is called before the first frame update
     void Start()
@@ -30,7 +30,7 @@ public class stopbus2 : MonoBehaviour
             busstoping = true;
             busstop.speed = 0;
             coll.enabled = false;
-            npcbus.canSpawn2 = true;
+            npcbus.canSpawn3 = true;
 
         }
     }

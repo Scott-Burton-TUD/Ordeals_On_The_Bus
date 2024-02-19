@@ -8,6 +8,8 @@ public class ticketbin : MonoBehaviour
     public npcmovement npc;
     public NPC2 npc2;
     public NPC3 npc3;
+    public NPC4 npc4;
+    public NPC5 npc5;
 
     // Start is called before the first frame update
     void Start()
@@ -40,6 +42,20 @@ public class ticketbin : MonoBehaviour
         if (other.gameObject.CompareTag("Ticket3"))
         {
             npc3.ticket3 = true;
+            Destroy(other.gameObject);
+
+        }
+
+        if (other.gameObject.CompareTag("Ticket4"))
+        {
+            npc4.ticket4 = true;
+            Destroy(other.gameObject);
+
+        }
+
+        if (other.gameObject.CompareTag("Ticket5"))
+        {
+            npc5.ticket5 = true;
             Destroy(other.gameObject);
 
         }

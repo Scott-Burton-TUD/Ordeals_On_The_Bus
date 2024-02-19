@@ -8,6 +8,8 @@ public class buttonref : MonoBehaviour
     public worldmove button;
     public getonbus button2;
     public busStop2 stop2;
+    public busStop3 stop3;
+    public busStop4 stop4;
     // Start is called before the first frame update
     void Start()
     {
@@ -39,7 +41,9 @@ public class buttonref : MonoBehaviour
     public void Open()
     {
         button2.GetOn();
-                                stop2.GetOn();
+        stop2.GetOn();
+        stop3.GetOn();
+        stop4.GetOn();
     }
 
   

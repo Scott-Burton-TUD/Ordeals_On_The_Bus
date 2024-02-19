@@ -6,6 +6,8 @@ public class busleaving : MonoBehaviour
 {
     NPC3 busleave;
     npcmovement busleave1;
+    NPC4 busleave2;
+    NPC5 busleave3;
     public bool test;
 
     // Start is called before the first frame update
@@ -13,6 +15,8 @@ public class busleaving : MonoBehaviour
     {
         busleave = GameObject.FindGameObjectWithTag("Second NPC").GetComponent<NPC3>();
         busleave1 = GameObject.FindGameObjectWithTag("First NPC").GetComponent<npcmovement>();
+        busleave2 = GameObject.FindGameObjectWithTag("Third NPC").GetComponent<NPC4>();
+        busleave3 = GameObject.FindGameObjectWithTag("Fourth NPC").GetComponent<NPC5>();
     }
 
     // Update is called once per frame
@@ -22,6 +26,8 @@ public class busleaving : MonoBehaviour
         {
             busleave.ticket3 = false;
             busleave1.ticket1 = false;
+            busleave2.ticket4 = false;
+            busleave3.ticket5 = false;
         }
     }
 
@@ -30,6 +36,14 @@ public class busleaving : MonoBehaviour
         if (other.gameObject.CompareTag("Player"))
         {
             test = true;
+        }
+    }
+
+    public void OnTriggerExit(Collider other)
+    {
+        if (other.gameObject.CompareTag("Player"))
+        {
+            test = false;
         }
     }
 }
