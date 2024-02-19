@@ -30,8 +30,8 @@ public class worldmove : MonoBehaviour
     public bool isSwitchingLane = false;
 
     //bus leaving
-    npcmovement npcleave;
-    NPC3 npcleave2;
+    public npcmovement npcleave;
+    public NPC3 npcleave2;
 
     public GameObject doorbutton;
     public GameObject busdoor;
@@ -46,8 +46,6 @@ public class worldmove : MonoBehaviour
     void Start()
     {
         stoppingbus = GameObject.FindGameObjectWithTag("Stop").GetComponent<stopbus>();
-        npcleave = GameObject.FindGameObjectWithTag("First NPC").GetComponent<npcmovement>();
-        npcleave2 = GameObject.FindGameObjectWithTag("Second NPC").GetComponent<NPC3>();
 
         busdoorAnim = busdoor.GetComponent<Animator>();
         canspeed = true;

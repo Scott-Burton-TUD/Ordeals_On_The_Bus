@@ -7,13 +7,13 @@ public class stopbus : MonoBehaviour
     public bool busstoping;
     worldmove busstop;
     Collider coll;
-    getonbus npcbus;
+    public getonbus npcbus;
 
     // Start is called before the first frame update
     void Start()
     {
         busstop = GameObject.FindGameObjectWithTag("World").GetComponent<worldmove>();
-        npcbus = GameObject.FindGameObjectWithTag("BusStop").GetComponent<getonbus>();
+        
         coll = GetComponent<Collider>();
     }
 

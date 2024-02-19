@@ -17,12 +17,13 @@ public class getonbus : MonoBehaviour
     public string animationName;
 
     //bool
-    npcspawnbool inZone;
+    public npcspawnbool inZone;
 
 
     void Start()
     {
         busdoorAnim = busdoor.GetComponent<Animator>();
+        
     }
 
     void Update()

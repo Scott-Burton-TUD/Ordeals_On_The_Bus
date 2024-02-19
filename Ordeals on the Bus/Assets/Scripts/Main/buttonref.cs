@@ -5,15 +5,16 @@ using UnityEngine;
 public class buttonref : MonoBehaviour
 {
 
-    worldmove button;
-    getonbus button2;
-    BusStop2 stop2;
+    public worldmove button;
+    public getonbus button2;
+    public busStop2 stop2;
     // Start is called before the first frame update
     void Start()
     {
-        button = GameObject.FindGameObjectWithTag("World").GetComponent<worldmove>();
-        button2 = GameObject.FindGameObjectWithTag("BusStop").GetComponent<getonbus>();
-        stop2 = GameObject.FindGameObjectWithTag("BusStop").GetComponent<BusStop2>();
+        //button = GameObject.FindGameObjectWithTag("World").GetComponent<worldmove>();
+        //button2 = GameObject.FindGameObjectWithTag("BusStop").GetComponent<getonbus>();
+
+        //stop2 = GameObject.FindGameObjectWithTag("BusStop2").GetComponent<BusStop2>();
     }
 
     // Update is called once per frame
@@ -38,7 +39,7 @@ public class buttonref : MonoBehaviour
     public void Open()
     {
         button2.GetOn();
-        stop2.GetOn();
+                                stop2.GetOn();
     }
 
   

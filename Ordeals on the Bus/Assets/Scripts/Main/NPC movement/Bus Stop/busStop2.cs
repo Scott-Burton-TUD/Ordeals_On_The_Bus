@@ -12,18 +12,19 @@ public class busStop2 : MonoBehaviour
 
 
     public NPC2 npc1;
-    public bool canSpawn;
+    public bool canSpawn2;
     public GameObject busdoor;
     public Animator busdoorAnim;
     public string animationName;
 
     //bool
-    npcspawnbool2 inZone;
+    public npcspawnbool2 inZone;
 
 
     void Start()
     {
         busdoorAnim = busdoor.GetComponent<Animator>();
+        
     }
 
     void Update()
@@ -36,7 +37,7 @@ public class busStop2 : MonoBehaviour
 
     public void GetOn()
     {
-        if (canSpawn == true && inZone.businzone2 == true)
+        if (canSpawn2 == true && inZone.businzone2 == true)
         {
             busdoorAnim.Play(animationName);
             StartCoroutine(DoorOpening());
