@@ -6,7 +6,7 @@ public class Spawner : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("LOL"))
+        if (other.CompareTag("Player"))
         {
             foreach (GameObject obj in gameObjectsToActivate)
             {
