@@ -6,7 +6,7 @@ public class Smoker : MonoBehaviour
 {
     public GameObject particleSystemObject;
     private ParticleSystem particleSystemComponent;
-    public bool enableParticles = true;
+    public bool enableParticles ;
 
     void Start()
     {
