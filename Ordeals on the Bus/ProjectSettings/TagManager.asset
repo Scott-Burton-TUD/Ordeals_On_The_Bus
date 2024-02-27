@@ -15,6 +15,29 @@ TagManager:
   - Stop
   - LastNPC
   - Button
+  - BusStop2
+  - Monkey
+  - Cleaner
+  - Super Slow
+  - Ticket4
+  - Fast
+  - Slow
+  - Hand
+  - Smeller
+  - Normal
+  - Ticket5
+  - Super Fast
+  - LOL
+  - Break
+  - NPC
+  - Bullet
+  - Fourth NPC
+  - Projectile
+  - Washer
+  - Second NPC
+  - Third NPC
+  - First NPC
+  - Traffic
   layers:
   - Default
   - TransparentFX

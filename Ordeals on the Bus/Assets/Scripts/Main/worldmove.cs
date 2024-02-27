@@ -1,63 +1,57 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.XR.Interaction.Toolkit;
 
 public class worldmove : MonoBehaviour
 {
-    //world move
+    // Variables for world movement
     public float speed = 1;
     public bool candrive;
     public bool canspeed;
 
-    //parking
+    // Variables for parking
     public float targetXPosition = 114.32f;
     public float moveSpeed = 1f;
     public bool canPark;
     public dockcheck dockk;
 
-    //stopping bus
+    // Reference to stopbus script
     stopbus stoppingbus;
 
-    //going forward
+    // Variables for going forward
     public float gobackPosition = 109.42f;
 
-    //switching lane
+    // Variables for switching lanes
     public GameObject leftButton;
     public GameObject rightButton;
     public float[] lanes;
     private int currentLaneIndex = 1;
     public bool isSwitchingLane = false;
 
-    //bus leaving
+    // Variables for bus leaving
     public npcmovement npcleave;
     public NPC3 npcleave2;
     public NPC4 npcleave3;
     public NPC5 npcleave4;
-
 
     public GameObject doorbutton;
     public GameObject busdoor;
     public Animator busdoorAnim;
     public string animationName;
 
+    // Collision with stationary objects
+    bool worldStopped = false;
+    float originalSpeed;
+    float worldStopTimer = 0f;
 
-
-
-
-    // Start is called before the first frame update
     void Start()
     {
         stoppingbus = GameObject.FindGameObjectWithTag("Stop").GetComponent<stopbus>();
-
         busdoorAnim = busdoor.GetComponent<Animator>();
         canspeed = true;
         UpdateBusPosition();
-
-
     }
 
-    // Update is called once per frame
     void Update()
     {
         //bus driving
@@ -66,7 +60,7 @@ public class worldmove : MonoBehaviour
         //Switching lane
         if (!isSwitchingLane)
         {
-            // Check for mouse clicks on objectToClick and objectToClick2
+            // Check for mouse clicks on left and right buttons for lane switching
             if (Input.GetMouseButtonDown(0)) // Left mouse button click
             {
                 Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
@@ -88,20 +82,31 @@ public class worldmove : MonoBehaviour
 
         if (dockk.dockingmode == true && canPark == false)
         {
-            //buspark();
+            buspark(); // Call the BusPark method
         }
 
- 
+        // Check if the world is stopped
+        if (worldStopped)
+        {
+            // Reduce the timer for world stoppage
+            worldStopTimer -= Time.deltaTime;
 
-        
-
+            // Check if the timer has expired
+            if (worldStopTimer <= 0f)
+            {
+                // Resume original speed
+                speed = originalSpeed;
+                worldStopped = false;
+            }
+        }
     }
+
     public void Left()
     {
         if (!isSwitchingLane)
         {
             SwitchLane(-1);
-        }          
+        }
     }
 
     public void Right()
@@ -109,7 +114,7 @@ public class worldmove : MonoBehaviour
         if (!isSwitchingLane)
         {
             SwitchLane(1);
-        }         
+        }
     }
 
     public void CloseDoor()
@@ -137,14 +142,15 @@ public class worldmove : MonoBehaviour
             busdoorAnim.Play(animationName);
             StartCoroutine(MoveOut());
         }
-
     }
-
 
     /// Bus Docking Code
     public void drive()
     {
-        transform.Translate(Vector3.left * speed * Time.deltaTime);
+        if (!worldStopped) // Check if the world is not stopped
+        {
+            transform.Translate(Vector3.left * speed * Time.deltaTime);
+        }
     }
 
     public void buspark()
@@ -154,12 +160,11 @@ public class worldmove : MonoBehaviour
         currentLaneIndex = 0;
     }
 
-    void goback()
+    void GoBack()
     {
         float step = moveSpeed * Time.deltaTime;
         transform.position = new Vector3(Mathf.MoveTowards(transform.position.x, gobackPosition, step), transform.position.y, transform.position.z);
     }
-
 
     ///Switching lane Code
     void SwitchLane(int direction)
@@ -193,8 +198,25 @@ public class worldmove : MonoBehaviour
         yield return new WaitForSeconds(5f);
         canPark = true;
         speed = 1;
-        goback();
+        GoBack();
 
     }
 
+    // Collision with stationary objects
+    void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.CompareTag("Player") || other.gameObject.CompareTag("Traffic"))
+        {
+            Debug.Log("Collision detected with stationary object");
+
+            // Stop the world for 2 seconds
+            originalSpeed = speed;
+            speed = 0;
+            worldStopped = true;
+            worldStopTimer = 2f;
+
+            // Deactivate the stationary object
+            other.gameObject.SetActive(false);
+        }
+    }
 }
