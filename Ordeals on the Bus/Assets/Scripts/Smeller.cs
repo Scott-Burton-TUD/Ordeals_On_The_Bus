@@ -7,11 +7,14 @@ public class Smeller : MonoBehaviour
     public GameObject particleSystemObject;
     private ParticleSystem particleSystemComponent;
     public bool enableParticles;
+    private Renderer objectRenderer;
 
     void Start()
     {
         // Get the ParticleSystem component from the GameObject
         particleSystemComponent = particleSystemObject.GetComponent<ParticleSystem>();
+        // Get the renderer component of the object
+        objectRenderer = GetComponent<Renderer>();
     }
 
     void Update()
@@ -28,12 +31,18 @@ public class Smeller : MonoBehaviour
             particleSystemComponent.Stop();
         }
     }
+
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Washer"))
         {
             enableParticles = false;
             transform.GetChild(1).gameObject.SetActive(true);
+        }
+        else if (other.CompareTag("Bullet"))
+        {
+            // Change the color of the object to yellow
+            objectRenderer.material.color = Color.yellow;
         }
     }
 }
