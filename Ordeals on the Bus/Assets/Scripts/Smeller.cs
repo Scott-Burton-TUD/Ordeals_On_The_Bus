@@ -33,6 +33,7 @@ public class Smeller : MonoBehaviour
         if (other.CompareTag("Washer"))
         {
             enableParticles = false;
+            transform.GetChild(1).gameObject.SetActive(true);
         }
     }
 }
