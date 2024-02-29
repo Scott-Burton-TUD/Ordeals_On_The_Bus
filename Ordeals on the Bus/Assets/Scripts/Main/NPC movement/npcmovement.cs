@@ -18,17 +18,23 @@ public class npcmovement : MonoBehaviour
     public string[] Seats;
     public bool gotoseat;
     private string randomSeatName;
+    public GameObject childObject;
+    public GameObject parentObject;
 
     [Header("Mayham")]
     public bool mayham;
     public string randomMovementAreaName;
     public vipmovement vip;
 
+    [Header("Animations")]
+    public Animator NPC1Animations;
+    public GameObject Animation;
+
     void Start()
     {
         navMeshAgent = GetComponent<NavMeshAgent>();
         navMeshAgent.speed = movementSpeed; // Set the initial speed 
-
+        NPC1Animations = Animation.GetComponent<Animator>();
 
     }
 
@@ -61,6 +67,15 @@ public class npcmovement : MonoBehaviour
         if (vip.isonFire == false && gotoseat == false)
         {
             MoveTowardsTarget(targetObjectName); // Pass the string as the target
+            NPC1Animations.SetBool("isWalk", true);
+            NPC1Animations.SetBool("isIdle", false);
+
+            if (navMeshAgent.remainingDistance < 0.01f)
+            {
+                NPC1Animations.SetBool("isIdle", true);
+                NPC1Animations.SetBool("isWalk", false);
+            }
+
         }
 
 
@@ -68,6 +83,9 @@ public class npcmovement : MonoBehaviour
         {
             gotoseat = true;
             mayham = false;
+            NPC1Animations.SetBool("isWalk", true);
+            NPC1Animations.SetBool("isIdle", false);
+
         }
 
         if (gotoseat == true && vip.isonFire == false)
@@ -100,6 +118,12 @@ public class npcmovement : MonoBehaviour
             {
                 // Set the y-rotation to 0
                 transform.eulerAngles = new Vector3(0, 0, 0);
+                NPC1Animations.SetBool("isSit", true);
+                NPC1Animations.SetBool("isWalk", false);
+                NPC1Animations.SetBool("isIdle", false);
+                childObject.transform.SetParent(parentObject.transform);
+
+
 
                 // Optional: You can disable the NavMeshAgent once the NPC reaches the seat
                 //navMeshAgent.isStopped = true;
