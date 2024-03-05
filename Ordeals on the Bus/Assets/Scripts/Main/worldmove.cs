@@ -8,8 +8,8 @@ public class worldmove : MonoBehaviour
 {
     public XRSlider slider;
     // Variables for world movement
-    float minSpeed = 1f; // Minimum speed
-    float maxSpeed = 10f; // Maximum speed
+    float minSpeed = 0f; // Minimum speed
+    float maxSpeed = 5f; // Maximum speed
     // Variables for world movement
     public float speed = 1;
     public bool candrive;
@@ -49,6 +49,7 @@ public class worldmove : MonoBehaviour
     bool worldStopped = false;
     float originalSpeed;
     float worldStopTimer = 0f;
+    public float test;
 
     void Start()
     {
@@ -62,11 +63,12 @@ public class worldmove : MonoBehaviour
     {
         // Adjust speed based on slider value
         float sliderValue = slider.value; // Get slider value between 0 and 1
+        test = Mathf.Lerp(minSpeed, maxSpeed, sliderValue);
         float newSpeed = Mathf.Lerp(minSpeed, maxSpeed, sliderValue); // Interpolate speed between min and max based on slider value
-        drive(newSpeed); // Drive with the new speed
+        drive(speed * newSpeed); // Drive with the new speed
 
         //bus driving
-        drive();
+        //drive();
 
         //Switching lane
         if (!isSwitchingLane)
