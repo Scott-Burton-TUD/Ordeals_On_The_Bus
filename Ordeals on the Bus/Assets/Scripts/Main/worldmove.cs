@@ -1,9 +1,15 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.XR.Content.Interaction;
+
 
 public class worldmove : MonoBehaviour
 {
+    public XRSlider slider;
+    // Variables for world movement
+    float minSpeed = 1f; // Minimum speed
+    float maxSpeed = 10f; // Maximum speed
     // Variables for world movement
     public float speed = 1;
     public bool candrive;
@@ -54,6 +60,11 @@ public class worldmove : MonoBehaviour
 
     void Update()
     {
+        // Adjust speed based on slider value
+        float sliderValue = slider.value; // Get slider value between 0 and 1
+        float newSpeed = Mathf.Lerp(minSpeed, maxSpeed, sliderValue); // Interpolate speed between min and max based on slider value
+        drive(newSpeed); // Drive with the new speed
+
         //bus driving
         drive();
 
@@ -218,5 +229,9 @@ public class worldmove : MonoBehaviour
             // Deactivate the stationary object
             other.gameObject.SetActive(false);
         }
+    }
+    void drive(float speed)
+    {
+        transform.Translate(Vector3.left * speed * Time.deltaTime);
     }
 }
