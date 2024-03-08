@@ -149,7 +149,7 @@ public class worldmove2 : MonoBehaviour
     {
         if (!worldStopped) // Check if the world is not stopped
         {
-            transform.Translate(Vector3.right * speed * Time.deltaTime); // Change back to X axis
+            transform.Translate(Vector3.back * speed * Time.deltaTime); // Change back to X axis
         }
     }
 
