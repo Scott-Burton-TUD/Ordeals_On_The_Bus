@@ -56,7 +56,7 @@ public class worldmove : MonoBehaviour
         stoppingbus = GameObject.FindGameObjectWithTag("Stop").GetComponent<stopbus>();
         busdoorAnim = busdoor.GetComponent<Animator>();
         canspeed = true;
-        UpdateBusPosition();
+        //UpdateBusPosition();
     }
 
     void Update()
