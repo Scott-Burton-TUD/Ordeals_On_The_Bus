@@ -7,7 +7,7 @@ public class tjunction : MonoBehaviour
     public bool candisable;
     public worldmove world1;
     public worldmove2 world2;
-
+    public GameObject right;
     //target location
     public GameObject worldmap;
     public Vector3 targetPosition = new Vector3(129.8f, 8.96f, -152.2f);
@@ -19,7 +19,7 @@ public class tjunction : MonoBehaviour
 
     // Start is called before the first frame update
     void Start()
-    {     
+    {        
         
     }
 
@@ -58,6 +58,7 @@ public class tjunction : MonoBehaviour
         {
             candisable = true;;
             world1.enabled = false;
+            right.SetActive(false);
 
             
 

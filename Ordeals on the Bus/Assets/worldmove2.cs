@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.XR.Content.Interaction;
 
 public class worldmove2 : MonoBehaviour
 {
@@ -27,9 +28,9 @@ public class worldmove2 : MonoBehaviour
     public bool isSwitchingLane = false;
 
     // Variables for bus leaving
- 
 
-    
+
+
     public GameObject busdoor;
     public Animator busdoorAnim;
     public string animationName;
@@ -38,6 +39,15 @@ public class worldmove2 : MonoBehaviour
     bool worldStopped = false;
     float originalSpeed;
     float worldStopTimer = 0f;
+
+    //slider
+    public XRSlider slider;
+    // Variables for world movement
+    float minSpeed = 1f; // Minimum speed
+    float maxSpeed = 5f; // Maximum speed
+    public float newSpeed;
+    public float sliderValue;
+
 
     void Start()
     {
@@ -49,10 +59,14 @@ public class worldmove2 : MonoBehaviour
 
     void Update()
     {
-        //bus driving
-        drive();
+        // Adjust speed based on slider value
+        sliderValue = slider.value; // Get slider value between 0 and 1
 
-       
+        newSpeed = Mathf.Lerp(minSpeed, maxSpeed, sliderValue); // Interpolate speed between min and max based on slider value
+
+        drive(speed * newSpeed); // Drive with the new speed
+
+
 
         if (dockk.dockingmode == true && canPark == false)
         {
@@ -93,10 +107,16 @@ public class worldmove2 : MonoBehaviour
 
     public void CloseDoor()
     {
-        
+
     }
 
     /// Bus Docking Code
+
+    void drive(float speed)
+    {
+        transform.Translate(Vector3.back * speed * Time.deltaTime);
+    }
+
     public void drive()
     {
         if (!worldStopped) // Check if the world is not stopped
@@ -171,4 +191,6 @@ public class worldmove2 : MonoBehaviour
             other.gameObject.SetActive(false);
         }
     }
+
+
 }
