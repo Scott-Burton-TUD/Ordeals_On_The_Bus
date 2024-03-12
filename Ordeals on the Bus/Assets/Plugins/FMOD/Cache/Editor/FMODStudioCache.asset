@@ -15,11 +15,39 @@ MonoBehaviour:
   Path: Assets/SFX/Fmod/Filee/Build/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 638455331741424130
+  lastModified: 638458595465850021
   FileSizes:
   - Name: Desktop
-    Value: 1036
+    Value: 167200
   Exists: 1
+--- !u!114 &-7911094778720968482
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/BusAI
+  m_EditorClassIdentifier: 
+  Path: event:/BusAI
+  Guid:
+    Data1: -954373483
+    Data2: 1214141666
+    Data3: 1396580746
+    Data4: -855554869
+  Banks:
+  - {fileID: -8726756704036569521}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 0
+  Parameters:
+  - {fileID: -3552404490702508983}
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 18019
 --- !u!114 &-5755459456988504139
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -48,6 +76,34 @@ MonoBehaviour:
   - Goodbye
   - Reset
   Exists: 1
+--- !u!114 &-3552404490702508983
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/BusAI/Parameter 2
+  m_EditorClassIdentifier: 
+  Name: Parameter 2
+  StudioPath: 
+  Min: 0
+  Max: 3
+  Default: 3
+  ID:
+    data1: 1319936241
+    data2: 354406501
+  Type: 2
+  IsGlobal: 0
+  Labels:
+  - Left
+  - Right
+  - Docking
+  - Main
+  Exists: 1
 --- !u!114 &-1542236823703206862
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -63,10 +119,10 @@ MonoBehaviour:
   Path: Assets/SFX/Fmod/Filee/Build/Desktop/Passenger Bank.bank
   Name: Passenger Bank
   StudioPath: bank:/Passenger Bank
-  lastModified: 638455331741642238
+  lastModified: 638458589969670493
   FileSizes:
   - Name: Desktop
-    Value: 106592
+    Value: 106688
   Exists: 1
 --- !u!114 &11400000
 MonoBehaviour:
@@ -86,12 +142,13 @@ MonoBehaviour:
   - {fileID: -1542236823703206862}
   EditorEvents:
   - {fileID: 7277436497921349217}
+  - {fileID: -7911094778720968482}
   EditorParameters: []
   MasterBanks:
   - {fileID: -8726756704036569521}
   StringsBanks:
   - {fileID: 3565024033501724129}
-  cacheTime: 638455331741642238
+  cacheTime: 638458595465870021
   cacheVersion: 131616
 --- !u!114 &3565024033501724129
 MonoBehaviour:
@@ -108,10 +165,10 @@ MonoBehaviour:
   Path: Assets/SFX/Fmod/Filee/Build/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 638455331741424130
+  lastModified: 638458595465870021
   FileSizes:
   - Name: Desktop
-    Value: 920
+    Value: 1012
   Exists: 1
 --- !u!114 &7277436497921349217
 MonoBehaviour:
@@ -133,6 +190,7 @@ MonoBehaviour:
     Data4: 221039697
   Banks:
   - {fileID: -1542236823703206862}
+  - {fileID: -8726756704036569521}
   IsStream: 0
   Is3D: 0
   IsOneShot: 0
@@ -140,4 +198,4 @@ MonoBehaviour:
   - {fileID: -5755459456988504139}
   MinDistance: 1
   MaxDistance: 20
-  Length: 15648
+  Length: 17800
