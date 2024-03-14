@@ -3,7 +3,7 @@ using UnityEngine;
 public class RadarScript : MonoBehaviour
 {
     public float moveSpeed = 5f; // Speed of movement
-    public float movementRange = 5f; // Maximum distance to move left or right
+    public float movementRange = 34.03246f; // Maximum distance to move left or right from original position
     public float positionOffset = 1f; // Offset from center for left and right positions
     public Vector3 originalPosition; // Original position of the object
 
@@ -26,11 +26,11 @@ public class RadarScript : MonoBehaviour
 
         if (inputValue < 1f) // Move left
         {
-            targetX = Mathf.Clamp(targetX - positionOffset, -movementRange, targetX);
+            targetX = Mathf.Clamp(targetX - positionOffset, originalPosition.x - movementRange, targetX);
         }
         else if (inputValue > 1f) // Move right
         {
-            targetX = Mathf.Clamp(targetX + positionOffset, targetX, movementRange);
+            targetX = Mathf.Clamp(targetX + positionOffset, targetX, originalPosition.x + movementRange);
         }
         else if (inputValue == 1f) // Return to original position
         {
