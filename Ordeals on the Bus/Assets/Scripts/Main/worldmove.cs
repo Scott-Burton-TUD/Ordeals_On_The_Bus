@@ -31,7 +31,7 @@ public class worldmove : MonoBehaviour
     public GameObject leftButton;
     public GameObject rightButton;
     public float[] lanes;
-    private int currentLaneIndex = 1;
+    public int currentLaneIndex = 1;
     public bool isSwitchingLane = false;
 
     // Variables for bus leaving
