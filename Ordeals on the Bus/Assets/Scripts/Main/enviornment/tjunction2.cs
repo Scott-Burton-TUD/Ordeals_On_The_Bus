@@ -5,9 +5,15 @@ using UnityEngine;
 public class tjunction2 : MonoBehaviour
 {
     public bool candisable;
+    public bool world3EnabledOnce = false; // Flag to track if world3 has been enabled once
     public worldmove world1;
     public worldmove3 world3;
-    public GameObject left;
+    public GameObject right;
+
+    //Tuning parent
+    public GameObject Parent;
+    public GameObject mapp;
+
     //target location
     public GameObject worldmap;
     public Vector3 targetPosition = new Vector3(129.8f, 8.96f, -152.2f);
@@ -29,49 +35,45 @@ public class tjunction2 : MonoBehaviour
         if (candisable == true)
         {
             MoveToWorldTarget();
-
-
+            mapp.transform.parent = Parent.transform;
         }
 
         if (HasArrivedAtPosition(worldmap.transform.position, targetPosition))
         {
-
             candisable = false;
-            world3.enabled = true;
+            if (!world3EnabledOnce) // Check if world3 has been enabled once
+            {
+                world3.enabled = true;
+                world3EnabledOnce = true; // Set the flag to true
+                mapp.transform.parent = null;
+            }
+            
         }
-
     }
 
     void MoveToWorldTarget()
     {
-
         worldmap.transform.position = Vector3.Lerp(worldmap.transform.position, targetPosition, Time.deltaTime * movementSpeed);
         worldmap.transform.rotation = Quaternion.Lerp(worldmap.transform.rotation, targetRotation, Time.deltaTime * movementSpeed);
 
         movementSpeed = Mathf.Min(movementSpeed + speedIncreaseRate * Time.deltaTime, maxMovementSpeed);
-
     }
 
     public void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.CompareTag("Player"))
         {
-            candisable = true; ;
+            candisable = true;
             world1.enabled = false;
-            left.SetActive(false);
-
-
-
+            right.SetActive(false);
         }
     }
 
-
     bool HasArrivedAtPosition(Vector3 currentPosition, Vector3 targetPosition)
     {
-
         float distance = Vector3.Distance(currentPosition, targetPosition);
-
         return distance <= arrivalThreshold;
     }
 }
+
 
