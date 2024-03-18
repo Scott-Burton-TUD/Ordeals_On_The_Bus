@@ -11,6 +11,7 @@ public class buttonref : MonoBehaviour
     public busStop2 stop2;
     public busStop3 stop3;
     public busStop4 stop4;
+    public tjunction2 turn;
     // Start is called before the first frame update
     void Start()
     {
@@ -28,13 +29,37 @@ public class buttonref : MonoBehaviour
 
     public void GoLeft()
     {
-        button.Left();
-        button3.Left();
+        if (turn.canlanechange == true)
+        {
+            button.Left();
+        }
+        if (turn.canlanechange2 == true)
+        {
+            button3.Left();
+        }
+
     }
+
+    public void GoLeft2()
+    {
+        
+    }
+
     public void GoRight()
     {
-        button.Right();
-        button3.Right();
+        if (turn.canlanechange == true)
+        {
+            button.Right();
+        }
+        if (turn.canlanechange2 == true)
+        {
+            button3.Right();
+        }
+    }
+
+    public void GoRight2()
+    {
+        
     }
 
     public void Close()

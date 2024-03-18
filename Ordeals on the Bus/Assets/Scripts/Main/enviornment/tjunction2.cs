@@ -9,6 +9,8 @@ public class tjunction2 : MonoBehaviour
     public worldmove world1;
     public worldmove3 world3;
     public GameObject right;
+    public bool canlanechange;
+    public bool canlanechange2;
 
     //Tuning parent
     public GameObject Parent;
@@ -26,7 +28,7 @@ public class tjunction2 : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-
+        canlanechange = true;
     }
 
     // Update is called once per frame
@@ -65,7 +67,10 @@ public class tjunction2 : MonoBehaviour
         {
             candisable = true;
             world1.enabled = false;
+            //Destroy(world1);
             right.SetActive(false);
+            canlanechange = false;
+            canlanechange2 = true;
         }
     }
 
