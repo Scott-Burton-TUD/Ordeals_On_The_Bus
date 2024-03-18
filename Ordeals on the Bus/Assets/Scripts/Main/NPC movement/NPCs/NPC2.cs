@@ -18,16 +18,23 @@ public class NPC2 : MonoBehaviour
     public string[] Seats;
     public bool gotoseat;
     private string randomSeatName;
+    public GameObject childObject;
+    public GameObject parentObject;
 
     [Header("Mayham")]
     public bool mayham;
     public string randomMovementAreaName;
     public vipmovement vip;
 
+    [Header("Animations")]
+    public Animator NPC1Animations;
+    public GameObject Animation;
+
     void Start()
     {
         navMeshAgent = GetComponent<NavMeshAgent>();
         navMeshAgent.speed = movementSpeed; // Set the initial speed 
+        NPC1Animations = Animation.GetComponent<Animator>();
 
 
     }
@@ -62,7 +69,15 @@ public class NPC2 : MonoBehaviour
 
         if (vip.isonFire == false && gotoseat == false)
         {
-            MoveTowardsTarget(targetObjectName); 
+            MoveTowardsTarget(targetObjectName);
+            NPC1Animations.SetBool("isWalk", true);
+            NPC1Animations.SetBool("isIdle", false);
+
+            if (navMeshAgent.remainingDistance < 0.01f)
+            {
+                NPC1Animations.SetBool("isIdle", true);
+                NPC1Animations.SetBool("isWalk", false);
+            }
         }
 
 
@@ -71,6 +86,8 @@ public class NPC2 : MonoBehaviour
         {
             gotoseat = true;
             mayham = false;
+            NPC1Animations.SetBool("isWalk", true);
+            NPC1Animations.SetBool("isIdle", false);
         }
 
 
@@ -101,6 +118,10 @@ public class NPC2 : MonoBehaviour
             {
 
                 transform.eulerAngles = new Vector3(0, 0, 0);
+                NPC1Animations.SetBool("isSit", true);
+                NPC1Animations.SetBool("isWalk", false);
+                NPC1Animations.SetBool("isIdle", false);
+                childObject.transform.SetParent(parentObject.transform);
 
 
             }
