@@ -1,10 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.XR.Content.Interaction;
 
 public class nomovement : MonoBehaviour
 {
     worldmove busmove;
+   
 
     // Start is called before the first frame update
     void Start()
@@ -17,12 +19,15 @@ public class nomovement : MonoBehaviour
     {
         
     }
+
     public void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.CompareTag("Player"))
         {
             busmove.isSwitchingLane = true;
             busmove.canspeed = false;
+            
+            
         }
     }
 
@@ -32,6 +37,7 @@ public class nomovement : MonoBehaviour
         {
             busmove.isSwitchingLane = false;
             busmove.canspeed = true;
+            
         }
     }
 

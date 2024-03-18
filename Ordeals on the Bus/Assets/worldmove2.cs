@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.XR.Content.Interaction;
 
 public class worldmove2 : MonoBehaviour
 {
@@ -22,19 +23,14 @@ public class worldmove2 : MonoBehaviour
     public float gobackPosition = 109.42f;
 
     // Variables for switching lanes
-    public GameObject leftButton;
-    public GameObject rightButton;
     public float[] lanes;
     private int currentLaneIndex = 1;
     public bool isSwitchingLane = false;
 
     // Variables for bus leaving
-    public npcmovement npcleave;
-    public NPC3 npcleave2;
-    public NPC4 npcleave3;
-    public NPC5 npcleave4;
 
-    public GameObject doorbutton;
+
+
     public GameObject busdoor;
     public Animator busdoorAnim;
     public string animationName;
@@ -43,6 +39,15 @@ public class worldmove2 : MonoBehaviour
     bool worldStopped = false;
     float originalSpeed;
     float worldStopTimer = 0f;
+
+    //slider
+    public XRSlider slider;
+    // Variables for world movement
+    float minSpeed = 1f; // Minimum speed
+    float maxSpeed = 5f; // Maximum speed
+    public float newSpeed;
+    public float sliderValue;
+
 
     void Start()
     {
@@ -54,31 +59,14 @@ public class worldmove2 : MonoBehaviour
 
     void Update()
     {
-        //bus driving
-        drive();
+        // Adjust speed based on slider value
+        sliderValue = slider.value; // Get slider value between 0 and 1
 
-        //Switching lane
-        if (!isSwitchingLane)
-        {
-            // Check for mouse clicks on left and right buttons for lane switching
-            if (Input.GetMouseButtonDown(0)) // Left mouse button click
-            {
-                Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-                RaycastHit hit;
+        newSpeed = Mathf.Lerp(minSpeed, maxSpeed, sliderValue); // Interpolate speed between min and max based on slider value
 
-                if (Physics.Raycast(ray, out hit))
-                {
-                    if (hit.collider.gameObject == leftButton)
-                    {
-                        SwitchLane(-1); // Move to the left lane
-                    }
-                    else if (hit.collider.gameObject == rightButton)
-                    {
-                        SwitchLane(1); // Move to the right lane
-                    }
-                }
-            }
-        }
+        drive(speed * newSpeed); // Drive with the new speed
+
+
 
         if (dockk.dockingmode == true && canPark == false)
         {
@@ -119,37 +107,21 @@ public class worldmove2 : MonoBehaviour
 
     public void CloseDoor()
     {
-        if (npcleave.ticket1 == true)
-        {
-            busdoorAnim.Play(animationName);
-            StartCoroutine(MoveOut());
-        }
 
-        if (npcleave2.ticket3 == true)
-        {
-            busdoorAnim.Play(animationName);
-            StartCoroutine(MoveOut());
-        }
-
-        if (npcleave3.ticket4 == true)
-        {
-            busdoorAnim.Play(animationName);
-            StartCoroutine(MoveOut());
-        }
-
-        if (npcleave4.ticket5 == true)
-        {
-            busdoorAnim.Play(animationName);
-            StartCoroutine(MoveOut());
-        }
     }
 
     /// Bus Docking Code
+
+    void drive(float speed)
+    {
+        transform.Translate(Vector3.back * speed * Time.deltaTime);
+    }
+
     public void drive()
     {
         if (!worldStopped) // Check if the world is not stopped
         {
-            transform.Translate(Vector3.right * speed * Time.deltaTime); // Change back to X axis
+            transform.Translate(Vector3.back * speed * Time.deltaTime); // Change back to X axis
         }
     }
 
@@ -219,4 +191,6 @@ public class worldmove2 : MonoBehaviour
             other.gameObject.SetActive(false);
         }
     }
+
+
 }
