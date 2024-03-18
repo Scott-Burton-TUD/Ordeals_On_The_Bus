@@ -5,14 +5,14 @@ using UnityEngine;
 public class stopbus4 : MonoBehaviour
 {
     public bool busstoping;
-    worldmove busstop;
+    worldmove4 busstop;
     Collider coll;
     public busStop4 npcbus;
 
     // Start is called before the first frame update
     void Start()
     {
-        busstop = GameObject.FindGameObjectWithTag("World").GetComponent<worldmove>();
+        busstop = GameObject.FindGameObjectWithTag("World").GetComponent<worldmove4>();
 
         coll = GetComponent<Collider>();
     }

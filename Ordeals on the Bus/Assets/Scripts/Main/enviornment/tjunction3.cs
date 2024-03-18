@@ -6,9 +6,11 @@ public class tjunction3 : MonoBehaviour
 {
     public bool candisable;
     public worldmove3 world3;
-    public worldmove world;
+    public worldmove4 world;
     public GameObject right;
     public bool world3EnabledOnce = false;
+    public bool canlanechange3;
+    public tjunction2 t2;
 
     //Tuning parent
     public GameObject Parent;
@@ -71,7 +73,8 @@ public class tjunction3 : MonoBehaviour
             candisable = true; 
             world3.enabled = false;
             right.SetActive(false);
-
+            canlanechange3 = true;
+            t2.canlanechange2 = false;
 
 
         }

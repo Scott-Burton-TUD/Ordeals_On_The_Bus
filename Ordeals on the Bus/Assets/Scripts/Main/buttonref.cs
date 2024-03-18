@@ -7,11 +7,13 @@ public class buttonref : MonoBehaviour
 
     public worldmove button;
     public worldmove3 button3;
+    public worldmove4 button4;
     public getonbus button2;
     public busStop2 stop2;
     public busStop3 stop3;
     public busStop4 stop4;
     public tjunction2 turn;
+    public tjunction3 turn2;
     // Start is called before the first frame update
     void Start()
     {
@@ -37,6 +39,11 @@ public class buttonref : MonoBehaviour
         {
             button3.Left();
         }
+        if (turn2.canlanechange3 == true)
+        {
+            button4.Left();
+        }
+
 
     }
 
@@ -55,6 +62,10 @@ public class buttonref : MonoBehaviour
         {
             button3.Right();
         }
+        if (turn2.canlanechange3 == true)
+        {
+            button4.Right();
+        }
     }
 
     public void GoRight2()
@@ -66,6 +77,7 @@ public class buttonref : MonoBehaviour
     {
         button.CloseDoor();
         button3.CloseDoor();
+        button4.CloseDoor();
     }
     public void Open()
     {

@@ -7,6 +7,7 @@ public class nomovement : MonoBehaviour
 {
     worldmove busmove;
     worldmove3 busmove3;
+    worldmove4 busmove4;
    
 
     // Start is called before the first frame update
@@ -14,6 +15,7 @@ public class nomovement : MonoBehaviour
     {
         busmove = GameObject.FindGameObjectWithTag("World").GetComponent<worldmove>();
         busmove3 = GameObject.FindGameObjectWithTag("World").GetComponent<worldmove3>();
+        busmove4 = GameObject.FindGameObjectWithTag("World").GetComponent<worldmove4>();
     }
 
     // Update is called once per frame
@@ -32,6 +34,9 @@ public class nomovement : MonoBehaviour
             busmove3.isSwitchingLane = true;
             busmove3.canspeed = false;
 
+            busmove4.isSwitchingLane = true;
+            busmove4.canspeed = false;
+
 
         }
     }
@@ -45,6 +50,9 @@ public class nomovement : MonoBehaviour
 
             busmove3.isSwitchingLane = false;
             busmove3.canspeed = true;
+
+            busmove4.isSwitchingLane = false;
+            busmove4.canspeed = true;
         }
     }
 
