@@ -28,7 +28,7 @@ public class worldmove3 : MonoBehaviour
     public bool isSwitchingLane = false;
 
     // Variables for bus leaving
-
+    public NPC4 npcleave3;
 
 
     public GameObject busdoor;
@@ -107,7 +107,11 @@ public class worldmove3 : MonoBehaviour
 
     public void CloseDoor()
     {
-
+        if (npcleave3.ticket4 == true)
+        {
+            busdoorAnim.Play(animationName);
+            StartCoroutine(MoveOut());
+        }
     }
 
     /// Bus Docking Code

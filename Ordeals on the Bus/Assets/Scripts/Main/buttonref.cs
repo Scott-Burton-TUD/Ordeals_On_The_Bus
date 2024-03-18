@@ -6,6 +6,7 @@ public class buttonref : MonoBehaviour
 {
 
     public worldmove button;
+    public worldmove3 button3;
     public getonbus button2;
     public busStop2 stop2;
     public busStop3 stop3;
@@ -21,22 +22,25 @@ public class buttonref : MonoBehaviour
 
     // Update is called once per frame
     void Update()
-    {
+    {   
         
     }
 
     public void GoLeft()
     {
         button.Left();
+        button3.Left();
     }
     public void GoRight()
     {
         button.Right();
+        button3.Right();
     }
 
     public void Close()
     {
         button.CloseDoor();
+        button3.CloseDoor();
     }
     public void Open()
     {

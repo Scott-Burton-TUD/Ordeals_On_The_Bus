@@ -6,11 +6,15 @@ public class dockcheck : MonoBehaviour
 {
     public bool dockingmode;
     worldmove busmove;
+    worldmove3 busmove3;
 
     // Start is called before the first frame update
     void Start()
     {
         busmove = GameObject.FindGameObjectWithTag("World").GetComponent<worldmove>();
+        busmove3 = GameObject.FindGameObjectWithTag("World").GetComponent<worldmove3>();
+
+
     }
 
     // Update is called once per frame
@@ -19,6 +23,7 @@ public class dockcheck : MonoBehaviour
         if(dockingmode == true)
         {
             busmove.buspark();
+            busmove3.buspark();
         }
     }
 
