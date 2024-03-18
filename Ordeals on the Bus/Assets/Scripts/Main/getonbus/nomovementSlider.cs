@@ -37,12 +37,20 @@ public class nomovementSlider : MonoBehaviour
 
     public void OnTriggerEnter(Collider other)
     {
-        canSlider = true;
+        if (other.gameObject.CompareTag("Player"))
+        {
+            canSlider = true;
+        }
+            
     }
 
     public void OnTriggerExit(Collider other)
     {
-        canSlider = false;
-        siliderbox.enabled = true;
+        if (other.gameObject.CompareTag("Player"))
+        {
+            canSlider = false;
+            siliderbox.enabled = true;
+        }
+            
     }
 }

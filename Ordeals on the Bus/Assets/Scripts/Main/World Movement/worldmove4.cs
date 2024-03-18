@@ -20,6 +20,9 @@ public class worldmove4 : MonoBehaviour
     public bool canPark;
     public dockcheck dockk;
 
+    //Speed
+    public float finalspeed;
+
     // Reference to stopbus script
     stopbus stoppingbus;
 
@@ -59,7 +62,9 @@ public class worldmove4 : MonoBehaviour
 
         newSpeed = Mathf.Lerp(minSpeed, maxSpeed, sliderValue); // Interpolate speed between min and max based on slider value
 
-        drive(speed * newSpeed); // Drive with the new speed
+        finalspeed = speed * newSpeed;
+
+        drive(finalspeed); // Drive with the new speed
 
         //bus driving
         //drive();
@@ -124,14 +129,14 @@ public class worldmove4 : MonoBehaviour
 
     public void buspark()
     {
-        float step = moveSpeed * Time.deltaTime;
+        float step = finalspeed/2 * Time.deltaTime;
         transform.position = new Vector3(Mathf.MoveTowards(transform.position.x, targetXPosition, step), transform.position.y, transform.position.z);
         currentLaneIndex = 0;
     }
 
     void GoBack()
     {
-        float step = moveSpeed * Time.deltaTime;
+        float step = finalspeed/2 * Time.deltaTime;
         transform.position = new Vector3(Mathf.MoveTowards(transform.position.x, gobackPosition, step), transform.position.y, transform.position.z);
     }
 
@@ -153,7 +158,7 @@ public class worldmove4 : MonoBehaviour
 
         while (Mathf.Abs(transform.position.x - targetX) > 0.01f)
         {
-            float step = speed * Time.deltaTime;
+            float step = finalspeed/2 * Time.deltaTime;
             transform.position = new Vector3(Mathf.MoveTowards(transform.position.x, targetX, step), transform.position.y, transform.position.z);
             yield return null;
         }
