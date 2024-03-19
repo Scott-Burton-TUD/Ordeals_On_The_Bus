@@ -32,6 +32,8 @@ public class NPC3 : MonoBehaviour
 
     [Header("Animations")]
     public string leavingdestination;
+    public bool canleave;
+
     void Start()
     {
         navMeshAgent = GetComponent<NavMeshAgent>();
@@ -96,6 +98,13 @@ public class NPC3 : MonoBehaviour
         if (gotoseat == true && vip.isonFire == false)
         {
             GoToRandomSeat();
+        }
+
+        if (canleave == true)
+        {
+            targetObjectName = leavingdestination;
+            NPC1Animations.SetBool("getup", true);
+            NPC1Animations.SetBool("isSit", false);
         }
     }
 
