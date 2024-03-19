@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 
 public class Breakbusback : MonoBehaviour
@@ -13,6 +14,10 @@ public class Breakbusback : MonoBehaviour
     private Rigidbody rb;
     private float resetter;
     public GameObject NPC1;
+    public GameObject NPC2;
+    public GameObject NPC3;
+    public GameObject NPC4;
+    public GameObject NPC5;
     public float eater = 0;
     Animator animators;
    
@@ -86,22 +91,79 @@ public class Breakbusback : MonoBehaviour
 
     void OnTriggerStay(Collider other)
     {
-        if (Eat == true)
+        if (other.gameObject.CompareTag("Bus"))
         {
-            
-            if (eater == 2)
+            if (Eat == true)
+            {
+
+                if (eater == 1 && NPC1 != null)
                 {
-                animators.SetTrigger("Swiping");
-                Debug.Log("hes Eaten 1");
+                    animators.SetTrigger("Swiping");
+                    Debug.Log("hes Eaten 1");
                     Destroy(NPC1);
                 }
-        }
-        if (other.CompareTag("Break"))
-        {
-            Debug.Log("works");
-            Destroy(other.gameObject);
+                if (eater == 1 && NPC1 == null)
+                {
+                    eater = 2;
+                }
+
+                if (eater == 2 && NPC2 != null)
+                {
+                    animators.SetTrigger("Swiping");
+                    Debug.Log("hes Eaten 1");
+                    Destroy(NPC2);
+                }
+                if (eater == 2 && NPC1 == null)
+                {
+                    eater = 3;
+                }
+                if (eater == 3 && NPC1 != null)
+                {
+                    animators.SetTrigger("Swiping");
+                    Debug.Log("hes Eaten 1");
+                    Destroy(NPC1);
+                }
+                if (eater == 3 && NPC1 == null)
+                {
+                    eater = 4;
+                }
+
+                if (eater == 4 && NPC1 != null)
+                {
+                    animators.SetTrigger("Swiping");
+                    Debug.Log("hes Eaten 1");
+                    Destroy(NPC1);
+                }
+                if (eater == 4 && NPC1 == null)
+                {
+                    eater = 5;
+                }
+
+                if (eater == 5 && NPC1 != null)
+                {
+                    animators.SetTrigger("Swiping");
+                    Debug.Log("hes Eaten 1");
+                    Destroy(NPC1);
+                }
+                if (eater >= 5 && NPC1 == null)
+                {
+                    animators.SetTrigger("Swiping");
+
+                }
+
+            }
+            if (other.CompareTag("Break"))
+            {
+                Debug.Log("works");
+                Destroy(other.gameObject);
+            }
         }
     }
+    IEnumerator DelayDeath()
+    {
 
-   
+        yield return new WaitForSeconds(5);
+        SceneManager.LoadScene(2);
+    }
+
 }
