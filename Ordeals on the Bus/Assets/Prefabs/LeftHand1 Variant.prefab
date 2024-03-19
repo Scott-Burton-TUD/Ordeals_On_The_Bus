@@ -68,6 +68,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: LeftHand1 Variant
       objectReference: {fileID: 0}
+    - target: {fileID: 7072478885645355679, guid: a543ce027c5ec3a4788c4f633673c3de,
+        type: 3}
+      propertyPath: m_TagString
+      value: Hand
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_AddedGameObjects: []
   m_SourcePrefab: {fileID: 100100000, guid: a543ce027c5ec3a4788c4f633673c3de, type: 3}
@@ -77,6 +82,19 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 878085774585790358}
   m_PrefabAsset: {fileID: 0}
+--- !u!135 &4658082230773227048
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7929124045916075273}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.06
+  m_Center: {x: -0.03, y: 0.03, z: 0}
 --- !u!114 &660237869
 MonoBehaviour:
   m_ObjectHideFlags: 0

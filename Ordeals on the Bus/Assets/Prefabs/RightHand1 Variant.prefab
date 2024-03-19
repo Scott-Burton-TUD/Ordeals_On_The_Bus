@@ -11,7 +11,7 @@ PrefabInstance:
     - target: {fileID: 3240524871626806228, guid: 534053b397750e74588f25f926e8da72,
         type: 3}
       propertyPath: m_RootOrder
-      value: -1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3240524871626806228, guid: 534053b397750e74588f25f926e8da72,
         type: 3}
@@ -68,6 +68,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: RightHand1 Variant
       objectReference: {fileID: 0}
+    - target: {fileID: 3240524871627034548, guid: 534053b397750e74588f25f926e8da72,
+        type: 3}
+      propertyPath: m_TagString
+      value: Hand
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_AddedGameObjects: []
   m_SourcePrefab: {fileID: 100100000, guid: 534053b397750e74588f25f926e8da72, type: 3}
@@ -77,6 +82,19 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 1441258901656053295}
   m_PrefabAsset: {fileID: 0}
+--- !u!135 &738938908022689658
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4105252500770253211}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.06
+  m_Center: {x: 0.03, y: 0.03, z: 0}
 --- !u!114 &235865432
 MonoBehaviour:
   m_ObjectHideFlags: 0
