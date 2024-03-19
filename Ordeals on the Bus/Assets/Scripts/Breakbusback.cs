@@ -14,9 +14,12 @@ public class Breakbusback : MonoBehaviour
     private float resetter;
     public GameObject NPC1;
     public float eater = 0;
+    Animator animators;
+   
 
     void Start()
     {
+        animators = GetComponent<Animator>();
         rb = GetComponent<Rigidbody>();
         if (rb == null)
         {
@@ -58,6 +61,7 @@ public class Breakbusback : MonoBehaviour
             // Move forward using Rigidbody
             rb.MovePosition(rb.position + Vector3.forward * moveSpeed * Time.deltaTime);
 
+
             // Log current position for debugging
            // Debug.Log("Current Position: " + transform.position);
             Debug.Log("eat" + Eat);
@@ -95,7 +99,8 @@ public class Breakbusback : MonoBehaviour
             
             if (eater == 2)
                 {
-                    Debug.Log("hes Eaten 1");
+                animators.SetTrigger("Swiping");
+                Debug.Log("hes Eaten 1");
                     Destroy(NPC1);
                 }
                 

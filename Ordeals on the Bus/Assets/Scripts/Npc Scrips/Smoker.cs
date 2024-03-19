@@ -7,6 +7,7 @@ public class Smoker : MonoBehaviour
     public GameObject particleSystemObject;
     private ParticleSystem particleSystemComponent;
     public bool enableParticles ;
+    
 
     void Start()
     {
@@ -27,12 +28,20 @@ public class Smoker : MonoBehaviour
             // Disable the particle system
             particleSystemComponent.Stop();
         }
+       
     }
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Cleaner"))
             {
             enableParticles = false;
+            StartCoroutine(SmokeAgain());
         }
+    }
+    IEnumerator SmokeAgain()
+    {
+
+        yield return new WaitForSeconds(Random.Range(5f,15f));
+        enableParticles = true;
     }
 }
