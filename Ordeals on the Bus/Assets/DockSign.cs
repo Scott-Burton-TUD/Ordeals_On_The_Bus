@@ -8,6 +8,9 @@ public class DockSign : MonoBehaviour
     public float fadeSpeed = 2f; // Speed at which the alpha changes
     private bool fadingOut = false; // Flag to control fading out
 
+    //new code
+    public GameObject sign;
+
     void Start()
     {
         rend = GetComponent<Renderer>();
@@ -22,7 +25,8 @@ public class DockSign : MonoBehaviour
         if (other.CompareTag("Docking"))
         {
             // Set alpha to 100%
-            SetAlpha(1f);
+            //SetAlpha(1f);
+            sign.SetActive(true);
         }
     }
 
@@ -31,7 +35,8 @@ public class DockSign : MonoBehaviour
         if (other.CompareTag("Docking"))
         {
             // Start fading out
-            fadingOut = true;
+            //fadingOut = true;
+            sign.SetActive(false);
         }
     }
 

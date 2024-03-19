@@ -30,6 +30,9 @@ public class NPC2 : MonoBehaviour
     public Animator NPC1Animations;
     public GameObject Animation;
 
+    [Header("Animations")]
+    public string leavingdestination;
+
     void Start()
     {
         navMeshAgent = GetComponent<NavMeshAgent>();
@@ -97,6 +100,10 @@ public class NPC2 : MonoBehaviour
         }
     }
 
+    public void leaving()
+    {
+        MoveTowardsTarget(leavingdestination);
+    }
 
     void GoToRandomSeat()
     {
