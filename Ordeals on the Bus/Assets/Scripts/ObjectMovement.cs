@@ -11,4 +11,11 @@ public class ObjectMovement : MonoBehaviour
         // Move the object forward.
         transform.Translate(Vector3.forward * moveSpeed * Time.deltaTime);
     }
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.CompareTag("Player"))
+        {
+            moveSpeed = 100f;
+        }
+    }
 }
