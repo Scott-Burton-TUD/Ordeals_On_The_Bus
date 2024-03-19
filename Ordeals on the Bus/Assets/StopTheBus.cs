@@ -10,7 +10,7 @@ public class StopTheBus : MonoBehaviour
     public float defaultspeed = 0.3f;
     public float transitionspeed = 1f;
     public bool canSlider;
-
+    public Breakbusback Eatfnc;
     public Collider siliderbox;
     public Collider Car;
 
@@ -32,7 +32,11 @@ public class StopTheBus : MonoBehaviour
                 slider.value = Mathf.Lerp(slider.value, defaultspeed, transitionspeed * Time.deltaTime);
 
             }
-
+        }
+        if (Eatfnc != null)
+        {
+            // Call the method on the referenced script
+            Eatfnc.EnableEat();
         }
     }
 
@@ -41,9 +45,11 @@ public class StopTheBus : MonoBehaviour
         if (other.gameObject.CompareTag("Player"))
         {
             canSlider = true;
+            Eatfnc.EnableEat();
         }
         Car.enabled = false; 
     }
+    
 
     public void OnTriggerExit(Collider other)
     {

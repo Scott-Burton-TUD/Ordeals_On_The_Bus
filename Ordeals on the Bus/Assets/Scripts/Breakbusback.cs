@@ -30,18 +30,10 @@ public class Breakbusback : MonoBehaviour
 
     public void EnableEat()
     {
+        
         eater += 1;
         Eat = true;
        
-    }
-
-    void OnTriggerSta(Collider other)
-    {
-        if (other.CompareTag("Break"))
-        {
-            Debug.Log("works");
-            Destroy(other.gameObject);
-        }
     }
 
     void Update()
@@ -103,12 +95,6 @@ public class Breakbusback : MonoBehaviour
                 Debug.Log("hes Eaten 1");
                     Destroy(NPC1);
                 }
-                
-                // Start the coroutine to continuously return to the original position
-
-                
-            
-           
         }
         if (other.CompareTag("Break"))
         {
