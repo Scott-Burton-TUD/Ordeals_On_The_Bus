@@ -91,7 +91,7 @@ public class Breakbusback : MonoBehaviour
 
     void OnTriggerStay(Collider other)
     {
-        if (other.gameObject.CompareTag("Bus"))
+        if (other.gameObject.CompareTag("LOL"))
         {
             if (Eat == true)
             {
