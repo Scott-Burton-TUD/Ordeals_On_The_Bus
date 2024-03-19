@@ -7,6 +7,8 @@ public class ButtonCannon : MonoBehaviour
     public Transform firePoint; // The point where the cannonball will be instantiated
     public GameObject cannonballPrefab; // Prefab of the cannonball
     public float launchForce = 10f; // Force applied to the cannonball
+    public Animator animator;
+    public GameObject Boss;
 
     private void Start()
     {
@@ -37,4 +39,19 @@ public class ButtonCannon : MonoBehaviour
             Debug.LogError("Cannonball prefab is missing Rigidbody component!");
         }
     }
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.CompareTag("Boss"))
+        {
+            StartCoroutine(DeathAni());
+            
+        }
+    }
+    IEnumerator DeathAni()
+    {
+        animator.SetTrigger("Dead");
+        yield return new WaitForSeconds(5);
+        Destroy(Boss);
+    }
+
 }

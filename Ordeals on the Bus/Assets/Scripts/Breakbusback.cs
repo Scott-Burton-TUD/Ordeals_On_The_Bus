@@ -148,7 +148,7 @@ public class Breakbusback : MonoBehaviour
                 if (eater >= 5 && NPC1 == null)
                 {
                     animators.SetTrigger("Swiping");
-
+                    StartCoroutine(DelayDeath());
                 }
 
             }
