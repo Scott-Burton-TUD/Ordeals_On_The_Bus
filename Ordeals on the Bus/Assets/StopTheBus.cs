@@ -13,6 +13,7 @@ public class StopTheBus : MonoBehaviour
     public Breakbusback Eatfnc;
     public Collider siliderbox;
     public Collider Car;
+    private bool eatEnabled = false;
 
     // Start is called before the first frame update
     void Start()
@@ -33,11 +34,7 @@ public class StopTheBus : MonoBehaviour
 
             }
         }
-        if (Eatfnc != null)
-        {
-            // Call the method on the referenced script
-            Eatfnc.EnableEat();
-        }
+        
     }
 
     public void OnTriggerEnter(Collider other)
@@ -45,7 +42,12 @@ public class StopTheBus : MonoBehaviour
         if (other.gameObject.CompareTag("Player"))
         {
             canSlider = true;
-            Eatfnc.EnableEat();
+            if (Eatfnc != null && !eatEnabled)
+            {
+                Eatfnc.EnableEat();
+                eatEnabled = true; // Set the flag to true so it won't be called again
+            }
+            
         }
         Car.enabled = false; 
     }
@@ -57,6 +59,7 @@ public class StopTheBus : MonoBehaviour
         {
             canSlider = false;
             siliderbox.enabled = true;
+            eatEnabled = false;
         }
 
     }
