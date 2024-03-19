@@ -91,6 +91,11 @@ public class Breakbusback : MonoBehaviour
 
     void OnTriggerStay(Collider other)
     {
+        if (other.CompareTag("Break"))
+        {
+            Debug.Log("works");
+            Destroy(other.gameObject);
+        }
         if (other.gameObject.CompareTag("LOL"))
         {
             if (Eat == true)
@@ -152,11 +157,7 @@ public class Breakbusback : MonoBehaviour
                 }
 
             }
-            if (other.CompareTag("Break"))
-            {
-                Debug.Log("works");
-                Destroy(other.gameObject);
-            }
+           
         }
     }
     IEnumerator DelayDeath()
