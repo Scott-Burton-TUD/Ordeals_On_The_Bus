@@ -36,9 +36,10 @@ public class Breakbusback : MonoBehaviour
     public void EnableEat()
     {
         
-        eater += 1;
+        
         Eat = true;
-       
+        StartCoroutine((IEnumerator)Eatdelay());
+
     }
 
     void Update()
@@ -117,53 +118,59 @@ public class Breakbusback : MonoBehaviour
                     Debug.Log("hes Eaten 1");
                     Destroy(NPC2);
                 }
-                if (eater == 2 && NPC1 == null)
+                if (eater == 2 && NPC2 == null)
                 {
                     eater = 3;
                 }
-                if (eater == 3 && NPC1 != null)
+                if (eater == 3 && NPC3 != null)
                 {
                     animators.SetTrigger("Swiping");
                     Debug.Log("hes Eaten 1");
-                    Destroy(NPC1);
+                    Destroy(NPC3);
                 }
-                if (eater == 3 && NPC1 == null)
+                if (eater == 3 && NPC3 == null)
                 {
                     eater = 4;
                 }
 
-                if (eater == 4 && NPC1 != null)
+                if (eater == 4 && NPC4 != null)
                 {
                     animators.SetTrigger("Swiping");
                     Debug.Log("hes Eaten 1");
-                    Destroy(NPC1);
+                    Destroy(NPC4);
                 }
-                if (eater == 4 && NPC1 == null)
+                if (eater == 4 && NPC4 == null)
                 {
                     eater = 5;
                 }
 
-                if (eater == 5 && NPC1 != null)
+                if (eater == 5 && NPC5 != null)
                 {
                     animators.SetTrigger("Swiping");
                     Debug.Log("hes Eaten 1");
-                    Destroy(NPC1);
+                    Destroy(NPC5);
                 }
-                if (eater >= 5 && NPC1 == null)
+                if (eater >= 5 && NPC5 == null)
                 {
                     animators.SetTrigger("Swiping");
-                    StartCoroutine(DelayDeath());
+                    StartCoroutine(Deathdelay());
                 }
 
             
            
         }
     }
-    IEnumerator DelayDeath()
+    IEnumerator Deathdelay()
     {
 
         yield return new WaitForSeconds(5);
         SceneManager.LoadScene(2);
     }
+    IEnumerable Eatdelay()
+    {
+        eater += 1;
+        yield return new WaitForSeconds(5);
+    }
+
 
 }
