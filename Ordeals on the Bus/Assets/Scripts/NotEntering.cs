@@ -21,12 +21,10 @@ public class NotEntering : MonoBehaviour
         {
             transform.GetChild(0).gameObject.SetActive(false);
         }
-    }
-     void OnTriggerExit(Collider other)
-    {
-        if (other.CompareTag("Washer"))
+        else
         {
             transform.GetChild(0).gameObject.SetActive(true);
         }
     }
+    
 }
