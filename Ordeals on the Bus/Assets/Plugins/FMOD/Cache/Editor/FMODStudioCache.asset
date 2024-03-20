@@ -103,41 +103,14 @@ MonoBehaviour:
   EditorEvents:
   - {fileID: -6946845832915909199}
   - {fileID: 2511789379430161724}
-  - {fileID: 2462562576589784451}
+  - {fileID: 7830303234585977131}
   EditorParameters: []
   MasterBanks:
   - {fileID: 2700541493429642394}
   StringsBanks:
   - {fileID: 3123715651733477682}
-  cacheTime: 638464970040753367
+  cacheTime: 638465331887334764
   cacheVersion: 131616
---- !u!114 &2462562576589784451
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/PeanutButter
-  m_EditorClassIdentifier: 
-  Path: event:/PeanutButter
-  Guid:
-    Data1: -2063845694
-    Data2: 1260089591
-    Data3: 585960859
-    Data4: 1307420689
-  Banks:
-  - {fileID: 2700541493429642394}
-  IsStream: 1
-  Is3D: 0
-  IsOneShot: 1
-  Parameters: []
-  MinDistance: 1
-  MaxDistance: 20
-  Length: 130344
 --- !u!114 &2511789379430161724
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -182,10 +155,10 @@ MonoBehaviour:
   Path: Assets/SFX/Fmod/Filee/Build/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 638464970040698241
+  lastModified: 638465331886969635
   FileSizes:
   - Name: Desktop
-    Value: 1223520
+    Value: 266048
   Exists: 1
 --- !u!114 &3123715651733477682
 MonoBehaviour:
@@ -202,11 +175,38 @@ MonoBehaviour:
   Path: Assets/SFX/Fmod/Filee/Build/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 638464970040753367
+  lastModified: 638465331886999573
   FileSizes:
   - Name: Desktop
-    Value: 1066
+    Value: 1052
   Exists: 1
+--- !u!114 &7830303234585977131
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/RandomNPC
+  m_EditorClassIdentifier: 
+  Path: event:/RandomNPC
+  Guid:
+    Data1: 996015931
+    Data2: 1101114064
+    Data3: 230637756
+    Data4: -379617773
+  Banks:
+  - {fileID: 2700541493429642394}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 8037
 --- !u!114 &8565048902427954819
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -222,7 +222,7 @@ MonoBehaviour:
   Path: Assets/SFX/Fmod/Filee/Build/Desktop/Passenger Bank.bank
   Name: Passenger Bank
   StudioPath: bank:/Passenger Bank
-  lastModified: 638463749053028801
+  lastModified: 638465331887334764
   FileSizes:
   - Name: Desktop
     Value: 106688
