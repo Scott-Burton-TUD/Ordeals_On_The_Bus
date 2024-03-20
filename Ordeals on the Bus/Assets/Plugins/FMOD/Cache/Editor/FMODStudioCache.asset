@@ -15,11 +15,38 @@ MonoBehaviour:
   Path: Assets/SFX/Fmod/Filee/Build/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 638463749052964852
+  lastModified: 638464955994743645
   FileSizes:
   - Name: Desktop
-    Value: 167296
+    Value: 1223520
   Exists: 1
+--- !u!114 &-8656517257696503229
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/PeanutButter
+  m_EditorClassIdentifier: 
+  Path: event:/PeanutButter
+  Guid:
+    Data1: -2063845694
+    Data2: 1260089591
+    Data3: 585960859
+    Data4: 1307420689
+  Banks:
+  - {fileID: -8726756704036569521}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 130344
 --- !u!114 &-7911094778720968482
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -119,7 +146,7 @@ MonoBehaviour:
   Path: Assets/SFX/Fmod/Filee/Build/Desktop/Passenger Bank.bank
   Name: Passenger Bank
   StudioPath: bank:/Passenger Bank
-  lastModified: 638463749053028801
+  lastModified: 638464955995141738
   FileSizes:
   - Name: Desktop
     Value: 106688
@@ -143,12 +170,13 @@ MonoBehaviour:
   EditorEvents:
   - {fileID: 7277436497921349217}
   - {fileID: -7911094778720968482}
+  - {fileID: -8656517257696503229}
   EditorParameters: []
   MasterBanks:
   - {fileID: -8726756704036569521}
   StringsBanks:
   - {fileID: 3565024033501724129}
-  cacheTime: 638463749053028801
+  cacheTime: 638464955995141738
   cacheVersion: 131616
 --- !u!114 &3565024033501724129
 MonoBehaviour:
@@ -165,10 +193,10 @@ MonoBehaviour:
   Path: Assets/SFX/Fmod/Filee/Build/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 638463749052993601
+  lastModified: 638464955994773564
   FileSizes:
   - Name: Desktop
-    Value: 1012
+    Value: 1066
   Exists: 1
 --- !u!114 &7277436497921349217
 MonoBehaviour:
