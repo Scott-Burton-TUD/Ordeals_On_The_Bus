@@ -8,6 +8,7 @@ public class Smeller : MonoBehaviour
     private ParticleSystem particleSystemComponent;
     public bool enableParticles;
     private Renderer objectRenderer;
+    bool clean = false;
 
     void Start()
     {
@@ -44,6 +45,8 @@ public class Smeller : MonoBehaviour
             // Change the color of the object to yellow
             objectRenderer.material.color = Color.yellow;
             enableParticles = false;
+            clean = true;
+            transform.GetChild(0).gameObject.SetActive(false);
         }
     }
 }
