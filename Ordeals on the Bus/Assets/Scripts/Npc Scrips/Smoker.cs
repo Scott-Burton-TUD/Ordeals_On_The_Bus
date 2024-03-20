@@ -41,7 +41,7 @@ public class Smoker : MonoBehaviour
     IEnumerator SmokeAgain()
     {
 
-        yield return new WaitForSeconds(Random.Range(5f,15f));
+        yield return new WaitForSeconds(Random.Range(15f,20f));
         enableParticles = true;
     }
 }

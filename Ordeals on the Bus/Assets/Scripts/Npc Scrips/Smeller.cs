@@ -32,7 +32,7 @@ public class Smeller : MonoBehaviour
         }
     }
 
-    private void OnTriggerEnter(Collider other)
+     void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Washer"))
         {
@@ -43,6 +43,7 @@ public class Smeller : MonoBehaviour
         {
             // Change the color of the object to yellow
             objectRenderer.material.color = Color.yellow;
+            enableParticles = false;
         }
     }
 }

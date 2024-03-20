@@ -8,7 +8,7 @@ public class Breakbusback : MonoBehaviour
 {
     public GameObject Sceneloader;
     public bool MonkeyCatch = false;
-    private bool Eat = false;
+    public bool Eat = false;
     private Vector3 originalPosition;
     private float moveSpeed = 1099f;
     private Rigidbody rb;
@@ -96,8 +96,7 @@ public class Breakbusback : MonoBehaviour
             Debug.Log("works");
             Destroy(other.gameObject);
         }
-        if (other.gameObject.CompareTag("LOL"))
-        {
+        
             if (Eat == true)
             {
 
@@ -156,7 +155,7 @@ public class Breakbusback : MonoBehaviour
                     StartCoroutine(DelayDeath());
                 }
 
-            }
+            
            
         }
     }
