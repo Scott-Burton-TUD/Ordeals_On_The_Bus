@@ -30,7 +30,7 @@ public class Smoker : MonoBehaviour
         }
        
     }
-    private void OnTriggerEnter(Collider other)
+     void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Cleaner"))
             {

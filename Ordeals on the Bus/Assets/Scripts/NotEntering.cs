@@ -15,14 +15,14 @@ public class NotEntering : MonoBehaviour
     {
         
     }
-    private void OnTriggerEnter(Collider other)
+     void OnTriggerEnter(Collider other)
     {
         if(other.CompareTag("Washer"))
         {
             transform.GetChild(0).gameObject.SetActive(false);
         }
     }
-    private void OnTriggerExit(Collider other)
+     void OnTriggerExit(Collider other)
     {
         if (other.CompareTag("Washer"))
         {
