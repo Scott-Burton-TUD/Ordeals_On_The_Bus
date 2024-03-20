@@ -104,12 +104,13 @@ MonoBehaviour:
   - {fileID: -6946845832915909199}
   - {fileID: 2511789379430161724}
   - {fileID: 7830303234585977131}
+  - {fileID: 3722114466396961226}
   EditorParameters: []
   MasterBanks:
   - {fileID: 2700541493429642394}
   StringsBanks:
   - {fileID: 3123715651733477682}
-  cacheTime: 638465331887334764
+  cacheTime: 638465342969085599
   cacheVersion: 131616
 --- !u!114 &2511789379430161724
 MonoBehaviour:
@@ -130,8 +131,8 @@ MonoBehaviour:
     Data3: -709459543
     Data4: 221039697
   Banks:
-  - {fileID: 2700541493429642394}
   - {fileID: 8565048902427954819}
+  - {fileID: 2700541493429642394}
   IsStream: 0
   Is3D: 0
   IsOneShot: 0
@@ -155,10 +156,10 @@ MonoBehaviour:
   Path: Assets/SFX/Fmod/Filee/Build/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 638465331886969635
+  lastModified: 638465342969054553
   FileSizes:
   - Name: Desktop
-    Value: 266048
+    Value: 1322240
   Exists: 1
 --- !u!114 &3123715651733477682
 MonoBehaviour:
@@ -175,11 +176,38 @@ MonoBehaviour:
   Path: Assets/SFX/Fmod/Filee/Build/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 638465331886999573
+  lastModified: 638465342969085599
   FileSizes:
   - Name: Desktop
-    Value: 1052
+    Value: 1110
   Exists: 1
+--- !u!114 &3722114466396961226
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/PeanutButterJelly
+  m_EditorClassIdentifier: 
+  Path: event:/PeanutButterJelly
+  Guid:
+    Data1: 2134867689
+    Data2: 1332931769
+    Data3: 872105907
+    Data4: -1734923014
+  Banks:
+  - {fileID: 2700541493429642394}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 130344
 --- !u!114 &7830303234585977131
 MonoBehaviour:
   m_ObjectHideFlags: 0
