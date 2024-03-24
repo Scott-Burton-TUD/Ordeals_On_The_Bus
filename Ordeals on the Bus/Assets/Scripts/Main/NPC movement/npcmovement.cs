@@ -12,8 +12,10 @@ public class npcmovement : MonoBehaviour
     [Header("Going to the driver speed")]
     public float dockingspeed = 5f;
     public string targetObjectName; // Change the target variable to string
+    public GameObject Player;
 
     [Header("Seats")]
+    public GameObject ticket;
     public bool ticket1;
     public string[] Seats;
     public bool gotoseat;
@@ -34,11 +36,15 @@ public class npcmovement : MonoBehaviour
     public string leavingdestination;
     public bool canleave;
 
+    [Header("Ragdoll")]
+    private Transform hipBone;
+
     void Start()
     {
         navMeshAgent = GetComponent<NavMeshAgent>();
         navMeshAgent.speed = movementSpeed; // Set the initial speed 
         NPC1Animations = Animation.GetComponent<Animator>();
+        hipBone = NPC1Animations.GetBoneTransform(HumanBodyBones.Hips);
 
     }
 
@@ -76,6 +82,7 @@ public class npcmovement : MonoBehaviour
 
             if (navMeshAgent.remainingDistance < 0.01f)
             {
+                
                 NPC1Animations.SetBool("isIdle", true);
                 NPC1Animations.SetBool("isWalk", false);
             }
@@ -102,6 +109,20 @@ public class npcmovement : MonoBehaviour
             targetObjectName = leavingdestination;
             NPC1Animations.SetBool("getup", true);
             NPC1Animations.SetBool("isSit", false);
+        }
+    }
+
+    public void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.CompareTag("Finish"))
+        {
+            ticket.SetActive(true);
+            transform.LookAt(Player.transform);
+        }
+
+        if (other.gameObject.CompareTag("Hand"))
+        {
+            ragdoll();
         }
     }
 
@@ -202,5 +223,46 @@ public class npcmovement : MonoBehaviour
         NavMesh.SamplePosition(randomDirection, out navHit, 5f, -1);
 
         return navHit.position;
+    }
+
+    public void ragdoll()
+    {
+        Vector3 savedPosition = transform.position;
+        Quaternion savedRotation = transform.rotation;
+
+        
+        NPC1Animations.enabled = false;
+        navMeshAgent.isStopped = true;
+        
+
+        StartCoroutine(RestorePositionAndRotation(savedPosition, savedRotation));
+    }
+
+    IEnumerator RestorePositionAndRotation(Vector3 position, Quaternion rotation)
+    {
+        NPC1Animations.SetBool("isStand", true);
+
+        yield return new WaitForSeconds(5f);
+
+        Vector3 originalHipsPosition = hipBone.position;
+        transform.position = hipBone.position;
+
+        if (Physics.Raycast(transform.position, Vector3.down, out RaycastHit hitInfo))
+        {
+            transform.position = new Vector3(transform.position.x, hitInfo.point.y, transform.position.z);
+        }
+
+        hipBone.position = originalHipsPosition;
+
+        
+        NPC1Animations.enabled = true;
+
+        yield return new WaitForSeconds(2.5f);
+
+        NPC1Animations.SetBool("isStand", false);
+        
+
+        yield return new WaitForSeconds(2.5f);
+        navMeshAgent.isStopped = false;
     }
 }
