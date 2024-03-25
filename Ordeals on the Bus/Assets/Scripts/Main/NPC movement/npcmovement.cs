@@ -38,6 +38,7 @@ public class npcmovement : MonoBehaviour
 
     [Header("Ragdoll")]
     private Transform hipBone;
+    public string getup;
 
     void Start()
     {
@@ -128,7 +129,15 @@ public class npcmovement : MonoBehaviour
         }
     }
 
-  
+    public void OnTriggerExit(Collider other)
+    {
+        if (other.gameObject.CompareTag("Finish"))
+        {
+            NPC1Animations.SetBool("isHand", false);
+        }
+    }
+
+
     /// <summary>
     /// Picking a random seat
     /// </summary>
@@ -251,7 +260,8 @@ public class npcmovement : MonoBehaviour
 
     IEnumerator RestorePositionAndRotation(Vector3 position, Quaternion rotation)
     {
-        NPC1Animations.SetBool("isStand", true);
+        //NPC1Animations.SetBool("isStand", true);
+        NPC1Animations.Play(getup);
 
         yield return new WaitForSeconds(5f);
 
@@ -272,6 +282,7 @@ public class npcmovement : MonoBehaviour
 
         NPC1Animations.SetBool("isStand", false);
         
+
 
         yield return new WaitForSeconds(2.5f);
         navMeshAgent.isStopped = false;
