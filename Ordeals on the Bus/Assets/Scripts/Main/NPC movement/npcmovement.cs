@@ -96,6 +96,7 @@ public class npcmovement : MonoBehaviour
             mayham = false;
             NPC1Animations.SetBool("isWalk", true);
             NPC1Animations.SetBool("isIdle", false);
+            NPC1Animations.SetBool("isHand", false);
 
         }
 
@@ -118,6 +119,7 @@ public class npcmovement : MonoBehaviour
         {
             ticket.SetActive(true);
             transform.LookAt(Player.transform);
+            NPC1Animations.SetBool("isHand", true);
         }
 
         if (other.gameObject.CompareTag("Hand"))
@@ -126,8 +128,7 @@ public class npcmovement : MonoBehaviour
         }
     }
 
-
-
+  
     /// <summary>
     /// Picking a random seat
     /// </summary>
@@ -223,6 +224,16 @@ public class npcmovement : MonoBehaviour
         NavMesh.SamplePosition(randomDirection, out navHit, 5f, -1);
 
         return navHit.position;
+    }
+
+    public void flinch()
+    {
+        NPC1Animations.SetBool("isFlinch", true);
+    }
+
+    public void noflinch()
+    {
+        NPC1Animations.SetBool("isFlinch", false);
     }
 
     public void ragdoll()
