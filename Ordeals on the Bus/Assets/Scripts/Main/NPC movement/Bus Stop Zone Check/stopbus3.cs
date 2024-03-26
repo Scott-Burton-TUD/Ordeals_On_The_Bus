@@ -5,6 +5,7 @@ using UnityEngine;
 public class stopbus3 : MonoBehaviour
 {
     public bool busstoping;
+    public dockcheck dock1;
     worldmove busstop;
     Collider coll;
     public busStop2 npcbus;
@@ -31,6 +32,7 @@ public class stopbus3 : MonoBehaviour
             busstop.speed = 0;
             coll.enabled = false;
             npcbus.canSpawn2 = true;
+            dock1.dockingmode = false;
 
         }
     }

@@ -15,7 +15,7 @@ public class npcmovement : MonoBehaviour
     public GameObject Player;
 
     [Header("Seats")]
-    public GameObject ticket;
+    public MeshRenderer ticket;
     public bool ticket1;
     public string[] Seats;
     public bool gotoseat;
@@ -118,7 +118,7 @@ public class npcmovement : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Finish"))
         {
-            ticket.SetActive(true);
+            ticket.enabled = true;
             transform.LookAt(Player.transform);
             NPC1Animations.SetBool("isHand", true);
         }

@@ -6,6 +6,7 @@ public class stopbus : MonoBehaviour
 {
     public bool busstoping;
     worldmove busstop;
+    public dockcheck dock1;
     Collider coll;
     public getonbus npcbus;
 
@@ -31,6 +32,7 @@ public class stopbus : MonoBehaviour
             busstop.speed = 0;
             coll.enabled = false;
             npcbus.canSpawn = true;
+            dock1.dockingmode = false;
 
         }
     }
