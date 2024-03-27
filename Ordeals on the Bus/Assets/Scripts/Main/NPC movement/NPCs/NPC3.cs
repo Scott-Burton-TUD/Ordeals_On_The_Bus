@@ -6,14 +6,16 @@ using UnityEngine.AI;
 public class NPC3 : MonoBehaviour
 {
     [Header("NPC movement speed")]
-    public float movementSpeed = 3.0f; // Public variable for controlling the speed
+    public float movementSpeed = 3.0f; 
     private NavMeshAgent navMeshAgent;
 
     [Header("Going to the driver speed")]
     public float dockingspeed = 5f;
-    public string targetObjectName; // Change the target variable to string
+    public string targetObjectName; 
+    public GameObject Player;
 
     [Header("Seats")]
+    public MeshRenderer ticket;
     public bool ticket3;
     public string[] Seats;
     public bool gotoseat;
@@ -34,13 +36,27 @@ public class NPC3 : MonoBehaviour
     public string leavingdestination;
     public bool canleave;
 
+    [Header("Special Interaction")]
+    public GameObject smelly;
+
+
+    public Material material;
+    public Color startColor;
+    public Color endColor;
+    public float duration = 2f;
+    public bool colorchange;
+    public bool canGeton;
+
+    private float startTime;
+
     void Start()
     {
         navMeshAgent = GetComponent<NavMeshAgent>();
         navMeshAgent.speed = movementSpeed; // Set the initial speed 
         NPC1Animations = Animation.GetComponent<Animator>();
 
-
+        //color change 
+        startTime = Time.time;
     }
 
     void Update()
@@ -105,6 +121,28 @@ public class NPC3 : MonoBehaviour
             targetObjectName = leavingdestination;
             NPC1Animations.SetBool("getup", true);
             NPC1Animations.SetBool("isSit", false);
+        }
+
+        //color change
+        if(colorchange == true)
+        {
+            StartCoroutine(ChangeBackColorOverTime());
+        }
+    }
+
+    public void OnTriggerEnter(Collider other)
+    {
+        if (other.CompareTag("Bullet"))
+        {
+            smelly.SetActive(false);
+            StartCoroutine(ChangeColorOverTime());
+
+        }
+
+        if(other.CompareTag("Finish"))
+        {
+            ticket.enabled = true;
+            transform.LookAt(Player.transform);
         }
     }
 
@@ -187,5 +225,48 @@ public class NPC3 : MonoBehaviour
         NavMesh.SamplePosition(randomDirection, out navHit, 5f, -1);
 
         return navHit.position;
+    }
+
+    //color change
+    private IEnumerator ChangeColorOverTime()
+    {
+        canGeton = true;
+        float elapsedTime = 0f;
+
+        while (elapsedTime < duration)
+        {
+            float t = elapsedTime / duration;
+            Color lerpedColor = Color.Lerp(startColor, endColor, t);
+            material.color = lerpedColor;
+
+            elapsedTime += Time.deltaTime;
+            yield return null;
+        }
+
+        material.color = endColor;
+        yield return new WaitForSeconds(10f);
+        colorchange = true;
+
+    }
+
+    private IEnumerator ChangeBackColorOverTime()
+    {
+        float elapsedTime = 0f;
+
+        while (elapsedTime < duration)
+        {
+            float t = elapsedTime / duration;
+            Color lerpedColor = Color.Lerp(endColor, startColor, t);
+            material.color = lerpedColor;
+
+            elapsedTime += Time.deltaTime;
+            yield return null;
+            canGeton = false;
+        }
+
+        material.color = startColor;
+        
+        smelly.SetActive(true);
+        colorchange = false;
     }
 }

@@ -129,7 +129,7 @@ public class worldmove : MonoBehaviour
 
     public void CloseDoor()
     {
-        if (npcleave.ticket1 == true)
+        if (npcleave.canDriveOff == true)
         {
             busdoorAnim.Play(animationName);
             StartCoroutine(MoveOut());

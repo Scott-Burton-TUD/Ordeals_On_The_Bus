@@ -12,8 +12,10 @@ public class NPC5 : MonoBehaviour
     [Header("Going to the driver speed")]
     public float dockingspeed = 5f;
     public string targetObjectName; // Change the target variable to string
+    public GameObject Player;
 
     [Header("Seats")]
+    public MeshRenderer ticket;
     public bool ticket5;
     public string[] Seats;
     public bool gotoseat;
@@ -30,9 +32,17 @@ public class NPC5 : MonoBehaviour
     public Animator NPC1Animations;
     public GameObject Animation;
 
-    [Header("Animations")]
+    [Header("Leaving")]
     public string leavingdestination;
     public bool canleave;
+
+    [Header("Special Interaction")]
+    public bool smoking;
+    public GameObject smokingVFX;
+    public ParticleSystem smoke;
+    public bool canSmoke;
+
+
     void Start()
     {
         navMeshAgent = GetComponent<NavMeshAgent>();
@@ -104,6 +114,31 @@ public class NPC5 : MonoBehaviour
             NPC1Animations.SetBool("getup", true);
             NPC1Animations.SetBool("isSit", false);
         }
+
+        //smoke
+        if(canSmoke == true)
+        {
+            var main = smoke.main;
+            main.loop = false;
+        }
+        
+        if(smoking == true)
+        {
+            var main = smoke.main;
+            main.loop = true;
+            smoke.Play();
+
+        }
+        
+    }
+
+    public void OnTriggerEnter(Collider other)
+    {
+        if (other.CompareTag("Finish"))
+        {
+            transform.LookAt(Player.transform);
+            ticket.enabled = true;
+        }
     }
 
     public void leaving()
@@ -135,8 +170,8 @@ public class NPC5 : MonoBehaviour
                 NPC1Animations.SetBool("isWalk", false);
                 NPC1Animations.SetBool("isIdle", false);
                 childObject.transform.SetParent(parentObject.transform);
-
-
+                smokingVFX.SetActive(true);
+                smokingVFX.transform.parent = null;
             }
         }
     }

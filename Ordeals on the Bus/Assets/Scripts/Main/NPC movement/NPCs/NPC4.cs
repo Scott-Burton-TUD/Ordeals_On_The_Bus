@@ -12,8 +12,13 @@ public class NPC4 : MonoBehaviour
     [Header("Going to the driver speed")]
     public float dockingspeed = 5f;
     public string targetObjectName; // Change the target variable to string
+    public NPC3 smelly;
+    public bool showticket;
+    public bool canShow;
+    public GameObject Player;
 
     [Header("Seats")]
+    public MeshRenderer ticket;
     public bool ticket4;
     public string[] Seats;
     public bool gotoseat;
@@ -30,9 +35,10 @@ public class NPC4 : MonoBehaviour
     public Animator NPC1Animations;
     public GameObject Animation;
 
-    [Header("Animations")]
+    [Header("Leaving")]
     public string leavingdestination;
     public bool canleave;
+
     void Start()
     {
         navMeshAgent = GetComponent<NavMeshAgent>();
@@ -103,6 +109,30 @@ public class NPC4 : MonoBehaviour
             targetObjectName = leavingdestination;
             NPC1Animations.SetBool("getup", true);
             NPC1Animations.SetBool("isSit", false);
+        }
+
+        //showing ticket
+        showticket = smelly.canGeton;
+
+        if (canShow == true && showticket == true)
+        {
+            ticket.enabled = true;
+        }
+        else
+        {
+            ticket.enabled = false;
+        }
+        
+
+    }
+
+    public void OnTriggerEnter(Collider other)
+    {
+        if (other.CompareTag("Finish"))
+        {
+            transform.LookAt(Player.transform);
+            canShow = true;
+            
         }
     }
 

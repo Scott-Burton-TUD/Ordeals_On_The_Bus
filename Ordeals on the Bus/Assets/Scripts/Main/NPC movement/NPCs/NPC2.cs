@@ -12,8 +12,10 @@ public class NPC2 : MonoBehaviour
     [Header("Going to the driver speed")]
     public float dockingspeed = 5f;
     public string targetObjectName; // Change the target variable to string
+    public GameObject Player;
 
     [Header("Seats")]
+    public MeshRenderer ticket;
     public bool ticket2;
     public string[] Seats;
     public bool gotoseat;
@@ -104,6 +106,15 @@ public class NPC2 : MonoBehaviour
             targetObjectName = leavingdestination;
             NPC1Animations.SetBool("getup", true);
             NPC1Animations.SetBool("isSit", false);
+        }
+    }
+
+    public void OnTriggerEnter(Collider other)
+    {
+        if (other.CompareTag("Finish"))
+        {
+            ticket.enabled = true;
+            transform.LookAt(Player.transform);
         }
     }
 

@@ -13,6 +13,7 @@ public class npcmovement : MonoBehaviour
     public float dockingspeed = 5f;
     public string targetObjectName; // Change the target variable to string
     public GameObject Player;
+    public bool canDriveOff;
 
     [Header("Seats")]
     public MeshRenderer ticket;
@@ -123,7 +124,7 @@ public class npcmovement : MonoBehaviour
             NPC1Animations.SetBool("isHand", true);
         }
 
-        if (other.gameObject.CompareTag("Hand"))
+        if (other.CompareTag("Hand"))
         {
             ragdoll();
         }

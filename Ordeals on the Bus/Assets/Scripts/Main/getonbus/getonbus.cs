@@ -16,8 +16,10 @@ public class getonbus : MonoBehaviour
     public Animator busdoorAnim;
     public string animationName;
 
+    public npcmovement npc1;
     //bool
     public npcspawnbool inZone;
+    
 
 
     void Start()
@@ -28,7 +30,7 @@ public class getonbus : MonoBehaviour
 
     void Update()
     {
-
+        ActivateNPC();
     }
 
     public void GetOn()
@@ -49,6 +51,17 @@ public class getonbus : MonoBehaviour
         currentNPCIndex = 0;
         npc[currentNPCIndex].GetComponent<npcmovement>().enabled = true;
         npc[currentNPCIndex].GetComponent<NavMeshAgent>().enabled = true;
+
+    }
+
+    void ActivateNPC()
+    {
+        if (npc1.ticket1 == true)
+        {
+            currentNPCIndex = 1;
+            npc[currentNPCIndex].GetComponent<NPC6>().enabled = true;
+            npc[currentNPCIndex].GetComponent<NavMeshAgent>().enabled = true;
+        }
 
     }
 }
