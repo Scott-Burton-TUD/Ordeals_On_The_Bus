@@ -25,7 +25,6 @@ public class NPC6 : MonoBehaviour
     [Header("Special Interaction")]
     public bool run;
     public string LeaveAreaName;
-    public npcmovement npc;
 
     void Start()
     {
@@ -54,7 +53,6 @@ public class NPC6 : MonoBehaviour
 
         if(run == true)
         {
-            npc.canDriveOff = true;
             targetObjectName = LeaveAreaName;
             NPC1Animations.SetBool("isWalk", true);
             NPC1Animations.SetBool("isIdle", false);

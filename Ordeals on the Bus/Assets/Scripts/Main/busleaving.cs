@@ -31,6 +31,7 @@ public class busleaving : MonoBehaviour
             busleave2.ticket4 = false;
             busleave3.ticket5 = false;
             busleave4.ticket2 = false;
+            busleave1.canDriveOff = false;
         }
     }
 

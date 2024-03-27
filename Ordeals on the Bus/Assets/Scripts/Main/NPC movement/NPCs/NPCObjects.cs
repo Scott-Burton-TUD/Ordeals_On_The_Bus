@@ -5,6 +5,7 @@ using UnityEngine;
 public class NPCObjects : MonoBehaviour
 {
     public NPC6 npc;
+    public npcmovement npc1;
     // Start is called before the first frame update
     void Start()
     {
@@ -30,5 +31,6 @@ public class NPCObjects : MonoBehaviour
         yield return new WaitForSeconds(2f);
         npc.run = true;
         npc.movementSpeed = 5f;
+        npc1.canDriveOff = true;
     }
 }
