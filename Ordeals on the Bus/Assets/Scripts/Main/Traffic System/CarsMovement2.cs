@@ -5,6 +5,7 @@ using UnityEngine;
 public class CarsMovement2 : MonoBehaviour
 {
     public float speed;
+    public float movingSpeed;
     public bool lane1;
     public bool lane2;
 
@@ -15,16 +16,23 @@ public class CarsMovement2 : MonoBehaviour
     private bool isCrashing = false;
 
     Gorilla gorilla;
+    GorillaSpawn canSpeed;
 
     // Start is called before the first frame update
     void Start()
     {
         gorilla = GameObject.FindGameObjectWithTag("Boss").GetComponent<Gorilla>();
+        canSpeed = GameObject.FindGameObjectWithTag("GorillaSpawn").GetComponent<GorillaSpawn>();
     }
 
     // Update is called once per frame
     void Update()
     {
+        if(canSpeed.move == true)
+        {
+            speed = movingSpeed;
+        }
+
         if (lane1 == true)
         {
             transform.Translate(Vector3.left * speed * Time.deltaTime);

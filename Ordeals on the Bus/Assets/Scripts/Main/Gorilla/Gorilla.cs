@@ -29,7 +29,6 @@ public class Gorilla : MonoBehaviour
 
     [Header("Animations")]
     public Animator gorillaAnimator;
-    public GameObject VFX;
 
     // Start is called before the first frame update
     void Start()
