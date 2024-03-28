@@ -35,15 +35,7 @@ public class TrafficSystem : MonoBehaviour
     {
         if(other.gameObject.CompareTag("Traffic"))
         {
-
-            Vector3 newScale = other.transform.localScale;
-
-            newScale.y = 0.1f;
-
-            other.transform.localScale = newScale;
-
             crashed = true;
-
         }
     }
 
