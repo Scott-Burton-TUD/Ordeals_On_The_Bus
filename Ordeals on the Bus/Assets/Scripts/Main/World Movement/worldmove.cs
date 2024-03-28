@@ -215,10 +215,9 @@ public class worldmove : MonoBehaviour
     // Collision with stationary objects
     void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.CompareTag("Player") || other.gameObject.CompareTag("Traffic"))
+        if (other.gameObject.CompareTag("Traffic"))
         {
-            Debug.Log("Collision detected with stationary object");
-
+           
             // Stop the world for 2 seconds
             originalSpeed = speed;
             speed = 0;
