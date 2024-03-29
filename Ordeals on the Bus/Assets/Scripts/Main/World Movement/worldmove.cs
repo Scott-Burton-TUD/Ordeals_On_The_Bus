@@ -42,8 +42,6 @@ public class worldmove : MonoBehaviour
     // Variables for bus leaving
     public npcmovement npcleave;
     public NPC3 npcleave2;
-    public NPC4 npcleave3;
-    public NPC5 npcleave4;
 
     public GameObject busdoor;
     public Animator busdoorAnim;
@@ -136,18 +134,6 @@ public class worldmove : MonoBehaviour
         }
 
         if (npcleave2.ticket3 == true)
-        {
-            busdoorAnim.Play(animationName);
-            StartCoroutine(MoveOut());
-        }
-
-        if (npcleave3.ticket4 == true)
-        {
-            busdoorAnim.Play(animationName);
-            StartCoroutine(MoveOut());
-        }
-
-        if (npcleave4.ticket5 == true)
         {
             busdoorAnim.Play(animationName);
             StartCoroutine(MoveOut());

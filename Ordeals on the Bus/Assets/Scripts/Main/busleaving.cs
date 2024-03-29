@@ -28,7 +28,7 @@ public class busleaving : MonoBehaviour
         {
             busleave.ticket3 = false;
             busleave1.ticket1 = false;
-            busleave2.ticket4 = false;
+            busleave2.canDriveOff = false;
             busleave3.ticket5 = false;
             busleave4.ticket2 = false;
             busleave1.canDriveOff = false;

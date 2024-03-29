@@ -59,7 +59,7 @@ public class getonbus : MonoBehaviour
         if (npc1.ticket1 == true)
         {
             currentNPCIndex = 1;
-            npc[currentNPCIndex].GetComponent<NPC6>().enabled = true;
+            npc[currentNPCIndex].GetComponent<NPC7>().enabled = true;
             npc[currentNPCIndex].GetComponent<NavMeshAgent>().enabled = true;
         }
 

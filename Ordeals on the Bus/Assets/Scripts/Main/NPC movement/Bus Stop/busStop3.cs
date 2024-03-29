@@ -18,6 +18,7 @@ public class busStop3 : MonoBehaviour
 
     //bool
     public npcspawnbool3 inZone;
+    public NPC4 npc4;
 
 
     void Start()
@@ -28,10 +29,7 @@ public class busStop3 : MonoBehaviour
 
     void Update()
     {
-
-        
-
-
+        ActivateNPC();
     }
 
     public void GetOn()
@@ -50,6 +48,17 @@ public class busStop3 : MonoBehaviour
         currentNPCIndex = 0;
         npc[currentNPCIndex].GetComponent<NPC4>().enabled = true;
         npc[currentNPCIndex].GetComponent<NavMeshAgent>().enabled = true;
+
+    }
+
+    void ActivateNPC()
+    {
+        if (npc4.ticket4 == true)
+        {
+            currentNPCIndex = 1;
+            npc[currentNPCIndex].GetComponent<NPC6>().enabled = true;
+            npc[currentNPCIndex].GetComponent<NavMeshAgent>().enabled = true;
+        }
 
     }
 }

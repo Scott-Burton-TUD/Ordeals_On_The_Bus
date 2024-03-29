@@ -38,6 +38,7 @@ public class NPC4 : MonoBehaviour
     [Header("Leaving")]
     public string leavingdestination;
     public bool canleave;
+    public bool canDriveOff;
 
     void Start()
     {

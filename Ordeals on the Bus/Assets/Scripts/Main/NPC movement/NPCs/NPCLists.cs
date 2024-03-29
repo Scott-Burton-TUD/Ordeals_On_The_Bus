@@ -30,12 +30,16 @@ public class NPCLists : MonoBehaviour
         {
             npc1.canleave = true;
             npc1.gotoseat = false;
+
             npc2.canleave = true;
             npc2.gotoseat = false;
+
             npc3.canleave = true;
             npc3.gotoseat = false;
+
             npc4.canleave = true;
             npc4.gotoseat = false;
+
             npc5.canleave = true;
             npc5.gotoseat = false;
 

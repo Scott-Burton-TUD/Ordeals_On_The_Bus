@@ -56,6 +56,7 @@ public class NPC6 : MonoBehaviour
             targetObjectName = LeaveAreaName;
             NPC1Animations.SetBool("isWalk", true);
             NPC1Animations.SetBool("isIdle", false);
+            navMeshAgent.speed = 5f;
         }
 
 
