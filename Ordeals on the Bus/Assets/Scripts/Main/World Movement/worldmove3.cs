@@ -15,13 +15,10 @@ public class worldmove3 : MonoBehaviour
     public float targetXPosition = 114.32f; // Change back to X position
     public float moveSpeed = 1f;
     public bool canPark;
-    public dockcheck dockk;
 
     //Speed
     public float finalspeed;
 
-    // Reference to stopbus script
-    stopbus stoppingbus;
 
     // Variables for going forward
     public float gobackPosition = 109.42f;
@@ -58,7 +55,6 @@ public class worldmove3 : MonoBehaviour
 
     void Start()
     {
-        stoppingbus = GameObject.FindGameObjectWithTag("Stop").GetComponent<stopbus>();
         busdoorAnim = busdoor.GetComponent<Animator>();
         canspeed = true;
         //UpdateBusPosition();
@@ -89,11 +85,6 @@ public class worldmove3 : MonoBehaviour
         drive(finalspeed); // Drive with the new speed
 
 
-
-        if (dockk.dockingmode == true && canPark == false)
-        {
-            buspark(); // Call the BusPark method
-        }
 
         // Check if the world is stopped
         if (worldStopped)

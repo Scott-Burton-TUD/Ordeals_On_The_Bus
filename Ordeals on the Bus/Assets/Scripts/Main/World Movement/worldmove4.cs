@@ -88,10 +88,6 @@ public class worldmove4 : MonoBehaviour
         //Switching lane
         
 
-        if (dockk.dockingmode == true && canPark == false)
-        {
-            buspark(); // Call the BusPark method
-        }
 
         // Check if the world is stopped
         if (worldStopped)

@@ -12,6 +12,7 @@ public class buttonref : MonoBehaviour
     public busStop2 stop2;
     public busStop3 stop3;
     public busStop4 stop4;
+    public busStop5 stop5;
     public tjunction2 turn;
     public tjunction3 turn2;
     // Start is called before the first frame update
@@ -85,6 +86,7 @@ public class buttonref : MonoBehaviour
         stop2.GetOn();
         stop3.GetOn();
         stop4.GetOn();
+        stop5.GetOn();
     }
 
   

@@ -24,10 +24,7 @@ public class busStop5 : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (inZone.businzone4 == true) 
-        {
-            busdoorAnim.Play(animationName);
-        }
+        
     }
 
     public void OnTriggerEnter(Collider other)
@@ -38,6 +35,14 @@ public class busStop5 : MonoBehaviour
             busstoping = true;
             busstop.speed = 0;
 
+        }
+    }
+
+    public void GetOn()
+    {
+        if (inZone.businzone4 == true)
+        {
+            busdoorAnim.Play(animationName);
         }
     }
 }
