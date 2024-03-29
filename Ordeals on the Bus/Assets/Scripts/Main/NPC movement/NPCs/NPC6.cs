@@ -68,6 +68,11 @@ public class NPC6 : MonoBehaviour
         {
             transform.LookAt(Player.transform);
         }
+
+        if (other.CompareTag("End"))
+        {
+            Destroy(gameObject);
+        }
     }
 
     void MoveTowardsTarget(string targetName)

@@ -64,6 +64,11 @@ public class NPC7 : MonoBehaviour
             transform.LookAt(Player.transform);
             StartCoroutine(Running());
         }
+
+        if(other.CompareTag("End"))
+        {
+            Destroy(gameObject);
+        }
     }
 
     void MoveTowardsTarget(string targetName)
