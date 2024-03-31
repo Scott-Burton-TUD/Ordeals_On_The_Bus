@@ -96,6 +96,6 @@ public class NPC7 : MonoBehaviour
 
         float runSpeed = 5f;
 
-        navMeshAgent.speed = runSpeed;
+        movementSpeed = runSpeed;
     }
 }
