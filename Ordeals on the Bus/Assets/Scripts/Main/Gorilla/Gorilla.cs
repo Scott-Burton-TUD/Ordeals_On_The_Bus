@@ -88,9 +88,13 @@ public class Gorilla : MonoBehaviour
             {
                 StartCoroutine(GrabbingBanana());
             }
-            
-
         }
+
+        if(other.CompareTag("Respawn"))
+        {
+            Die();
+        }
+
     }
 
     public void OnTriggerExit(Collider other)
@@ -118,5 +122,10 @@ public class Gorilla : MonoBehaviour
                 Debug.LogWarning("Target object not found.");
             }
         }
+    }
+
+    public void Die()
+    {
+        Destroy(gameObject);
     }
 }

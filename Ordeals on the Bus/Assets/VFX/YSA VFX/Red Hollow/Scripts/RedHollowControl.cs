@@ -40,4 +40,9 @@ public class RedHollowControl : MonoBehaviour
     {
         animator.Play("Red Hollow - Dead");
     }
+
+    public void Blue()
+    {
+        hue = 0.7f;
+    }
 }
