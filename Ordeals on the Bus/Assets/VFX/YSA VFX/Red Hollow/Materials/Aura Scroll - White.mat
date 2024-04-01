@@ -67,7 +67,7 @@ Material:
     - Vector2_B12BF039: {r: 4, g: 2, b: 0, a: 0}
     - _Color1: {r: 5.3403134, g: 0.54450256, b: 0.54450256, a: 0}
   m_BuildTextureStacks: []
---- !u!114 &71191884322168472
+--- !u!114 &7006824370513797143
 MonoBehaviour:
   m_ObjectHideFlags: 11
   m_CorrespondingSourceObject: {fileID: 0}
