@@ -23,6 +23,8 @@ public class BananaCrossing : MonoBehaviour
 
     [Header("Special Interaction")]
     public GameObject SplatterVFX;
+    public bool GotHit;
+    public bool self;
 
     void Start()
     {
@@ -36,6 +38,7 @@ public class BananaCrossing : MonoBehaviour
     void Update()
     {
         navMeshAgent.speed = movementSpeed;
+
         if (gotoseat == false)
         {
             MoveTowardsTarget(targetObjectName);
@@ -50,6 +53,11 @@ public class BananaCrossing : MonoBehaviour
             }
         }
 
+        if(GotHit == true && self == false)
+        {
+            navMeshAgent.isStopped = true;
+        }
+
 
 
     }
@@ -60,6 +68,8 @@ public class BananaCrossing : MonoBehaviour
         {
             navMeshAgent.isStopped = true;
             SplatterVFX.SetActive(true);
+            GotHit = true;
+            self = true;
         }
     }
 
