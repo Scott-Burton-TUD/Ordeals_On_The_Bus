@@ -4,12 +4,12 @@ using UnityEngine;
 
 public class npcanimationtrigger : MonoBehaviour
 {
-    public Animator bananaAnimations;
-    public string animationName;
+    public Animator TargetAnimator;
+    public GameObject TargetObject;
     // Start is called before the first frame update
     void Start()
     {
-        bananaAnimations = GetComponent<Animator>();
+        TargetAnimator = TargetObject.GetComponent<Animator>();
     }
 
     // Update is called once per frame
@@ -20,10 +20,6 @@ public class npcanimationtrigger : MonoBehaviour
 
     public void OnTriggerEnter(Collider other)
     {
-        if(other.gameObject.CompareTag("Player"))
-        {
-            bananaAnimations.Play(animationName);
-        }
-      
+        TargetAnimator.enabled = true;
     }
 }

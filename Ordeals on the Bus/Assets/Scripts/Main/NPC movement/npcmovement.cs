@@ -40,6 +40,8 @@ public class npcmovement : MonoBehaviour
     [Header("Ragdoll")]
     private Transform hipBone;
     public string getup;
+    public GameObject Bones;
+    public Rigidbody[] _ragdollRigidbodies;
 
     void Start()
     {
@@ -47,7 +49,12 @@ public class npcmovement : MonoBehaviour
         navMeshAgent.speed = movementSpeed; // Set the initial speed 
         NPC1Animations = Animation.GetComponent<Animator>();
         hipBone = NPC1Animations.GetBoneTransform(HumanBodyBones.Hips);
+        _ragdollRigidbodies = Bones.GetComponentsInChildren<Rigidbody>();
 
+        foreach (var rigidbody in _ragdollRigidbodies)
+        {
+            rigidbody.isKinematic = true;
+        }
     }
 
     void Update()
@@ -127,6 +134,11 @@ public class npcmovement : MonoBehaviour
         if (other.CompareTag("Hand"))
         {
             ragdoll();
+
+            foreach (var rigidbody in _ragdollRigidbodies)
+            {
+                rigidbody.isKinematic = false;
+            }
         }
     }
 
@@ -251,7 +263,7 @@ public class npcmovement : MonoBehaviour
         Vector3 savedPosition = transform.position;
         Quaternion savedRotation = transform.rotation;
 
-        
+
         NPC1Animations.enabled = false;
         navMeshAgent.isStopped = true;
         
@@ -263,6 +275,7 @@ public class npcmovement : MonoBehaviour
     {
         //NPC1Animations.SetBool("isStand", true);
         NPC1Animations.Play(getup);
+        
 
         yield return new WaitForSeconds(5f);
 
@@ -287,5 +300,9 @@ public class npcmovement : MonoBehaviour
 
         yield return new WaitForSeconds(2.5f);
         navMeshAgent.isStopped = false;
+        foreach (var rigidbody in _ragdollRigidbodies)
+        {
+            rigidbody.isKinematic = true;
+        }
     }
 }
