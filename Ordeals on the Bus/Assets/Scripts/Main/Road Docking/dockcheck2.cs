@@ -31,13 +31,5 @@ public class dockcheck2 : MonoBehaviour
             dockingmode = true;
         }
     }
-
-    public void OnTriggerExit(Collider other)
-    {
-        if (other.gameObject.CompareTag("Player"))
-        {
-            dockingmode = false;
-        }
-    }
 }
 

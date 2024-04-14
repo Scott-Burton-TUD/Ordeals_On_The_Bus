@@ -5,6 +5,7 @@ using UnityEngine.XR.Content.Interaction;
 
 public class worldmove3 : MonoBehaviour
 {
+
     // Variables for world movement
     public float speed = 1;
     public bool candrive;
@@ -51,6 +52,9 @@ public class worldmove3 : MonoBehaviour
     public float newSpeed;
     public float sliderValue;
 
+    public XRKnob wheel;
+    public float wheelangle;
+
 
     void Start()
     {
@@ -62,6 +66,19 @@ public class worldmove3 : MonoBehaviour
 
     void Update()
     {
+        //Wheel value
+        wheelangle = wheel.value;
+
+        if (wheelangle == 1)
+        {
+            Right();
+        }
+
+        if (wheelangle == 0)
+        {
+            Left();
+        }
+
         // Adjust speed based on slider value
         sliderValue = slider.value; // Get slider value between 0 and 1
 

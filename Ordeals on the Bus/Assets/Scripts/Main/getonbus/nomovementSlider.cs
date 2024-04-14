@@ -7,11 +7,13 @@ public class nomovementSlider : MonoBehaviour
 {
 
     public XRSlider slider;
+    public XRKnob wheel;
     public float defaultspeed = 0.3f;
     public float transitionspeed = 1f;
     public bool canSlider;
 
     public Collider siliderbox;
+    public Collider wheelbox;
 
     // Start is called before the first frame update
     void Start()
@@ -25,6 +27,9 @@ public class nomovementSlider : MonoBehaviour
         if (canSlider == true)
         {
             siliderbox.enabled = false;
+            wheelbox.enabled = false;
+
+            wheel.value = Mathf.Lerp(wheel.value, 0.5f, transitionspeed * Time.deltaTime);
 
             if (slider.value != defaultspeed)
             {
@@ -50,6 +55,7 @@ public class nomovementSlider : MonoBehaviour
         {
             canSlider = false;
             siliderbox.enabled = true;
+            wheelbox.enabled = true;
         }
             
     }

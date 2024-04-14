@@ -6,6 +6,7 @@ public class busStop5 : MonoBehaviour
 {
     public bool busstoping;
     worldmove4 busstop;
+    public dockcheck3 dock1;
 
     // Start is called before the first frame update
     void Start()
@@ -24,6 +25,7 @@ public class busStop5 : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Player"))
         {
+            dock1.dockingmode = false;
             busstoping = true;
             busstop.speed = 0;
 

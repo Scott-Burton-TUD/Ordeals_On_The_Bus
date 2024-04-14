@@ -8,6 +8,7 @@ public class stopbus2 : MonoBehaviour
     worldmove3 busstop;
     Collider coll;
     public busStop3 npcbus;
+    public dockcheck2 dock2;
 
     // Start is called before the first frame update
     void Start()
@@ -27,6 +28,7 @@ public class stopbus2 : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Player"))
         {
+            dock2.dockingmode = false;
             busstoping = true;
             busstop.speed = 0;
             coll.enabled = false;

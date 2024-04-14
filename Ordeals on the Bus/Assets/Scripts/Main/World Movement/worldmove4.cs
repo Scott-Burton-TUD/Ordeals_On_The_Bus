@@ -47,6 +47,9 @@ public class worldmove4 : MonoBehaviour
     float worldStopTimer = 0f;
     public float newSpeed;
     public float sliderValue;
+
+    public XRKnob wheel;
+    public float wheelangle;
     void Start()
     {
         stoppingbus = GameObject.FindGameObjectWithTag("Stop").GetComponent<stopbus>();
@@ -57,6 +60,19 @@ public class worldmove4 : MonoBehaviour
 
     void Update()
     {
+        //Wheel value
+        wheelangle = wheel.value;
+
+        if (wheelangle == 1)
+        {
+            Right();
+        }
+
+        if (wheelangle == 0)
+        {
+            Left();
+        }
+
         // Adjust speed based on slider value
         sliderValue = slider.value; // Get slider value between 0 and 1
 

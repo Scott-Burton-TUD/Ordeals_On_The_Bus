@@ -7,9 +7,12 @@ using UnityEngine.XR.Content.Interaction;
 public class worldmove : MonoBehaviour
 {
     public XRSlider slider;
+    public XRKnob wheel;
+    public float wheelangle;
     // Variables for world movement
     float minSpeed = 1f; // Minimum speed
     float maxSpeed = 5f; // Maximum speed
+
     // Variables for world movement
     public float speed = 1;
     public bool candrive;
@@ -19,7 +22,6 @@ public class worldmove : MonoBehaviour
     public float targetXPosition = 114.32f;
     public float moveSpeed = 1f;
     public bool canPark;
-    public dockcheck dockk;
 
     //Speed
     public float finalspeed;
@@ -43,7 +45,6 @@ public class worldmove : MonoBehaviour
     public NPC4 npcleave3;
     public NPC5 npcleave4;
 
-    public GameObject doorbutton;
     public GameObject busdoor;
     public Animator busdoorAnim;
     public string animationName;
@@ -54,6 +55,8 @@ public class worldmove : MonoBehaviour
     float worldStopTimer = 0f;
     public float newSpeed;
     public float sliderValue;
+
+
     void Start()
     {
         stoppingbus = GameObject.FindGameObjectWithTag("Stop").GetComponent<stopbus>();
@@ -64,6 +67,19 @@ public class worldmove : MonoBehaviour
 
     void Update()
     {
+        //Wheel value
+        wheelangle = wheel.value;
+
+        if(wheelangle == 1)
+        {
+            Right();
+        }
+
+        if (wheelangle == 0)
+        {
+            Left();
+        }
+
         // Adjust speed based on slider value
         sliderValue = slider.value; // Get slider value between 0 and 1
 
@@ -77,32 +93,7 @@ public class worldmove : MonoBehaviour
         //drive();
 
         //Switching lane
-        if (!isSwitchingLane)
-        {
-            // Check for mouse clicks on left and right buttons for lane switching
-            if (Input.GetMouseButtonDown(0)) // Left mouse button click
-            {
-                Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-                RaycastHit hit;
 
-                if (Physics.Raycast(ray, out hit))
-                {
-                    if (hit.collider.gameObject == leftButton)
-                    {
-                        SwitchLane(-1); // Move to the left lane
-                    }
-                    else if (hit.collider.gameObject == rightButton)
-                    {
-                        SwitchLane(1); // Move to the right lane
-                    }
-                }
-            }
-        }
-
-        if (dockk.dockingmode == true && canPark == false)
-        {
-            buspark(); // Call the BusPark method
-        }
 
         // Check if the world is stopped
         if (worldStopped)

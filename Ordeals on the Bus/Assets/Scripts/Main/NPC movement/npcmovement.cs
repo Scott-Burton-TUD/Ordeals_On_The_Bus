@@ -12,8 +12,10 @@ public class npcmovement : MonoBehaviour
     [Header("Going to the driver speed")]
     public float dockingspeed = 5f;
     public string targetObjectName; // Change the target variable to string
+    public GameObject Player;
 
     [Header("Seats")]
+    public MeshRenderer ticket;
     public bool ticket1;
     public string[] Seats;
     public bool gotoseat;
@@ -34,11 +36,16 @@ public class npcmovement : MonoBehaviour
     public string leavingdestination;
     public bool canleave;
 
+    [Header("Ragdoll")]
+    private Transform hipBone;
+    public string getup;
+
     void Start()
     {
         navMeshAgent = GetComponent<NavMeshAgent>();
         navMeshAgent.speed = movementSpeed; // Set the initial speed 
         NPC1Animations = Animation.GetComponent<Animator>();
+        hipBone = NPC1Animations.GetBoneTransform(HumanBodyBones.Hips);
 
     }
 
@@ -76,6 +83,7 @@ public class npcmovement : MonoBehaviour
 
             if (navMeshAgent.remainingDistance < 0.01f)
             {
+                
                 NPC1Animations.SetBool("isIdle", true);
                 NPC1Animations.SetBool("isWalk", false);
             }
@@ -89,6 +97,7 @@ public class npcmovement : MonoBehaviour
             mayham = false;
             NPC1Animations.SetBool("isWalk", true);
             NPC1Animations.SetBool("isIdle", false);
+            NPC1Animations.SetBool("isHand", false);
 
         }
 
@@ -105,6 +114,28 @@ public class npcmovement : MonoBehaviour
         }
     }
 
+    public void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.CompareTag("Finish"))
+        {
+            ticket.enabled = true;
+            transform.LookAt(Player.transform);
+            NPC1Animations.SetBool("isHand", true);
+        }
+
+        if (other.gameObject.CompareTag("Hand"))
+        {
+            ragdoll();
+        }
+    }
+
+    public void OnTriggerExit(Collider other)
+    {
+        if (other.gameObject.CompareTag("Finish"))
+        {
+            NPC1Animations.SetBool("isHand", false);
+        }
+    }
 
 
     /// <summary>
@@ -202,5 +233,58 @@ public class npcmovement : MonoBehaviour
         NavMesh.SamplePosition(randomDirection, out navHit, 5f, -1);
 
         return navHit.position;
+    }
+
+    public void flinch()
+    {
+        NPC1Animations.SetBool("isFlinch", true);
+    }
+
+    public void noflinch()
+    {
+        NPC1Animations.SetBool("isFlinch", false);
+    }
+
+    public void ragdoll()
+    {
+        Vector3 savedPosition = transform.position;
+        Quaternion savedRotation = transform.rotation;
+
+        
+        NPC1Animations.enabled = false;
+        navMeshAgent.isStopped = true;
+        
+
+        StartCoroutine(RestorePositionAndRotation(savedPosition, savedRotation));
+    }
+
+    IEnumerator RestorePositionAndRotation(Vector3 position, Quaternion rotation)
+    {
+        //NPC1Animations.SetBool("isStand", true);
+        NPC1Animations.Play(getup);
+
+        yield return new WaitForSeconds(5f);
+
+        Vector3 originalHipsPosition = hipBone.position;
+        transform.position = hipBone.position;
+
+        if (Physics.Raycast(transform.position, Vector3.down, out RaycastHit hitInfo))
+        {
+            transform.position = new Vector3(transform.position.x, hitInfo.point.y, transform.position.z);
+        }
+
+        hipBone.position = originalHipsPosition;
+
+        
+        NPC1Animations.enabled = true;
+
+        yield return new WaitForSeconds(2.5f);
+
+        NPC1Animations.SetBool("isStand", false);
+        
+
+
+        yield return new WaitForSeconds(2.5f);
+        navMeshAgent.isStopped = false;
     }
 }
