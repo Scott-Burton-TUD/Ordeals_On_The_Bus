@@ -38,6 +38,13 @@ TagManager:
   - Third NPC
   - First NPC
   - Traffic
+  - Docking
+  - Hello
+  - DockSfx
+  - Ticket
+  - Obstacle
+  - Boss
+  - Fifth NPC
   layers:
   - Default
   - TransparentFX
@@ -47,7 +54,7 @@ TagManager:
   - UI
   - Hands
   - Interactive
-  - 
+  - PostProcessing
   - 
   - 
   - 
