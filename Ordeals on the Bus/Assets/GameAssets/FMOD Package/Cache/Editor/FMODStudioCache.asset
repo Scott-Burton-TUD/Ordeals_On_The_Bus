@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!114 &-7418988087477222659
+--- !u!114 &-6784953477951115608
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -10,25 +10,24 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/Scream
+  m_Name: event:/Tunnel
   m_EditorClassIdentifier: 
-  Path: event:/Scream
+  Path: event:/Tunnel
   Guid:
-    Data1: -424557604
-    Data2: 1307189727
-    Data3: 1859829133
-    Data4: 1730452605
+    Data1: 19348859
+    Data2: 1274498866
+    Data3: -1635566154
+    Data4: 1384761835
   Banks:
   - {fileID: 4660892209033538582}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
-  Parameters:
-  - {fileID: 1006748742752961528}
+  Parameters: []
   MinDistance: 1
   MaxDistance: 20
-  Length: 11000
---- !u!114 &-5544654185607864843
+  Length: 7993
+--- !u!114 &-5138855674699692409
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -38,47 +37,23 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: snapshot:/Tunnel
+  m_Name: event:/Dramatic Character Motif
   m_EditorClassIdentifier: 
-  Path: snapshot:/Tunnel
+  Path: event:/Dramatic Character Motif
   Guid:
-    Data1: -704043073
-    Data2: 1225650640
-    Data3: -2126730067
-    Data4: 282036461
+    Data1: -564744203
+    Data2: 1279533078
+    Data3: -921315930
+    Data4: 593985460
   Banks:
-  - {fileID: 7542775194498571835}
+  - {fileID: 4065136385024125927}
   IsStream: 0
   Is3D: 0
-  IsOneShot: 0
+  IsOneShot: 1
   Parameters: []
-  MinDistance: 0
-  MaxDistance: 0
-  Length: 0
---- !u!114 &-2855683161861516167
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
-  m_Name: parameter:/Bus STOP Button Player SFX/Parameter 3
-  m_EditorClassIdentifier: 
-  Name: Parameter 3
-  StudioPath: 
-  Min: 0
-  Max: 1
-  Default: 0
-  ID:
-    data1: 3634793231
-    data2: 1226734138
-  Type: 0
-  IsGlobal: 0
-  Labels: []
-  Exists: 1
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 3864
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -97,17 +72,16 @@ MonoBehaviour:
   - {fileID: 4065136385024125927}
   - {fileID: 4660892209033538582}
   EditorEvents:
-  - {fileID: 1166690548777895527}
-  - {fileID: -5544654185607864843}
   - {fileID: 100858521870614569}
-  - {fileID: 2972947015950062502}
-  - {fileID: -7418988087477222659}
+  - {fileID: -6784953477951115608}
+  - {fileID: -5138855674699692409}
+  - {fileID: 1593703470966995985}
   EditorParameters: []
   MasterBanks:
   - {fileID: 7542775194498571835}
   StringsBanks:
   - {fileID: 866841245876077147}
-  cacheTime: 638405208730498520
+  cacheTime: 638503673965303586
   cacheVersion: 131616
 --- !u!114 &100858521870614569
 MonoBehaviour:
@@ -128,12 +102,11 @@ MonoBehaviour:
     Data3: -618684781
     Data4: -870449100
   Banks:
-  - {fileID: 4065136385024125927}
+  - {fileID: 4660892209033538582}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
-  Parameters:
-  - {fileID: -2855683161861516167}
+  Parameters: []
   MinDistance: 1
   MaxDistance: 20
   Length: 522
@@ -152,36 +125,12 @@ MonoBehaviour:
   Path: Assets/Scott FMOD/FMOD Sound Design Final Assignment/Build/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 638405208729685359
+  lastModified: 638503673963766731
   FileSizes:
   - Name: Desktop
-    Value: 1256
+    Value: 1010
   Exists: 1
---- !u!114 &1006748742752961528
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
-  m_Name: parameter:/Scream/Parameter 4
-  m_EditorClassIdentifier: 
-  Name: Parameter 4
-  StudioPath: 
-  Min: 0
-  Max: 1
-  Default: 0
-  ID:
-    data1: 2774364087
-    data2: 3364703250
-  Type: 0
-  IsGlobal: 0
-  Labels: []
-  Exists: 1
---- !u!114 &1166690548777895527
+--- !u!114 &1593703470966995985
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -191,101 +140,23 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/Major Theme Change
+  m_Name: event:/Engine
   m_EditorClassIdentifier: 
-  Path: event:/Major Theme Change
+  Path: event:/Engine
   Guid:
-    Data1: 1354513174
-    Data2: 1088186461
-    Data3: -2064221532
-    Data4: 403175846
+    Data1: 782769557
+    Data2: 1240282415
+    Data3: -1301858424
+    Data4: -1170655138
   Banks:
-  - {fileID: 4065136385024125927}
   - {fileID: 4660892209033538582}
-  IsStream: 1
-  Is3D: 0
-  IsOneShot: 0
-  Parameters:
-  - {fileID: 1263519852814740278}
-  MinDistance: 1
-  MaxDistance: 20
-  Length: 30480
---- !u!114 &1263519852814740278
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
-  m_Name: parameter:/Major Theme Change/Parameter 1
-  m_EditorClassIdentifier: 
-  Name: Parameter 1
-  StudioPath: 
-  Min: 0
-  Max: 1
-  Default: 0
-  ID:
-    data1: 3981258450
-    data2: 1723759693
-  Type: 0
-  IsGlobal: 0
-  Labels: []
-  Exists: 1
---- !u!114 &2972947015950062502
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/Eerie
-  m_EditorClassIdentifier: 
-  Path: event:/Eerie
-  Guid:
-    Data1: 103801013
-    Data2: 1292519568
-    Data3: 1111371184
-    Data4: 2122294610
-  Banks:
-  - {fileID: 4065136385024125927}
   IsStream: 0
   Is3D: 0
-  IsOneShot: 1
-  Parameters:
-  - {fileID: 3563997587988326655}
+  IsOneShot: 0
+  Parameters: []
   MinDistance: 1
   MaxDistance: 20
-  Length: 6359
---- !u!114 &3563997587988326655
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
-  m_Name: parameter:/Eerie/Parameter 2
-  m_EditorClassIdentifier: 
-  Name: Parameter 2
-  StudioPath: 
-  Min: 0
-  Max: 1
-  Default: 0
-  ID:
-    data1: 3645354948
-    data2: 1074982363
-  Type: 0
-  IsGlobal: 0
-  Labels: []
-  Exists: 1
+  Length: 4048
 --- !u!114 &4065136385024125927
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -301,10 +172,10 @@ MonoBehaviour:
   Path: Assets/Scott FMOD/FMOD Sound Design Final Assignment/Build/Desktop/Music.bank
   Name: Music
   StudioPath: bank:/Music
-  lastModified: 638405208468963175
+  lastModified: 638503645216956685
   FileSizes:
   - Name: Desktop
-    Value: 487872
+    Value: 48544
   Exists: 1
 --- !u!114 &4660892209033538582
 MonoBehaviour:
@@ -321,10 +192,10 @@ MonoBehaviour:
   Path: Assets/Scott FMOD/FMOD Sound Design Final Assignment/Build/Desktop/SFX.bank
   Name: SFX
   StudioPath: bank:/SFX
-  lastModified: 638405208730498520
+  lastModified: 638503673965303586
   FileSizes:
   - Name: Desktop
-    Value: 433024
+    Value: 104928
   Exists: 1
 --- !u!114 &7542775194498571835
 MonoBehaviour:
@@ -341,8 +212,8 @@ MonoBehaviour:
   Path: Assets/Scott FMOD/FMOD Sound Design Final Assignment/Build/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 638405208729624986
+  lastModified: 638503673963736608
   FileSizes:
   - Name: Desktop
-    Value: 4280
+    Value: 1036
   Exists: 1
