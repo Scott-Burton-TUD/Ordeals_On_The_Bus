@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!114 &-6784953477951115608
+--- !u!114 &-8161827510686102081
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -10,14 +10,14 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/Tunnel
+  m_Name: event:/SFX/Froze
   m_EditorClassIdentifier: 
-  Path: event:/Tunnel
+  Path: event:/SFX/Froze
   Guid:
-    Data1: 19348859
-    Data2: 1274498866
-    Data3: -1635566154
-    Data4: 1384761835
+    Data1: -492930758
+    Data2: 1125568906
+    Data3: 493592982
+    Data4: 1523986633
   Banks:
   - {fileID: 4660892209033538582}
   IsStream: 0
@@ -26,8 +26,8 @@ MonoBehaviour:
   Parameters: []
   MinDistance: 1
   MaxDistance: 20
-  Length: 7993
---- !u!114 &-5138855674699692409
+  Length: 626
+--- !u!114 &-7985330085551380031
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -37,9 +37,88 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/Dramatic Character Motif
+  m_Name: event:/SFX/thanks
   m_EditorClassIdentifier: 
-  Path: event:/Dramatic Character Motif
+  Path: event:/SFX/thanks
+  Guid:
+    Data1: -2050401945
+    Data2: 1275155137
+    Data3: 460025730
+    Data4: -1448377402
+  Banks:
+  - {fileID: 4660892209033538582}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 768
+--- !u!114 &-6419587028836866452
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Music/Transition
+  m_EditorClassIdentifier: 
+  Path: event:/Music/Transition
+  Guid:
+    Data1: 399634236
+    Data2: 1248139851
+    Data3: -1858335353
+    Data4: 298029814
+  Banks:
+  - {fileID: 4065136385024125927}
+  IsStream: 1
+  Is3D: 1
+  IsOneShot: 0
+  Parameters:
+  - {fileID: -3092557517417828442}
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 37136
+--- !u!114 &-3092557517417828442
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Transition/MusicTransition
+  m_EditorClassIdentifier: 
+  Name: MusicTransition
+  StudioPath: 
+  Min: 0
+  Max: 1
+  Default: 0
+  ID:
+    data1: 1780787696
+    data2: 3149688736
+  Type: 0
+  IsGlobal: 0
+  Labels: []
+  Exists: 1
+--- !u!114 &-1361174173413626957
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Music/Dramatic Character Motif
+  m_EditorClassIdentifier: 
+  Path: event:/Music/Dramatic Character Motif
   Guid:
     Data1: -564744203
     Data2: 1279533078
@@ -54,6 +133,88 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 3864
+--- !u!114 &-1220978196786385316
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Music/RUINER
+  m_EditorClassIdentifier: 
+  Path: event:/Music/RUINER
+  Guid:
+    Data1: 1445079695
+    Data2: 1278588890
+    Data3: -931589196
+    Data4: -1385778513
+  Banks:
+  - {fileID: 4065136385024125927}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 16136
+--- !u!114 &-712514450143912478
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SFX/Bus STOP Button Player SFX
+  m_EditorClassIdentifier: 
+  Path: event:/SFX/Bus STOP Button Player SFX
+  Guid:
+    Data1: 978856
+    Data2: 1288112683
+    Data3: -618684781
+    Data4: -870449100
+  Banks:
+  - {fileID: 4660892209033538582}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 522
+--- !u!114 &-128302526666997141
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SFX/Engine
+  m_EditorClassIdentifier: 
+  Path: event:/SFX/Engine
+  Guid:
+    Data1: 782769557
+    Data2: 1240282415
+    Data3: -1301858424
+    Data4: -1170655138
+  Banks:
+  - {fileID: 4660892209033538582}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 0
+  Parameters:
+  - {fileID: 8640106580951401961}
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 4048
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -72,18 +233,25 @@ MonoBehaviour:
   - {fileID: 4065136385024125927}
   - {fileID: 4660892209033538582}
   EditorEvents:
-  - {fileID: 100858521870614569}
-  - {fileID: -6784953477951115608}
-  - {fileID: -5138855674699692409}
-  - {fileID: 1593703470966995985}
+  - {fileID: -1361174173413626957}
+  - {fileID: 2520874731315247353}
+  - {fileID: -712514450143912478}
+  - {fileID: 6924182722205765974}
+  - {fileID: -1220978196786385316}
+  - {fileID: -6419587028836866452}
+  - {fileID: 265582767796064983}
+  - {fileID: 7244315277579660920}
+  - {fileID: -8161827510686102081}
+  - {fileID: -7985330085551380031}
+  - {fileID: -128302526666997141}
   EditorParameters: []
   MasterBanks:
   - {fileID: 7542775194498571835}
   StringsBanks:
   - {fileID: 866841245876077147}
-  cacheTime: 638503673965303586
+  cacheTime: 638505178887822735
   cacheVersion: 131616
---- !u!114 &100858521870614569
+--- !u!114 &265582767796064983
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -93,23 +261,23 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/Bus STOP Button Player SFX
+  m_Name: event:/Music/FINGERBIB
   m_EditorClassIdentifier: 
-  Path: event:/Bus STOP Button Player SFX
+  Path: event:/Music/FINGERBIB
   Guid:
-    Data1: 978856
-    Data2: 1288112683
-    Data3: -618684781
-    Data4: -870449100
+    Data1: 2037316641
+    Data2: 1201870217
+    Data3: -2140600667
+    Data4: 626757618
   Banks:
-  - {fileID: 4660892209033538582}
-  IsStream: 0
+  - {fileID: 4065136385024125927}
+  IsStream: 1
   Is3D: 0
-  IsOneShot: 1
+  IsOneShot: 0
   Parameters: []
   MinDistance: 1
   MaxDistance: 20
-  Length: 522
+  Length: 13344
 --- !u!114 &866841245876077147
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -125,12 +293,38 @@ MonoBehaviour:
   Path: Assets/Scott FMOD/FMOD Sound Design Final Assignment/Build/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 638503673963766731
+  lastModified: 638505178244596941
   FileSizes:
   - Name: Desktop
-    Value: 1010
+    Value: 1470
   Exists: 1
---- !u!114 &1593703470966995985
+--- !u!114 &1180957252582858533
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Area/Musicchange
+  m_EditorClassIdentifier: 
+  Name: Musicchange
+  StudioPath: 
+  Min: 0
+  Max: 1
+  Default: 0
+  ID:
+    data1: 2093646313
+    data2: 508254511
+  Type: 0
+  IsGlobal: 0
+  Labels:
+  - FINGERBIB
+  - RUINER
+  Exists: 1
+--- !u!114 &2520874731315247353
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -140,23 +334,23 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/Engine
+  m_Name: event:/Music/Tunnel
   m_EditorClassIdentifier: 
-  Path: event:/Engine
+  Path: event:/Music/Tunnel
   Guid:
-    Data1: 782769557
-    Data2: 1240282415
-    Data3: -1301858424
-    Data4: -1170655138
+    Data1: 19348859
+    Data2: 1274498866
+    Data3: -1635566154
+    Data4: 1384761835
   Banks:
   - {fileID: 4660892209033538582}
   IsStream: 0
   Is3D: 0
-  IsOneShot: 0
+  IsOneShot: 1
   Parameters: []
   MinDistance: 1
   MaxDistance: 20
-  Length: 4048
+  Length: 7993
 --- !u!114 &4065136385024125927
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -172,10 +366,10 @@ MonoBehaviour:
   Path: Assets/Scott FMOD/FMOD Sound Design Final Assignment/Build/Desktop/Music.bank
   Name: Music
   StudioPath: bank:/Music
-  lastModified: 638503645216956685
+  lastModified: 638505122427067431
   FileSizes:
   - Name: Desktop
-    Value: 48544
+    Value: 469920
   Exists: 1
 --- !u!114 &4660892209033538582
 MonoBehaviour:
@@ -192,11 +386,66 @@ MonoBehaviour:
   Path: Assets/Scott FMOD/FMOD Sound Design Final Assignment/Build/Desktop/SFX.bank
   Name: SFX
   StudioPath: bank:/SFX
-  lastModified: 638503673965303586
+  lastModified: 638505178887822735
   FileSizes:
   - Name: Desktop
-    Value: 104928
+    Value: 144160
   Exists: 1
+--- !u!114 &6924182722205765974
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Music/Area
+  m_EditorClassIdentifier: 
+  Path: event:/Music/Area
+  Guid:
+    Data1: 189042121
+    Data2: 1300791664
+    Data3: -2051097932
+    Data4: -163551128
+  Banks:
+  - {fileID: 4065136385024125927}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 0
+  Parameters:
+  - {fileID: 1180957252582858533}
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
+--- !u!114 &7244315277579660920
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SFX/Horn
+  m_EditorClassIdentifier: 
+  Path: event:/SFX/Horn
+  Guid:
+    Data1: -2098916526
+    Data2: 1162459621
+    Data3: -731150154
+    Data4: -64887416
+  Banks:
+  - {fileID: 4660892209033538582}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 1000
 --- !u!114 &7542775194498571835
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -212,8 +461,32 @@ MonoBehaviour:
   Path: Assets/Scott FMOD/FMOD Sound Design Final Assignment/Build/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 638503673963736608
+  lastModified: 638505178244561453
   FileSizes:
   - Name: Desktop
     Value: 1036
+  Exists: 1
+--- !u!114 &8640106580951401961
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Engine/engine
+  m_EditorClassIdentifier: 
+  Name: engine
+  StudioPath: 
+  Min: 0
+  Max: 1
+  Default: 0
+  ID:
+    data1: 377272807
+    data2: 3916285628
+  Type: 0
+  IsGlobal: 0
+  Labels: []
   Exists: 1

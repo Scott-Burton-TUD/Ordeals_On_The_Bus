@@ -7,6 +7,7 @@ using FMODUnity;
 public class vipmovement : MonoBehaviour
 {
     [SerializeField] private EventReference STOPSound;
+    [SerializeField] private EventReference frozeSound;
 
     [Header("NPC movement speed")]
     public float movementSpeed = 3.0f; // Public variable for controlling the speed
@@ -45,7 +46,8 @@ public class vipmovement : MonoBehaviour
             icecube.SetActive(true);
             fire.SetActive(false);
             isonFire = false;
-           
+            AudioManager.instance.PlayOneShot(frozeSound, this.transform.position);
+
 
         }
         if (mayham == true && !string.IsNullOrEmpty(randomMovementAreaName))
@@ -72,7 +74,7 @@ public class vipmovement : MonoBehaviour
         }
 
 
-        if (Input.GetKey(KeyCode.K))
+        if (Input.GetKey(KeyCode.O))
         {
             gotoseat = true;
             mayham = false;

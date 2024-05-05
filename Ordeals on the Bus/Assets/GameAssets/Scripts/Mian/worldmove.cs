@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using FMODUnity;
 
 public class worldmove : MonoBehaviour
 {
@@ -15,6 +16,8 @@ public class worldmove : MonoBehaviour
     public dockcheck dockk;
 
     //stopping bus
+    [SerializeField] private EventReference hornSound;
+
     public stopbus stoppingbus;
 
     //going forward
@@ -23,6 +26,7 @@ public class worldmove : MonoBehaviour
     //switching lane
     public GameObject leftButton;
     public GameObject rightButton;
+    public GameObject hornButton;
     public float[] lanes;
     private int currentLaneIndex = 1;
     private bool isSwitchingLane = false;
@@ -50,7 +54,15 @@ public class worldmove : MonoBehaviour
 
                 if (Physics.Raycast(ray, out hit))
                 {
-                    if (hit.collider.gameObject == leftButton)
+                    Debug.Log("Hit object: " + hit.collider.gameObject.name);
+                    if (hit.collider.gameObject == hornButton)
+                    {
+                  
+                        Debug.Log("obefvb");
+                        AudioManager.instance.PlayOneShot(hornSound, this.transform.position);
+                        
+                    }
+                    else if (hit.collider.gameObject == leftButton)
                     {
                         SwitchLane(-1); // Move to the left lane
                     }
@@ -58,6 +70,7 @@ public class worldmove : MonoBehaviour
                     {
                         SwitchLane(1); // Move to the right lane
                     }
+                    
                 }
             }
         }

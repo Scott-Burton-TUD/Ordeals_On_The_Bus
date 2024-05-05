@@ -204,7 +204,6 @@ GameObject:
   m_Component:
   - component: {fileID: 679295841}
   - component: {fileID: 679295842}
-  - component: {fileID: 679295844}
   - component: {fileID: 679295843}
   - component: {fileID: -4512498208642691603}
   m_Layer: 0
@@ -225,8 +224,7 @@ Transform:
   m_LocalPosition: {x: -0.6, y: 0.18, z: -0.62}
   m_LocalScale: {x: 0.79671, y: 0.79671, z: 0.79671}
   m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 900659205}
+  m_Children: []
   m_Father: {fileID: 1502831338}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
@@ -273,14 +271,6 @@ Camera:
   m_OcclusionCulling: 1
   m_StereoConvergence: 10
   m_StereoSeparation: 0.022
---- !u!81 &679295844
-AudioListener:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 679295840}
-  m_Enabled: 1
 --- !u!114 &679295843
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -327,62 +317,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   attenuationObject: {fileID: 0}
---- !u!1 &900659204
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 900659205}
-  - component: {fileID: 900659206}
-  m_Layer: 0
-  m_Name: Clouds
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &900659205
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 900659204}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -51, y: 40, z: 53.2}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 679295841}
-  m_RootOrder: -1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &900659206
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 900659204}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a541dd7833af03b4da522b51a05196df, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  cloudMesh: {fileID: -5495902117074765545, guid: 04c71bc04dffe5240ab4af7345095092,
-    type: 3}
-  cloudMat: {fileID: 2100000, guid: d4af315dc21520a42af4f1a0145e8310, type: 2}
-  cloudSize: 1
-  maxScale: 50
-  timeScale: 0.1
-  texScale: 0.1
-  minNoiseSize: 0.6
-  sizeScale: 15
-  cam: {fileID: 679295842}
-  maxDist: 50
-  batchesToCreate: 1
 --- !u!1 &1502831337
 GameObject:
   m_ObjectHideFlags: 0

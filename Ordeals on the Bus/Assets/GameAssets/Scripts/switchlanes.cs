@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using FMODUnity;
 
 public class switchlanes : MonoBehaviour
 {
@@ -18,6 +19,9 @@ public class switchlanes : MonoBehaviour
 
     public GameObject objectToClick;
     public GameObject objectToClick2;
+    public GameObject objectToClick3;
+
+    [SerializeField] private EventReference hornSound;
 
     public Busmovement stopMove;
     public laneMovetobusStop lanemove;
@@ -61,6 +65,14 @@ public class switchlanes : MonoBehaviour
                     {
                         SwitchLane(1); // Move to the right lane
                     }
+                }
+                if (Physics.Raycast(ray, out hit))
+                {
+                    if (hit.collider.gameObject == objectToClick3)
+                    {
+                        AudioManager.instance.PlayOneShot(hornSound, this.transform.position);
+                    }
+                    
                 }
             }
         }

@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
+using FMODUnity;
 
 public class npcmovement : MonoBehaviour
 {
@@ -22,6 +23,8 @@ public class npcmovement : MonoBehaviour
     public bool mayham;
     public string randomMovementAreaName;
     public vipmovement vip;
+
+    [SerializeField] private EventReference thanksSound;
 
     void Start()
     {
@@ -67,11 +70,13 @@ public class npcmovement : MonoBehaviour
         {
             gotoseat = true;
             mayham = false;
+            AudioManager.instance.PlayOneShot(thanksSound, this.transform.position);
         }
 
         if (gotoseat == true && vip.isonFire == false)
         {
             GoToRandomSeat();
+            
         }
     }
 
